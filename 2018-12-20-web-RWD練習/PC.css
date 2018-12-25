@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    height: 1080px;
+    width: 1920px;
+    background-color: antiquewhite;
+
+    font-family: "微軟正黑體";
+}
+
+.clearfix{
+    clear: both;
+}
+
+/* 整個網頁大小 */
+.all{
+    height: 100%;
+    width: 100%;
+}
+
+/* 左邊大區塊 */
+.left{
+    height: 100%;
+    width: 20%;
+    background-color: azure; 
+    box-shadow: 3px 1px 3px #222222;
+    float: left;
+}
+
+/* 右邊大區塊 */
+.right{
+    height: 100%;
+    width: 80%;
+    background-image: url("02-Material/doodles.png");
+    float: left;
+    position: relative;
+}
+
+/* 左邊區塊中的LOGO圖 */
+.left .logo{
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    margin:  0 auto;
+    margin-top: 100px;
+    margin-bottom: 80px;
+}
+
+/* 左邊區塊中的連結 */
+.navbar .link{
+    text-align: center;
+    margin: 20px;
+}
+
+.right_box
+{
+    width: 60%;
+    height: 60%;
+    background-color: lightpink;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.right_box_x{
+    float: left;
+    width: 33.333%;
+    height: 100%;
+    background-color: antiquewhite;
+}
+.right_box_y{
+    float: left;
+    width: 33.333%;
+    height: 100%;
+    background-color: darksalmon;
+}
+.right_box_z{
+    float: left;
+    width: 33.333%;
+    height: 100%;
+    background-color: lightblue;
+}
+
