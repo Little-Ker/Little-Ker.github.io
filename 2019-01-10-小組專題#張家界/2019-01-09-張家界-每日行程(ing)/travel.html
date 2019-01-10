@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>每日行程</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lightbox.css">
+   <style>
+            html, body {
+                position: relative;
+                height: 100%;
+                
+            }
+            body {
+                background: #eee;
+                font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+                font-size: 14px;
+                color:#000;
+                margin: 0;
+                padding: 0;
+            }
+            .swiper-container {
+                width: 100%;
+                height: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+            }
+            .swiper-slide {
+              /*  text-align: center;*/
+                font-size: 18px;
+                background: #fff;
+                /* Center slide text vertically */
+              /*  display: -webkit-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-align-items: center;
+                align-items: center;*/
+            }
+            .swiper-pagination {/*整條DAY*/
+               
+            }
+
+            .swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet{
+                margin: 40PX;
+            }
+            
+          /*  .swiper-pagination span:nth-child(1){
+                background-color: rgb(0, 0, 0,0.8);
+                              
+            }*/
+            
+          
+            .swiper-pagination span{ /*正在指的那個圈*/
+                background-color: rgb(0, 0, 0);
+                transition: 0.5s;
+              
+            }
+            .swiper-pagination-bullet-active::after{/*實現Day數字*/
+                 color: rgb(252, 250, 250);
+                 font-size: 10px;
+                 position: absolute;
+                 top: -3px;
+                 left: 0.6px;                      
+            }
+            
+
+            /*出現天數ING*/
+            .swiper-pagination-bullet-active:nth-child(1)::after{/*實現Day數字*/
+                 content: '1';                                   
+            }
+            .swiper-pagination-bullet-active:nth-child(2)::after{/*實現Day數字*/
+                 content: '2';                                   
+            }
+            .swiper-pagination-bullet-active:nth-child(3)::after{/*實現Day數字*/
+                 content: '3';                                   
+            }
+            .swiper-pagination-bullet-active:nth-child(4)::after{/*實現Day數字*/
+                 content: '4';                                   
+            }
+            .swiper-pagination-bullet-active:nth-child(5)::after{/*實現Day數字*/
+                 content: '5';                                   
+            }
+            .swiper-pagination-bullet-active:nth-child(6)::after{/*實現Day數字*/
+                 content: '6';                                   
+            }
+            .swiper-pagination-bullet-active:nth-child(7)::after{/*實現Day數字*/
+                 content: '7';                                   
+            }
+            .swiper-pagination-bullet-active:nth-child(8)::after{/*實現Day數字*/
+                 content: '8';                                   
+            }
+
+            /*HOVER出現天數*/
+            .swiper-pagination-bullet:nth-child(1):hover:after{/*實現Day數字*/
+                 content: '1';  color: rgb(255, 255, 255);  
+                 font-size: 10px;
+                 position: absolute;
+                 top: -3px;
+                 left: 0.6px;  
+                                       
+            }
+            .swiper-pagination-bullet:nth-child(2):hover:after{/*實現Day數字*/
+                 content: '2';  
+                 color: rgb(255, 255, 255);
+                 
+                 font-size: 10px;
+                 position: absolute;
+                 top: -3px;
+                 left: 0.6px;     
+                /* top: -2.5px;
+                 left: 1px;   */                              
+            }
+            .swiper-pagination-bullet:nth-child(3):hover:after{/*實現Day數字*/
+                 content: '3';  
+                 color: rgb(255, 255, 255);   
+                 font-size: 10px;
+                 position: absolute;
+                 top: -3px;
+                 left: 0.6px;    /*:hover:after*/                              
+            }
+            .swiper-pagination-bullet:nth-child(4):hover:after{/*實現Day數字*/
+                 content: '4';  
+                 color: rgb(255, 255, 255);  
+                 font-size: 10px;
+                 position: absolute;
+                 top: -3px;
+                 left: 0.6px;                                  
+            }
+            .swiper-pagination-bullet:nth-child(5):hover:after{/*實現Day數字*/
+                 content: '5';       color: rgb(255, 255, 255);  
+                 font-size: 10px;
+                 position: absolute;
+                 top: -3px;
+                 left: 0.6px;                            
+            }
+            .swiper-pagination-bullet:nth-child(6):hover:after{/*實現Day數字*/
+                 content: '6';     color: rgb(255, 255, 255); 
+                 font-size: 10px;
+                 position: absolute;
+                 top: -3px;
+                 left: 0.6px;                               
+            }
+            .swiper-pagination-bullet:nth-child(7):hover:after{/*實現Day數字*/
+                 content: '7';     color: rgb(255, 255, 255);     
+                 font-size: 10px;
+                 position: absolute;
+                 top: -3px;
+                 left: 0.6px;                           
+            }
+            .swiper-pagination-bullet:nth-child(8):hover:after{/*實現Day數字*/
+                 content: '8';    
+                 color: rgb(255, 255, 255);  
+                 font-size: 10px;
+                 position: absolute;
+                 top: -3px;
+                 left: 0.6px;                               
+            }
+            
+
+
+
+
+
+            /*  .swiper-pagination span:nth-child(1){
+                background-color: rgb(0, 0, 0,0.8);
+                              
+            }*/
+
+
+         /*   .swiper-pagination span:hover{
+                background-color: rgb(7, 7, 7);
+                transition: 0.2s;
+                transform: scale(5);
+                
+            }*/
+             .swiper-pagination-bullet{
+                
+                opacity: 0.5;
+            }
+            .swiper-pagination-bullet:hover{
+                transform: scale(5);
+                font-size: 10PX;
+                font-family: 'Caveat', cursive;
+                color: #eee;
+                transition:0.3s; 
+                
+            }
+            .swiper-pagination-bullet-active{
+                opacity:0.8;
+                transition: 0.5s;
+                transform: scale(5);
+                font-size: 13PX;
+                font-family: 'Caveat', cursive;
+                position: relative;
+            }
+           
+            .cover{
+                display: none;
+            }
+            .clearfix{
+                clear: both;
+            }
+            .dAY{
+                height: 100%;
+                width: 15%;
+                 
+                float: left;
+            }
+            .circle{
+                width: 100%;
+                 height:40%;
+                
+               /* background-image: url("img/010.png");
+                background-size: cover;
+                 background-size:contain; 
+                background-repeat: no-repeat;*/
+                text-align: center;
+                color: white;
+                font-size: 42PX;
+                transform:translatey(20px);
+                z-index: 10;
+                
+            }
+            .dAY .light{
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                /* background-color: cadetblue; */
+                
+                 transform:translatey(-150px); 
+            }
+            .swiper-pagination .light{
+                width: 3px;
+                height: 80%;
+                background-color: #000;
+            }
+            
+            .circle p{
+                opacity: 0.9;
+                transform:translatey(-175px);
+               
+            }
+            .travel{
+                margin-top: 80px;
+               float: left;
+              height: 100%;
+              width: 80%;
+              
+            }
+            .icon{
+                text-align: center;
+                display: block;
+                
+                transform:translatey(-890px);
+            }
+            .travel h1{
+                margin: 0;
+            }
+            .travel p{
+                
+                font-size: 20px;
+                font-weight: 100px;
+                line-height:50px;
+                margin-top: 55px;
+            }
+
+            </style>
+        </head>
+        <body>
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1  -->
+                    <div class="swiper-slide">
+                        <div class="dAY">
+                            <div class="circle"><img src="img/010.png" alt="" width="190px;"> <p>Day<br>01</p> </div>
+                            <div class="light">
+                                <img src="img/011.png" alt="">  
+                            </div>
+                            <div class="icon">
+                                <img  src="img/eat.png" alt="" width="50px;"> 
+                            </div>
+                            <div class="icon">
+                                    <img  src="img/live.png" alt="" width="50px;"> 
+                                    
+                            </div>
+                            
+                        </div>
+                        <div class="travel">
+                            <div class="title">
+                            <h1 style="font-family:微軟正黑體 ;font-weight: 300;">台北→長沙</h1> <p style="font-family:微軟正黑體;">早餐／ 敬請自理   午餐／ 敬請自理   晚餐／ 敬請自理<br>大華賓館 或 金雅國際酒店 或 華峰華天酒店</p>
+                            </div>
+                            <div class="lightbox">
+                                    <div class="slider_container2">
+                                            <!-- <div>
+                                                <img src="images/image1.png" alt="pure css3 slider" />
+                                                <span class="info">Image Description 1</span>
+                                            </div>
+                                            <div>
+                                                <img src="images/image2.png" alt="pure css3 slider" />
+                                                <span class="info">Image Description 2</span>
+                                            </div>
+                                            <div>
+                                                <img src="images/image3.png" alt="pure css3 slider" />
+                                                <span class="info">Image Description 3</span>
+                                            </div>
+                                            <div>
+                                                <img src="images/image4.png" alt="pure css3 slider" />
+                                                <span class="info">Image Description 4</span>
+                                            </div>
+                                            <div>
+                                                <img src="images/image5.png" alt="pure css3 slider" />
+                                                <span class="info">Image Description 5</span>
+                                            </div> -->
+                                        </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide">Slide 5</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    
+                </div>
+
+                <!-- Add Pagination -->
+                <div class="swiper-pagination">
+                   <div class="light"></div>
+                </div>
+                
+            </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.js"></script>
+        <script>
+                var swiper = new Swiper('.swiper-container', {
+                    direction: 'vertical',
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    mousewheel: true,
+                    pagination: {
+                      el: '.swiper-pagination',
+                      clickable: true,
+                    },
+                });
+                </script>
+</body>
+</html>
