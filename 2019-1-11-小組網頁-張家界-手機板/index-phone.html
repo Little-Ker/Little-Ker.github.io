@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.css">
     <link rel="stylesheet" href="reveal.css">
     <link rel="stylesheet" href="imageBlock.css">
+    <link rel="stylesheet" href="/css/menu.css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
     <script type="text/javascript" src="jquery.reveal.js"></script>
 
@@ -47,17 +48,18 @@
         }
 
         .swiper-slide:nth-child(1n) {
-            width:60%;
+            width: 60%;
         }
 
         .eatPhoto .card .swiper-slide {
             display: block;
             margin: 0 auto;
         }
-       #livePhoto-swiper .swiper-wrapper{
-        transform: translate3d(74.6815px, 0px, 0px);
+
+        #livePhoto-swiper .swiper-wrapper {
+            transform: translate3d(74.6815px, 0px, 0px);
         }
-   
+
 
         .box {
             width: 100%;
@@ -79,16 +81,17 @@
                 </div>
             </div>
         </div>
-        <nav>
-            <div class="container ">
 
-                <div class="menu"><img src="/img/menu.png" width="23px" alt=""></div>
-                <div class="title"><img src="/img/navbar_title.png" width="75px;" alt=""> </div>
+        <nav>
+            <div class="container">
+                <a id="menu" class="menu" href="#">
+                    <img src="/img/menu.png" alt="">
+                </a>
+                <div class="title"><img src="/img/navbar_title.png" width="75px;" alt=""></div>
                 <div class="clearfix"></div>
             </div>
-
-
         </nav>
+
         <div class="menuBox cover">
             <div class="chooseclose">
                 <a href=""> <img class="" src="/img/close.png" width="30px" alt=""></a>
@@ -269,73 +272,83 @@
                         </div>
                     </div>
                     <div class="livePhoto cover">
-                        <div class="swiper-container" id="livePhoto-swiper">                          
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img src="/img/02-travel/D2-1.jpg" width="100%" alt="">
-                                            <h3>詩牆</h3>
-                                        </div>
+                        <div class="swiper-container" id="livePhoto-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <img src="/img/02-travel/D2-1.jpg" width="100%" alt="">
+                                        <h3>詩牆</h3>
                                     </div>
-    
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img src="/img/02-travel/D2-1.jpg" width="100%" alt="">
-                                            <h3>詩牆</h3>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <img src="/img/02-travel/D2-1.jpg" width="100%" alt="">
-                                            <h3>詩牆</h3>
-                                        </div>
-                                    </div>
-    
                                 </div>
-                                <!-- Add Pagination -->                             
+
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <img src="/img/02-travel/D2-1.jpg" width="100%" alt="">
+                                        <h3>詩牆</h3>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <img src="/img/02-travel/D2-1.jpg" width="100%" alt="">
+                                        <h3>詩牆</h3>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Add Pagination -->
+                        </div>
+
+                    </div>
+                    <!-- 說明事項 -->
+                    <div class="travel04">
+                        <div class="title2">
+                            <h3>參團說明</h3>
+                        </div>
+                        <img class="long" src="/img/long.png" width="330px" alt="">
+                        <div class="other">
+                            <div class="otherBox">
+                                <div class="downloadTitle">行程備註</div>
+                                <div class="download"><img src="/img/download.svg" width="12px;" alt=""> </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="otherBox">
+                                <div class="downloadTitle">安全守則</div>
+                                <div class="download"><img src="/img/download.svg" width="12px;" alt=""> </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="otherBox">
+                                <div class="downloadTitle">脫隊規定</div>
+                                <div class="download"><img src="/img/download.svg" width="12px;" alt=""> </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="otherBox">
+                                <div class="downloadTitle">旅遊資訊</div>
+                                <div class="download"><img src="/img/download.svg" width="12px;" alt=""> </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="more">
+                                <p>閱讀更多</p>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
-                <!-- 說明事項 -->
-                <div class="travel04">
-                    <div class="title2">
-                        <h3>參團說明</h3>
-                    </div>
-                    <img class="long" src="/img/long.png" width="330px" alt="">
-                    <div class="other">
-                        <div class="otherBox">
-                            <div class="downloadTitle">行程備註</div>
-                            <div class="download"><img src="/img/download.svg" width="12px;" alt=""> </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="otherBox">
-                            <div class="downloadTitle">安全守則</div>
-                            <div class="download"><img src="/img/download.svg" width="12px;" alt=""> </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="otherBox">
-                            <div class="downloadTitle">脫隊規定</div>
-                            <div class="download"><img src="/img/download.svg" width="12px;" alt=""> </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="otherBox">
-                            <div class="downloadTitle">旅遊資訊</div>
-                            <div class="download"><img src="/img/download.svg" width="12px;" alt=""> </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="more">
-                            <p>閱讀更多</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </div>
-        <!-- <div class="travel"></div>
+            <!-- <div class="travel"></div>
         <div class="directions"></div> -->
 
 
     </all-phone>
+    <!-- menu toggle -->
+    <script>
+        let navBar = document.getElementsByTagName("nav")
+
+        document.getElementById("menu").onclick = function () { 
+            console.log("test");            
+            navBar.classList.toggle("toggleBar");
+        }
+    </script>
+
     <!-- 出現說明圖文 -->
     <script>
         let image01 = document.querySelector(".blackBox");
@@ -358,7 +371,7 @@
     <!-- 小景點特色Swiper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.js"></script>
     <script>
-           var swiper1 = new Swiper('#View-swiper', {
+        var swiper1 = new Swiper('#View-swiper', {
             slidesPerView: 'auto',
             centeredSlides: true,
             spaceBetween: 30,
