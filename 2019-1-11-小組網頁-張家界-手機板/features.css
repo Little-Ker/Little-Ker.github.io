@@ -1,0 +1,82 @@
+.features{
+    width: 100%;
+    
+    background-image: url("/img/background.png");
+  
+    background-size: 100%;
+
+}
+
+.features .title {
+    padding-top: 60px;
+    text-align: center;
+    font-family: "wt024";
+            font-weight: 0;
+            font-size: 20px;
+            margin-top: 3px;
+           
+}
+.features .title2 {
+    /* padding-top: 60px; */
+    text-align: center;
+    font-family: "wt024";
+            font-weight: 0;
+            font-size: 20px;
+            margin-top: 3px;
+           
+}
+.traver h3{
+    font-family: "wt024";
+    margin-top: -40px;
+}
+.photo01{
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.767);
+    margin-top: 3px;
+}
+.travelTitle{
+    font-family: "微軟正黑體";
+    font-size: 20px;
+    font-weight: 600;
+}
+.travelWord{
+    font-family: "微軟正黑體";
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.travel02 {
+    text-align: center;
+    width: 100%;
+    height: 350px;  
+ }
+
+
+ .traverTitle
+ {
+    
+      margin-top: -35px; 
+ }
+ .btnPrevious{
+     float: left;
+ }
+ .btn{
+     float: left;
+ }
+.btnNext{
+    float: left;
+}
+.dayMenu{
+    text-align: center;
+}
+.dayMenu a{
+    margin-right: 14px;
+    
+}
+.btn{
+    width: 20px;
+    height: 30px;
+    background-color: chartreuse;
+}
+.dayMenu p{
+    margin:0;
+    color: rgba(226, 71, 143, 0.062);
+}
