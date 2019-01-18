@@ -1,8 +1,6 @@
 .features{
-    width: 100%;
-    
-     background-image: url("/img/background.png"); 
-  
+    width: 100%;    
+    background-image: url(../img/background.png);   
     background-size: 100%;
 
 }
@@ -11,9 +9,9 @@
     padding-top: 15px;
     text-align: center;
     font-family: "wt024";
-            font-weight: 0;
-            font-size: 20px;
-            margin-top: 3px;
+    font-weight: 0;
+    font-size: 20px;
+    margin-top: 3px;
            
 }
 #View-swiper{
@@ -24,9 +22,9 @@
     /* padding-top: 60px; */
     text-align: center;
     font-family: "wt024";
-            font-weight: 0;
-            font-size: 20px;
-            margin-top: 3px;
+    font-weight: 0;
+    font-size: 20px;
+    margin-top: 3px;
            
 }
 .traver {
@@ -65,37 +63,33 @@
 }
 #travel02 {
     text-align: center;
+    width: 100%;    
+    margin-bottom: 30px;  
+}
+
+
+
+.traverTitle {
+    display: block;
+    margin: 0 auto;
+    margin-top: -35px; 
     width: 100%;
-    
-    margin-bottom: 30px;
-  
- }
-
-
-
- .traverTitle
- {
-     display: block;
-     margin: 0 auto;
-      margin-top: -35px; 
-      width: 100%;
- }
+}
 
 
 .btnNext{
     float: left;
 }
 .dayMenu{
-   width: 100%;
-   display: block;
-   font-family: "wt024";
+    width: 100%;
+    display: block;
+    font-family: "wt024";
  
 }
 
 .btnPre{
     width: 0px;
-    height: 30px;
-    
+    height: 30px;    
     margin-right: calc(100%  / 10);
     float: left;
 }
@@ -126,6 +120,7 @@
     font-weight: 500; 
     float: left;
 }
+
 .btn3{
     width: 0px;
     height: 30px;
@@ -135,6 +130,7 @@
     font-weight: 500; 
     float: left;
 }
+
 .btn4{
     width: 0px;
     height: 30px;
@@ -206,7 +202,7 @@
 }
 .travelMenu{
     width: 100%;
-    background-image: url("/img/tabs_ground.png");
+    background-image: url(../img/tabs_ground.png);
     background-position: 75%;
     margin: 0 auto;
     background-size: 70%;
@@ -237,11 +233,10 @@
     transform: translateX(-50%);
 }
 
-.travelMenu .play{
-    
+.travelMenu .play{    
     width: 30px;
     height: 30px;
-    background-image: url("/img/play.png");
+    background-image: url(../img/play.png);
     background-position: center; 
     background-size: 100%;
     background-repeat: no-repeat;
@@ -255,7 +250,7 @@
     /* left: 50%; */
     width: 30px;
     height: 30px;
-    background-image: url("/img/eat.png");
+    background-image: url(../img/eat.png);
     background-position: center;
     background-size: 75%;
     /* margin-right: 15px; */
@@ -269,15 +264,14 @@
     /* left: 60%; */
     width: 30px;
     height: 30px;
-    background-image: url("/img/live.png");
+    background-image: url(../img/live.png);
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
     z-index: 888;
     
 }
-.travel03{
-  
+.travel03{  
     width: 100%;
     margin: 0 auto;
 }
@@ -286,129 +280,125 @@
     margin-top: 0px;
 }
 #travel03 .longDeco{
-     display: block;
-     margin: 0 auto; 
-     width: 100%;
+    display: block;
+    margin: 0 auto; 
+    width: 100%;
 }
 
 
 .brush{
    
-     width: 40px;
-     height: 30px;
-     background-image: url("/img/redBrush.png");
-     background-position: center;
-     background-size: 100%;
-     background-repeat: no-repeat;
-     position: absolute;
-     
-     left: 40%; 
-      overflow: hidden; 
+    width: 40px;
+    height: 30px;
+    background-image: url(../img/redBrush.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;     
+    left: 40%; 
+    overflow: hidden; 
       
- }
- .mask{
-   
-     background-color: rgb(255, 255, 255);
-     width: 100%;
-     height: 100%;
-      position: absolute;
-    
-     left: -10%; 
-     transition: 0s;
- 
- }
- .clickmask1{
-     top: 0;
-     left: 100%;
-     transition: 1s;
- }
-  .brush2{
-    
-      width: 40px;
-      height: 35px;
-      background-image: url("/img/redBrush.png");
-      background-position: center;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      position: absolute;
-    
-      left: 50%;
-      overflow: hidden;
-     
-  }
-  .mask2{
-      background-color: rgb(255, 255, 255);
-      width: 100%;
-      height: 100%;
-       position: absolute;
-      top: 0;
-      left: 0; 
-      transition: 0s;
-  
-  }
-  .clickmask2{
-      top: 0;
-      left: 100%;
-      transition: 1s;
-  }
+}
 
-  .brush3{
+.mask{
    
-      width: 40px;
-      height: 35px;
-      background-image: url("/img/redBrush.png");
-      background-position: center;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      position: absolute;
-      
-      left: 60%;
-      overflow: hidden;
-      
-  }
-  .mask3{
-      background-color: rgb(255, 255, 255);
-      width: 100%;
-      height: 100%;
-       position: absolute;
-      top: 0;
-      left: 0; 
-      transition: 0s;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+    position: absolute;    
+    left: -10%; 
+    transition: 0s;
+ 
+}
+
+.clickmask1{
+    top: 0;
+    left: 100%;
+    transition: 1s;
+}
+.brush2{
+    
+    width: 40px;
+    height: 35px;
+    background-image: url(../img/redBrush.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;    
+    left: 50%;
+    overflow: hidden;
+     
+}
+
+.mask2{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    transition: 0s;
   
-  }
-  .clickmask3{
-      top: 0;
-      left: 100%;
-      transition: 1s;
-  }
+}
+.clickmask2{
+    top: 0;
+    left: 100%;
+    transition: 1s;
+}
+
+.brush3{   
+    width: 40px;
+    height: 35px;
+    background-image: url(../img/redBrush.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;      
+    left: 60%;
+    overflow: hidden;
+      
+}
+
+.mask3{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    transition: 0s;
+  
+}
+
+.clickmask3{
+    top: 0;
+    left: 100%;
+    transition: 1s;
+}
  
 
- .card{
-     margin-top: 10px;
-     background-color: white;
-     border: 1px solid rgba(66, 66, 66, 0.397);
-     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.356);
-     font-family: "微軟正黑體";
-     
- }
- .eatcard{
+.card{
+    margin-top: 10px;
+    background-color: white;
+    border: 1px solid rgba(66, 66, 66, 0.397);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.356);
+    font-family: "微軟正黑體";     
+}
+
+.eatcard{
     margin-top: 10px;
     margin-left: calc(100% / 5);
     width: 205px;
     background-color: white;
     border: 1px solid rgba(66, 66, 66, 0.397);
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.356);
- }
- .eatPhoto .swiper-slide{
-    /* margin-left: calc(100% / 5); */
- }
- .travel04{
-   
 }
+
 .travel04 .long{
     display: block;
     margin: 0 auto;
 }
+
 .downloadTitle{
     float: left;
     line-height: 30px;
@@ -417,6 +407,7 @@
     font-size: 14px;
     font-weight: 600;
 }
+
 .download{
     text-align: center;
     height: 31px;
@@ -426,12 +417,12 @@
     line-height: 35px;
 }
 
-.otherBox{
-    
+.otherBox{    
     margin-top:20px;
     height: 30px;
     border: 2px solid rgba(0, 0, 0, 0.74);
 }
+
 .more a{
     display: block;
     font-family:"wt024";
@@ -441,6 +432,7 @@
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
 .livePhoto .swiper-slide{
     margin-left: 30px;
 }
@@ -448,9 +440,11 @@
 footer{
     text-align: center;
 }
+
 footer .map{
     text-align: center;
 }
+
 footer .map a {
     font-weight: 900;
     display: block;
@@ -460,6 +454,7 @@ footer .map a {
     font-family: "微軟正黑體";
 
 }
+
 footer .map p {
     margin: 0;
     display: block;
@@ -471,22 +466,25 @@ footer .map p {
     margin-top: -5px;
     margin-left: 10%;
     margin-right: 10%;
-
 }
+
 .map .mapword{
     margin-left: 10px;
     width: 100%;
 }
+
 footer .moreTravel{
     color: black;
     font-size: 12px;
-   font-family: "微軟正黑體";
+    font-family: "微軟正黑體";
 }
+
 footer .moreTravel b{
     color: #1A371D;
     font-size: 12px;
    font-family: "微軟正黑體";
 }
+
 footer .rightcopy{
     color: rgba(37, 37, 37, 0.774);
     font-size: 10px;
