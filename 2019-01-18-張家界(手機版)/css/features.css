@@ -27,16 +27,7 @@
     margin-top: 3px;
            
 }
-.traver {
-    margin: 0 auto;
-    display: block;
-}
 
-.traver h3{
-    font-family: "wt024";
-    margin-top: -38px;
-    
-}
 
 .trave01 img{
     display: block;
@@ -50,13 +41,13 @@
     display: block;
     margin: 0 auto;
 }
-.travelTitle{
+.travelTitle {
     font-family: "微軟正黑體";
     font-size: 20px;
     font-weight: 600;
     
 }
-.travelWord{
+.travelWord {
     font-family: "微軟正黑體";
     font-size: 14px;
     margin-bottom: 10px;
@@ -67,15 +58,28 @@
     margin-bottom: 30px;  
 }
 
-
+.traver {
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}
 
 .traverTitle {
     display: block;
-    margin: 0 auto;
+    margin: 8px auto;
     margin-top: -35px; 
     width: 100%;
 }
 
+.traver h3{
+    width: 100%;
+    position: absolute;
+    font-family: "wt024";
+    left: 50%;
+    top: 79%;
+    transform: translateX(-50%);
+    
+}
 
 .btnNext{
     float: left;
