@@ -1,0 +1,310 @@
+.navbar{
+    height: 80PX;
+    width: 100%;
+    background-color: f4f7f9;
+    box-shadow: 1px 1px 3px #777;
+    z-index: 999;
+    background-color: white;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+.navbar_left{
+    float: left;
+}
+.navbar_right{
+    float: right;
+}
+.navbar_right .link{
+    float: left;
+    
+}
+
+.logo{
+    float: left;
+    margin-top: 20px;
+}
+.MCMA_name{
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.menuBoxRWD{
+    width: 23px;
+    height: 2px;
+    background-color: rgb(97, 96, 96);
+    margin-bottom: 6px;
+    transition: 1s;
+}
+.menuBoxRWDup{
+    width: 23px;
+    height: 2px;
+    background-color: rgb(97, 96, 96);
+    margin-bottom: 6px;
+    transition: 0.5s;
+}
+.menuBoxRWDdown{
+    width: 23px;
+    height: 2px;
+    background-color: rgb(97, 96, 96);
+    margin-bottom: 6px;
+    transition: 0.5s;
+}
+.menuRWD{
+    margin-top: 13px;
+    margin-right: 3px;
+    display: none;
+}
+.navbar_right .link{
+    margin-right: 30px;
+    margin-top: 20px;
+    height: 100%;
+
+}
+.navbar_right .link a{
+    color: rgb(77, 76, 76);
+}
+.grayBox{
+    width: 0%;
+    height: 3px;
+    margin-top: 5px;
+    background-color: #777;
+    transition: 0.3s;
+}
+a:hover .grayBox{
+    width: 100%;
+    transition: 0.3s;
+}
+
+.section_photo{
+    margin-top: 80px;
+    width: 100%;
+    height: 530px;
+    background-color: white;
+}
+
+.activity_photo .maskBlack ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+/* 訊息公告news */
+.section_news{
+    width: 100%;
+     /* margin-top: 80px; */
+   /* background-color: aqua;*/
+}
+.news_title{
+    width: 100%;
+    
+    text-align:center;
+  
+}
+
+.news_BG{
+    width: 100%;
+    height: 546px;
+    
+    
+}
+.news_button_group{
+    width: 100%;
+    text-align: center;
+    /* height: 115px; */
+  
+}
+.news_button{
+    width: 160px;
+    text-align: center;
+    color: black;
+    float: left;
+    border: solid 1px rgba(119, 119, 119, 0.356);
+    background-color: white;
+    padding: 14px 18px;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 45px 25px;
+     
+}
+.news_button:hover{
+    background-color: #656C74;
+    color: white;
+}
+
+.newsField{
+    width: 100%;
+    height: 300px;
+}
+.news:first-child{
+    width: 100%;
+    height: 58px;
+    border-top: solid 1px rgba(0, 0, 0, 0.342);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.342);
+    padding-top: 15px;
+    padding-left: 10px;
+    color: rgba(0, 0, 0, 0.842);
+    
+}
+
+.news{
+    width: 100%;
+    height: 58px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.342);
+    padding-top: 15px;
+    padding-left: 10px;
+    color: rgba(0, 0, 0, 0.842);
+}
+.section_news .container{
+    background-color: rgba(200, 211, 223, 0.774);
+}
+.date{
+    float: left;
+    font-weight: 700;
+    margin-left: 10px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.842);
+}
+.newsTitle{
+    float: left;
+    font-weight: 600;
+    margin-left: 50px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.842);
+}
+.moreBTN{
+    float: right;
+    height: 28px;
+    width: 65px;
+    text-align: center;
+    border: solid 1px rgba(85, 85, 85, 0);
+    border-radius: 20%;
+    background-color: white;
+    color:rgb(99, 101, 104);
+}
+
+.news_num_btn{
+    float: left;
+}
+.news:hover .moreBTN{
+    background-color: #656C74;
+    color:white;
+}
+
+.news_num_btn{
+    width: 30px;
+    height: 30px;
+    border: solid 1px  rgba(85, 85, 85, 0);
+    border-radius: 15%;
+    padding: 2px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    margin: 30px 10px;
+    font-size: 18px;
+    color: #777;
+    
+}
+.news_num{
+    width: 100%;
+    position: absolute;
+    left: calc(50% - 15px * 12);
+}
+.news_num_btn:hover{
+    background-color: #656C74;
+    color: beige;
+}
+
+
+/* 關於本系About */
+
+.about_title{
+    text-align: center;
+ 
+}
+.about_Field .title{
+    padding: 13px;
+    border-top: solid 1px rgb(177, 173, 173);
+    border-bottom: solid 1px rgb(177, 173, 173);
+}
+.about_Field .word{
+    padding: 25px 13px;
+}
+
+.about_Field .word h4 {
+    margin: 20px 0px;
+    margin-bottom: 20px;
+    line-height: 30px;
+  
+    color: rgba(0, 0, 0, 0.836);
+}
+.wordP2{
+    font-size:20px;
+}
+.about_Field .word h4 p{
+    margin: 20px 0px;
+    margin-bottom: 20px;
+    line-height: 30px;
+
+}
+.navbar_right .link a{
+    text-decoration: none;
+}
+.covermenu{
+        display: none;
+    }
+
+.swiper-container {
+  
+            width: 100%;
+            height: 100%;
+            margin-top: 80px;
+        }
+        .swiper-container2 .swiper-slide{
+            width: 100px;
+            height: 565px;
+        }
+
+        .swiper-slide {
+           /* text-align: center;*/
+            font-size: 18px;
+            background: #555;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            width: 100%;
+        }
+        .swiper-slide2
+         {
+             
+           /* text-align: center;*/
+            font-size: 18px;
+            background: #555;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        .coverSwiper{
+            display: none;
+        }
+        

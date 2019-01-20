@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+}
+.all{
+    overflow: hidden;
+}
+.clearfix {
+    clear: both;
+}
+
+body {
+    margin: 0px;
+    font-family: "微軟正黑體";
+    height: 3000PX;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+     padding-left:20px;
+    padding-right:20px; 
+}
+
+.container2 {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-left: 120px;
+    padding-right: 120px;
+    position: relative;
+}
+.logo img{
+    width:55px;
+}
+
+h1 {
+     margin: 0px;
+    padding: 0px; 
+ 
+
+}
+
+h2 {
+    margin: 0px;
+    padding: 0px;
+}
+
+h3 {
+    padding: 0px;
+    margin: 0px;
+   
+}
+
+h4 {
+    padding: 0px;
+    margin: 0px;
+ 
+}
+h5 {
+    padding: 0px;
+    margin: 0px;
+
+}
+h6 {
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0px;
+  
+  
+    
+}
+
+ul {
+    margin: 0px;
+}
+
+.BigSpace{
+   
+    margin-top: 80px;
+}
+.BigSpace2{
+    height: 80px;
+}
+.LittleSpace{
+    margin-top: 40px;
+}
+.LittleSpace2{
+    height:  40px;
+}
+.otherSpace2{
+    height:  100px;
+}

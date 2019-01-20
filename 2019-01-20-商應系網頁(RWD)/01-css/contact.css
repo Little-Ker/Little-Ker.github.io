@@ -1,0 +1,50 @@
+.section_contact .title h1{
+    text-align: center;
+}
+.section_contact .container{
+    width: 100%;
+    height: 400px;
+  
+    color: white;
+}
+.googlemap{
+    width: 100%;
+    height: 400px;
+    background-image: url("../02-material/googleMap.png");
+    
+  
+    background-size: cover;
+    background-position: 0px -30px;
+}
+.tel{
+   
+    float: left;
+    
+    height: 100%;
+    margin-left: 50px;
+}
+.icon{
+    float: left;
+    
+}
+.number{
+    float: left;
+    margin-left: 20px;
+    
+    margin-top: 8px;
+}
+.blackMask{
+ 
+  margin-top: 200px;
+}
+
+.rightcopy{
+    width: 100%;
+    height: 50px;
+    background-color: #171B1E;
+    color: rgba(255, 255, 255, 0.589);
+    text-align: center;
+    padding: 17px;
+    font-size: 12px;
+    letter-spacing:3px;
+}
