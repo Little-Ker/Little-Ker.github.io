@@ -12,6 +12,11 @@
         padding-right: 5px;
         position: relative;
     }
+    .section_photo{
+        margin-top: 0px;
+      
+    }
+    
     .container3 {
         max-width: 1140px;
         margin: 0 auto;
@@ -193,6 +198,10 @@
     white-space: nowrap;
     margin-top: 5px;
    
+}
+.news_num{
+    width: 100%;
+    left: calc(50% - 25px / 2 * 10);
 }
 .news_num_btn{
     width: 25px;
@@ -443,6 +452,7 @@ h4{
     margin-top: 20px;
 }
 .paperLiseBox{
+    float: none;
     display: inline-block;
     width: 50%;
     height: 22px;
