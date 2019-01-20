@@ -216,7 +216,7 @@
    
 }
 .news_num{
-    width: 70%;
+    width: 100vw;
     left: calc(50% - 25px / 2 * 10);
 }
 .news_num_btn{
