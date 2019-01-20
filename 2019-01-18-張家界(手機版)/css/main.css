@@ -36,11 +36,9 @@ nav{
 
 }
 
-nav .menu{
-    display: block;
+nav .menu {
     float: left;
-    line-height: 30px; 
-    
+    margin-top: 1%;
 }
 nav .title{
     height: 30px;
@@ -113,25 +111,29 @@ a{
 .bigmargin2{
     margin-top: 50px;
 }
-video{
+
+.movie{
+    position: relative;
+    /* width: 100vw; */
+    /* height: 100vh; */
+}
+
+.movie video {
+    /* width: 100vw; */
     height: 100vh;
     z-index: 10;
-    
-}
-.movie{
-    position: relative;  
-    height: 100vh;
-    
-    
 }
 
 .downTag{
     position: absolute;
     z-index: 999;
-    top: 600px; 
-    left: calc(50% - 30px ) ;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8%;
 }
 
+/* 指示符號漸變消失 */
 .downTagCover{
  opacity: 0;
  transition: 0.5s;
