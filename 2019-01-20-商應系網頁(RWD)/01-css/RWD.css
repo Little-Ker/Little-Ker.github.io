@@ -317,11 +317,12 @@ h4{
     margin-top: 10px;
 }
 .SSE{
+
     margin-left:3px;
     width: 49%;
     height: 355px;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 .sseWord{
     padding: 5px;
@@ -349,7 +350,7 @@ h4{
  
 }
 .sseBTN {
-    margin-top: 0px;
+    margin-top:0px;
     font-size: 12px;
     line-height: 30px;
     margin-left: 40px;
@@ -357,9 +358,13 @@ h4{
     height: 30px;
  
 }
+.img3D{
+    margin-bottom: calc(195px - 85px);
+
+}
 .BTN3D {
-    margin-top:105px;
-    margin-bottom: 20px;
+    margin-top:0px;
+    
     width: 80px;
     height: 30px;
     font-size: 12px;
@@ -455,6 +460,7 @@ h4{
 }
 .paperCenter {
     height: 345px;
+    width: 100%;
   
 }
 
@@ -514,9 +520,9 @@ ul li {
     margin-top: -58px;
 }
 #img_bag #img{
-    width: 305px;
+    width: 330px;
     height: 300px;
-    margin-left: calc( 50% - 30px);
+   
 }
 .rightPaperA p {
     margin: 3px;
