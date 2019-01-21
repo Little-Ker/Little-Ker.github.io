@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="css/features.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.css">
     <link rel="stylesheet" href="css/reveal.css">
+   <link rel="stylesheet" href="css/ModalImage.css">    
     <link rel="stylesheet" href="css/imageBlock.css">
+ 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
     <script type="text/javascript" src="jquery.reveal.js"></script>
@@ -81,6 +83,7 @@
         }
         .all-phone{
             overflow: hidden;
+          
         }
     </style>
 
@@ -169,63 +172,63 @@
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <div class="traver">
-                                            <img src="img/01-littleImg/one_01.png" width="100%" alt="">
+                                            <img class="littleView01" src="img/01-littleImg/one_01.png" width="100%" alt="">
                                             <img class="traverTitle" src="img/photoTitle.png" width="80%" alt="">
                                             <h3>鬼谷棧道</h3>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="traver">
-                                            <img src="img/01-littleImg/one_02.png" width="100%" alt="">
+                                            <img class="littleView02" src="img/01-littleImg/one_02.png" width="100%" alt="">
                                             <img class="traverTitle" src="img/photoTitle.png" width="80%" alt="">
                                             <h3>天門洞</h3>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="traver">
-                                            <img src="img/01-littleImg/one_03.png" width="100%" alt="">
+                                            <img class="littleView03" src="img/01-littleImg/one_03.png" width="100%" alt="">
                                             <img class="traverTitle" src="img/photoTitle.png" width="80%" alt="">
                                             <h3>高空纜車</h3>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="traver">
-                                            <img src="img/01-littleImg/two_01.png" width="100%" alt="">
+                                            <img class="littleView04" src="img/01-littleImg/two_01.png" width="100%" alt="">
                                             <img class="traverTitle" src="img/photoTitle.png" width="80%" alt="">
                                             <h3>玻璃橋</h3>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="traver">
-                                            <img src="img/01-littleImg/two_02.png" width="100%" alt="">
+                                            <img class="littleView05" src="img/01-littleImg/two_02.png" width="100%" alt="">
                                             <img class="traverTitle" src="img/photoTitle.png" width="80%" alt="">
                                             <h3>百龍雲梯</h3>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="traver">
-                                            <img src="img/01-littleImg/two_03.png" width="100%" alt="">
+                                            <img class="littleView06" src="img/01-littleImg/two_03.png" width="100%" alt="">
                                             <img class="traverTitle" src="img/photoTitle.png" width="80%" alt="">
                                             <h3>十里畫廊</h3>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="traver">
-                                            <img src="img/01-littleImg/three_01.png" width="100%" alt="">
+                                            <img class="littleView07" src="img/01-littleImg/three_01.png" width="100%" alt="">
                                             <img class="traverTitle" src="img/photoTitle.png" width="80%" alt="">
                                             <h3>迴龍閣古街</h3>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="traver">
-                                            <img src="img/01-littleImg/three_02.png" width="100%" alt="">
+                                            <img class="littleView08" src="img/01-littleImg/three_02.png" width="100%" alt="">
                                             <img class="traverTitle" src="img/photoTitle.png" width="80%" alt="">
                                             <h3>虹橋</h3>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="traver">
-                                            <img src="img/01-littleImg/three_03.png" width="100%" alt="">
+                                            <img class="littleView09" src="img/01-littleImg/three_03.png" width="100%" alt="">
                                             <img class="traverTitle" src="img/photoTitle.png" width="80%" alt="">
                                             <h3>石板老街</h3>
                                         </div>
@@ -1671,6 +1674,87 @@
                 </div>
             </div>
         </div>
+        <!-- The Modal-01 -->
+        <div id="Viewmodal01" class="modal">
+            <!-- The Close Button -->
+            <span class="close">&times;</span>
+            <!-- Modal Content (The Image) -->
+            <img src="img/01-littleImg/one_01.png" class="modal-content" id="img01">
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption">鬼谷棧道</div>
+        </div>
+         <!-- The Modal-02 -->
+         <div id="Viewmodal02" class="modal">
+                <!-- The Close Button -->
+                <span class="close">&times;</span>
+                <!-- Modal Content (The Image) -->
+                <img src="img/01-littleImg/one_02.png" class="modal-content" id="img01">
+                <!-- Modal Caption (Image Text) -->
+                <div id="caption">天門洞</div>
+            </div>
+            <!-- The Modal-03 -->
+         <div id="Viewmodal03" class="modal">
+                <!-- The Close Button -->
+                <span class="close">&times;</span>
+                <!-- Modal Content (The Image) -->
+                <img src="img/01-littleImg/one_03.png" class="modal-content" id="img01">
+                <!-- Modal Caption (Image Text) -->
+                <div id="caption">高空纜車</div>
+            </div>
+            <!-- The Modal-04 -->
+         <div id="Viewmodal04" class="modal">
+                <!-- The Close Button -->
+                <span class="close">&times;</span>
+                <!-- Modal Content (The Image) -->
+                <img src="img/01-littleImg/two_01.png" class="modal-content" id="img01">
+                <!-- Modal Caption (Image Text) -->
+                <div id="caption">玻璃橋</div>
+            </div>
+            <!-- The Modal-05-->
+         <div id="Viewmodal05" class="modal">
+                <!-- The Close Button -->
+                <span class="close">&times;</span>
+                <!-- Modal Content (The Image) -->
+                <img src="img/01-littleImg/two_02.png" class="modal-content" id="img01">
+                <!-- Modal Caption (Image Text) -->
+                <div id="caption">百龍雲梯</div>
+            </div>
+            <!-- The Modal-06 -->
+         <div id="Viewmodal06" class="modal">
+                <!-- The Close Button -->
+                <span class="close">&times;</span>
+                <!-- Modal Content (The Image) -->
+                <img src="img/01-littleImg/two_03.png" class="modal-content" id="img01">
+                <!-- Modal Caption (Image Text) -->
+                <div id="caption">十里畫廊</div>
+            </div>
+            <!-- The Modal-07 -->
+         <div id="Viewmodal07" class="modal">
+                <!-- The Close Button -->
+                <span class="close">&times;</span>
+                <!-- Modal Content (The Image) -->
+                <img src="img/01-littleImg/three_01.png" class="modal-content" id="img01">
+                <!-- Modal Caption (Image Text) -->
+                <div id="caption">迴龍閣古街</div>
+            </div>
+            <!-- The Modal-08 -->
+         <div id="Viewmodal08" class="modal">
+                <!-- The Close Button -->
+                <span class="close">&times;</span>
+                <!-- Modal Content (The Image) -->
+                <img src="img/01-littleImg/three_02.png" class="modal-content" id="img01">
+                <!-- Modal Caption (Image Text) -->
+                <div id="caption">虹橋</div>
+            </div>
+            <!-- The Modal-09 -->
+         <div id="Viewmodal09" class="modal">
+                <!-- The Close Button -->
+                <span class="close">&times;</span>
+                <!-- Modal Content (The Image) -->
+                <img src="img/01-littleImg/three_03.png" class="modal-content" id="img01">
+                <!-- Modal Caption (Image Text) -->
+                <div id="caption">石板老街</div>
+            </div>  
     </all-phone>
 
     <!-- AOS特效 -->
@@ -1678,6 +1762,100 @@
     <script>
         AOS.init();
     </script>
+    <!-- 小圖放大 -->
+    <script>
+    
+        // Get the modal
+        var modal = document.getElementById('Viewmodal01');
+        var modal2 = document.getElementById('Viewmodal02');
+        var modal3 = document.getElementById('Viewmodal03');
+        var modal4 = document.getElementById('Viewmodal04');
+        var modal5 = document.getElementById('Viewmodal05');
+        var modal5 = document.getElementById('Viewmodal06');
+        var modal5 = document.getElementById('Viewmodal07');
+        var modal5 = document.getElementById('Viewmodal08');
+        var modal5 = document.getElementById('Viewmodal09');
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.querySelector(".littleView01");
+        var img2 = document.querySelector(".littleView02");
+        var img3 = document.querySelector(".littleView03");
+        var img4 = document.querySelector(".littleView04");
+        var img5 = document.querySelector(".littleView05");
+        var img6 = document.querySelector(".littleView06");
+        var img7 = document.querySelector(".littleView07");
+        var img8 = document.querySelector(".littleView08");
+        var img9 = document.querySelector(".littleView09");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+          
+        }
+        img2.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+     
+        }
+        img3.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+         
+        }
+        img4.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+          
+        }
+        img5.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+          
+        }
+        img6.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+      
+        }
+        img7.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+
+        }
+        img8.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+
+        }
+        img9.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        
+        }
+        // Get the <span> element that closes the modal
+        var span = document.querySelector(".modal");
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+         
+        }
+        
+       
+
+
+    </script>
+
+
+
     <script>
         // 滾下來時，滾動提示漸漸消失
         const scrollTAG = document.querySelector(".downTag");
@@ -1765,14 +1943,14 @@
         let imageBtn13 = document.querySelector(".playPhotoD1_3");
         let imageP13 = document.querySelector(".blackBoxP13");
 
-            imageBtn13.onclick = function () {
+        imageBtn13.onclick = function () {
             imageP13.classList.add("blackBoxShow13");
             Noscroll.setAttribute("onmousewheel", "return false;");
         }
         function blackBoxCover() {
             imageP13.classList.remove("blackBoxCover13");
         }
-            closeBtn13.onclick = function () {
+        closeBtn13.onclick = function () {
             imageP13.classList.remove("blackBoxShow13");
             Noscroll.setAttribute("onmousewheel", "return true;");
         }
@@ -1782,14 +1960,14 @@
         let imageBtn21 = document.querySelector(".playPhotoD2_1");
         let imageP21 = document.querySelector(".blackBoxP21");
 
-            imageBtn21.onclick = function () {
+        imageBtn21.onclick = function () {
             imageP21.classList.add("blackBoxShow21");
             Noscroll.setAttribute("onmousewheel", "return false;");
         }
         function blackBoxCover() {
             imageP21.classList.remove("blackBoxCover21");
         }
-            closeBtn21.onclick = function () {
+        closeBtn21.onclick = function () {
             imageP21.classList.remove("blackBoxShow21");
             Noscroll.setAttribute("onmousewheel", "return true;");
         }
@@ -1799,14 +1977,14 @@
         let imageBtn22 = document.querySelector(".playPhotoD2_2");
         let imageP22 = document.querySelector(".blackBoxP22");
 
-            imageBtn22.onclick = function () {
+        imageBtn22.onclick = function () {
             imageP22.classList.add("blackBoxShow22");
             Noscroll.setAttribute("onmousewheel", "return false;");
         }
         function blackBoxCover() {
             imageP22.classList.remove("blackBoxCover22");
         }
-            closeBtn22.onclick = function () {
+        closeBtn22.onclick = function () {
             imageP22.classList.remove("blackBoxShow22");
             Noscroll.setAttribute("onmousewheel", "return true;");
         }
@@ -1816,14 +1994,14 @@
         let imageBtn23 = document.querySelector(".playPhotoD2_3");
         let imageP23 = document.querySelector(".blackBoxP23");
 
-            imageBtn23.onclick = function () {
+        imageBtn23.onclick = function () {
             imageP23.classList.add("blackBoxShow23");
             Noscroll.setAttribute("onmousewheel", "return false;");
         }
         function blackBoxCover() {
             imageP23.classList.remove("blackBoxCover23");
         }
-            closeBtn23.onclick = function () {
+        closeBtn23.onclick = function () {
             imageP23.classList.remove("blackBoxShow23");
             Noscroll.setAttribute("onmousewheel", "return true;");
         }
@@ -1833,14 +2011,14 @@
         let imageBtn31 = document.querySelector(".playPhotoD3_1");
         let imageP31 = document.querySelector(".blackBoxP31");
 
-            imageBtn31.onclick = function () {
+        imageBtn31.onclick = function () {
             imageP31.classList.add("blackBoxShow31");
             Noscroll.setAttribute("onmousewheel", "return false;");
         }
         function blackBoxCover() {
             imageP31.classList.remove("blackBoxCover31");
         }
-            closeBtn31.onclick = function () {
+        closeBtn31.onclick = function () {
             imageP31.classList.remove("blackBoxShow31");
             Noscroll.setAttribute("onmousewheel", "return true;");
         }
@@ -1850,14 +2028,14 @@
         let imageBtn32 = document.querySelector(".playPhotoD3_2");
         let imageP32 = document.querySelector(".blackBoxP32");
 
-            imageBtn32.onclick = function () {
+        imageBtn32.onclick = function () {
             imageP32.classList.add("blackBoxShow32");
             Noscroll.setAttribute("onmousewheel", "return false;");
         }
         function blackBoxCover() {
             imageP32.classList.remove("blackBoxCover32");
         }
-            closeBtn32.onclick = function () {
+        closeBtn32.onclick = function () {
             imageP32.classList.remove("blackBoxShow32");
             Noscroll.setAttribute("onmousewheel", "return true;");
         }
@@ -1867,31 +2045,31 @@
         let imageBtn33 = document.querySelector(".playPhotoD3_3");
         let imageP33 = document.querySelector(".blackBoxP33");
 
-            imageBtn33.onclick = function () {
+        imageBtn33.onclick = function () {
             imageP33.classList.add("blackBoxShow33");
             Noscroll.setAttribute("onmousewheel", "return false;");
         }
         function blackBoxCover() {
             imageP33.classList.remove("blackBoxCover33");
         }
-            closeBtn33.onclick = function () {
+        closeBtn33.onclick = function () {
             imageP33.classList.remove("blackBoxShow33");
             Noscroll.setAttribute("onmousewheel", "return true;");
         }
-        
+
         // 出現說明圖文-play-D4-1 
         let closeBtn41 = document.querySelector(".blackBoxP41");
         let imageBtn41 = document.querySelector(".playPhotoD4_1");
         let imageP41 = document.querySelector(".blackBoxP41");
 
-            imageBtn41.onclick = function () {
+        imageBtn41.onclick = function () {
             imageP41.classList.add("blackBoxShow41");
             Noscroll.setAttribute("onmousewheel", "return false;");
         }
         function blackBoxCover() {
             imageP41.classList.remove("blackBoxCover41");
         }
-            closeBtn41.onclick = function () {
+        closeBtn41.onclick = function () {
             imageP41.classList.remove("blackBoxShow41");
             Noscroll.setAttribute("onmousewheel", "return true;");
         }
@@ -1899,14 +2077,14 @@
         let closeBtn42 = document.querySelector(".blackBoxP42");
         let imageBtn42 = document.querySelector(".playPhotoD4_2");
         let imageP42 = document.querySelector(".blackBoxP42");
-            imageBtn42.onclick = function () {
+        imageBtn42.onclick = function () {
             imageP42.classList.add("blackBoxShow42");
             Noscroll.setAttribute("onmousewheel", "return false;");
         }
         function blackBoxCover() {
             imageP42.classList.remove("blackBoxCover42");
         }
-            closeBtn42.onclick = function () {
+        closeBtn42.onclick = function () {
             imageP42.classList.remove("blackBoxShow42");
             Noscroll.setAttribute("onmousewheel", "return true;");
         }
@@ -1914,14 +2092,14 @@
         let closeBtn43 = document.querySelector(".blackBoxP43");
         let imageBtn43 = document.querySelector(".playPhotoD4_3");
         let imageP43 = document.querySelector(".blackBoxP43");
-            imageBtn43.onclick = function () {
+        imageBtn43.onclick = function () {
             imageP43.classList.add("blackBoxShow43");
             Noscroll.setAttribute("onmousewheel", "return false;");
         }
         function blackBoxCover() {
             imageP43.classList.remove("blackBoxCover43");
         }
-            closeBtn43.onclick = function () {
+        closeBtn43.onclick = function () {
             imageP43.classList.remove("blackBoxShow43");
             Noscroll.setAttribute("onmousewheel", "return true;");
         }
@@ -1929,14 +2107,14 @@
         let closeBtn51 = document.querySelector(".blackBoxP51");
         let imageBtn51 = document.querySelector(".playPhotoD5_1");
         let imageP51 = document.querySelector(".blackBoxP51");
-            imageBtn51.onclick = function () {
+        imageBtn51.onclick = function () {
             imageP51.classList.add("blackBoxShow51");
             Noscroll.setAttribute("onmousewheel", "return false;");
         }
         function blackBoxCover() {
             imageP51.classList.remove("blackBoxCover51");
         }
-            closeBtn51.onclick = function () {
+        closeBtn51.onclick = function () {
             imageP51.classList.remove("blackBoxShow51");
             Noscroll.setAttribute("onmousewheel", "return true;");
         }
@@ -1944,14 +2122,14 @@
         let closeBtn52 = document.querySelector(".blackBoxP52");
         let imageBtn52 = document.querySelector(".playPhotoD5_2");
         let imageP52 = document.querySelector(".blackBoxP52");
-            imageBtn52.onclick = function () {
+        imageBtn52.onclick = function () {
             imageP52.classList.add("blackBoxShow52");
             Noscroll.setAttribute("onmousewheel", "return false;");
         }
         function blackBoxCover() {
             imageP52.classList.remove("blackBoxCover52");
         }
-            closeBtn52.onclick = function () {
+        closeBtn52.onclick = function () {
             imageP52.classList.remove("blackBoxShow52");
             Noscroll.setAttribute("onmousewheel", "return true;");
         }
@@ -1959,14 +2137,14 @@
         let closeBtn53 = document.querySelector(".blackBoxP53");
         let imageBtn53 = document.querySelector(".playPhotoD5_3");
         let imageP53 = document.querySelector(".blackBoxP53");
-            imageBtn53.onclick = function () {
+        imageBtn53.onclick = function () {
             imageP53.classList.add("blackBoxShow53");
             Noscroll.setAttribute("onmousewheel", "return false;");
         }
         function blackBoxCover() {
             imageP53.classList.remove("blackBoxCover53");
         }
-            closeBtn53.onclick = function () {
+        closeBtn53.onclick = function () {
             imageP53.classList.remove("blackBoxShow53");
             Noscroll.setAttribute("onmousewheel", "return true;");
         }
@@ -1974,14 +2152,14 @@
         let closeBtn61 = document.querySelector(".blackBoxP61");
         let imageBtn61 = document.querySelector(".playPhotoD6_1");
         let imageP61 = document.querySelector(".blackBoxP61");
-            imageBtn61.onclick = function () {
+        imageBtn61.onclick = function () {
             imageP61.classList.add("blackBoxShow61");
             Noscroll.setAttribute("onmousewheel", "return false;");
         }
         function blackBoxCover() {
             imageP61.classList.remove("blackBoxCover61");
         }
-            closeBtn61.onclick = function () {
+        closeBtn61.onclick = function () {
             imageP61.classList.remove("blackBoxShow61");
             Noscroll.setAttribute("onmousewheel", "return true;");
         }
@@ -1989,14 +2167,14 @@
         let closeBtn62 = document.querySelector(".blackBoxP62");
         let imageBtn62 = document.querySelector(".playPhotoD6_2");
         let imageP62 = document.querySelector(".blackBoxP62");
-            imageBtn62.onclick = function () {
+        imageBtn62.onclick = function () {
             imageP62.classList.add("blackBoxShow62");
             Noscroll.setAttribute("onmousewheel", "return false;");
         }
         function blackBoxCover() {
             imageP62.classList.remove("blackBoxCover62");
         }
-            closeBtn62.onclick = function () {
+        closeBtn62.onclick = function () {
             imageP62.classList.remove("blackBoxShow62");
             Noscroll.setAttribute("onmousewheel", "return true;");
         }
@@ -2004,14 +2182,14 @@
         let closeBtn63 = document.querySelector(".blackBoxP63");
         let imageBtn63 = document.querySelector(".playPhotoD6_3");
         let imageP63 = document.querySelector(".blackBoxP63");
-            imageBtn63.onclick = function () {
+        imageBtn63.onclick = function () {
             imageP63.classList.add("blackBoxShow63");
             Noscroll.setAttribute("onmousewheel", "return false;");
         }
         function blackBoxCover() {
             imageP63.classList.remove("blackBoxCover63");
         }
-            closeBtn63.onclick = function () {
+        closeBtn63.onclick = function () {
             imageP63.classList.remove("blackBoxShow63");
             Noscroll.setAttribute("onmousewheel", "return true;");
         }
@@ -2019,14 +2197,14 @@
         let closeBtn71 = document.querySelector(".blackBoxP71");
         let imageBtn71 = document.querySelector(".playPhotoD7_1");
         let imageP71 = document.querySelector(".blackBoxP71");
-            imageBtn71.onclick = function () {
+        imageBtn71.onclick = function () {
             imageP71.classList.add("blackBoxShow71");
             Noscroll.setAttribute("onmousewheel", "return false;");
         }
         function blackBoxCover() {
             imageP71.classList.remove("blackBoxCover71");
         }
-            closeBtn71.onclick = function () {
+        closeBtn71.onclick = function () {
             imageP71.classList.remove("blackBoxShow71");
             Noscroll.setAttribute("onmousewheel", "return true;");
         }
@@ -2034,7 +2212,7 @@
         let closeBtn72 = document.querySelector(".blackBoxP72");
         let imageBtn72 = document.querySelector(".playPhotoD7_2");
         let imageP72 = document.querySelector(".blackBoxP72");
-            imageBtn72.onclick = function () {
+        imageBtn72.onclick = function () {
             imageP72.classList.add("blackBoxShow72");
             Noscroll.setAttribute("onmousewheel", "return false;");
         }
@@ -2698,7 +2876,7 @@
 
         let play = document.querySelector(".play");
         let mask1 = document.querySelector(".mask");
-            play.onclick = function () {
+        play.onclick = function () {
             mask1.classList.add("clickmask1");
             mask2.classList.remove("clickmask2");
             mask3.classList.remove("clickmask3");
@@ -2710,7 +2888,7 @@
 
         let eat = document.querySelector(".eat");
         let mask2 = document.querySelector(".mask2");
-            eat.onclick = function () {
+        eat.onclick = function () {
             mask1.classList.remove("clickmask1");
             mask2.classList.add("clickmask2");
             mask3.classList.remove("clickmask3");
@@ -2738,8 +2916,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2750,8 +2928,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2761,8 +2939,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2772,8 +2950,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2783,8 +2961,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2794,8 +2972,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2805,8 +2983,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2816,8 +2994,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2827,8 +3005,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2838,8 +3016,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2849,8 +3027,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2860,8 +3038,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2871,8 +3049,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2882,8 +3060,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2893,8 +3071,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2904,8 +3082,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2915,8 +3093,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2927,8 +3105,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2938,8 +3116,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2949,8 +3127,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2960,8 +3138,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2971,8 +3149,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
@@ -2982,8 +3160,8 @@
             centeredSlides: true,
             spaceBetween: 30,
             pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
+                el: '.swiper-pagination',
+                clickable: true,
             },
             observer: true,
             observeParents: true,
