@@ -1,0 +1,1873 @@
+*{
+    box-sizing: border-box;
+    /* font-family: "wt024";
+    font-weight: 200; */
+}
+body{
+    position: relative;
+    margin: 0;
+}
+.container{
+    margin: auto;
+    max-width: 1200px;
+    /* height: 100vh; */
+}
+.clearfix{
+    clear: both;
+}
+html {
+    scroll-behavior: smooth;
+}
+/* nav */
+nav{
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: "wt024";
+    font-weight: 600; 
+    font-size: 30px;
+}
+/* banner+section01----------------------------- */
+
+
+.opa{
+    opacity:0;
+    transition: 1s;
+} 
+
+#myVideo {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 9999; 
+  }
+  
+
+.logo{
+    width: 250px;
+    position: absolute;
+    top: calc(50% - 317.5px);
+    left: calc(50% - 125px);
+    z-index: 66666;
+}
+
+.logo img{
+    width: 100%;
+}
+
+.swiper-slide img{
+    height: 100vh;
+    width: 100%;
+    /* float: left; */
+}
+
+
+/* nav+section02-------------------------------- */
+.swiper-container-horizontal > .swiper-pagination-progressbar, .swiper-container-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite
+{
+    width: 100%;
+    height: 12px !important;
+    left: 0;
+    top: 0;
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: rgba(255,255, 255, 0.5) !important;
+}
+
+.navbar-brand{
+    transform: scale(0.6);
+    left: 16%;
+    position: absolute;
+}
+
+#section02{
+    height: 100vh;
+    width: 100%;
+    background-image: url("/03-img/section02-background\ \(2\).png");
+    background-position: 0 90%;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+}
+#section02 .title{
+    font-size: 64px;
+    position: absolute;
+    left: 21%;
+    top: 24%;
+    text-shadow:  0px 3px 10px #898787c2;
+}
+#section02 .textBG img{
+    width: 100%;
+    height: 300px;
+} 
+
+#section02 .textBG{
+    width: 805px;
+    height: 200px;
+    position: absolute;
+    left: -41%;
+    top: 84%;
+}
+#section02 .part01{
+    font-size: 32px;
+    position: absolute;
+    z-index: 123;
+    float: left;
+    padding: 55px 90px;
+}
+
+/* section03----------------------------------*/
+#section03{
+    background-image: url("/03-img/section03-background.png");
+    background-position: 0 90%;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+#section03 .Centercard{
+    height: 1100px;
+    width: 700px;
+    position: absolute;
+    left: 10%;
+    top: -1%;
+}
+#section03 .cardImg{
+    height:65%;
+    width: 100%;
+    background-image: url("/03-img/section03-image01.png");
+    background-position: 0 90%;
+    background-size: cover;
+}
+#section03 .cardTitle{
+    height: 20%;
+    width: 100%;
+    background-image: url("/03-img/section03-text\ box.png");
+    background-position: 0 90%;
+    background-size: cover;
+    position: absolute;
+    transform: scale(0.6);
+    left: 2%;
+    top: 45%;
+    text-align: center;
+}
+#section03 .cardTitle span{
+    font-size: 100px;
+    line-height: 230px;
+}
+
+#section03 .Centercard02{
+    height: 1100px;
+    width: 700px;
+    position: absolute;
+    left: 31%;
+    top: 25%;
+    z-index: 1;
+}
+
+#section03 .Centercard02 .cardImg{
+    height:65%;
+    width: 100%;
+    background-image: url("/03-img/section03-image02.png");
+    background-position: 0 90%;
+    background-size: cover;
+}
+
+#section03 .Centercard03{
+    height: 1100px;
+    width: 700px;
+    position: absolute;
+    left: 53%;
+    top: 3%;
+}
+
+#section03 .Centercard03 .cardImg{
+    height:65%;
+    width: 100%;
+    background-image: url("/03-img/section03-image03.png");
+    background-position: 0 90%;
+    background-size: cover;
+}
+/* section04------------------------------- */
+#section04{
+    height: 100vh;
+    width: 100%;
+    background-image: url("/03-img/section04-background\ \(1\).png");
+    background-position: 0 90%;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+}
+#section04 .title{
+    font-size: 64px;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    text-shadow:  0px 3px 10px #898787c2;
+}
+
+#section04 .textBG img{
+    width: 100%;
+    height: 300px;
+} 
+
+#section04 .textBG{
+    width: 805px;
+    height: 200px;
+    position: absolute;
+    left: -25%;
+    top: 75%;
+}
+#section04 .part02{
+    font-size: 32px;
+    position: absolute;
+    z-index: 123;
+    float: left;
+    padding: 55px 90px;
+}
+
+/* section05---------------------------------*/
+#section05{
+    background-image: url("/03-img/section05-background.png");
+    background-position: 0 90%;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+#section05 .Centercard{
+    height: 600px;
+    width: 375px;
+    position: absolute;
+    left: 21%;
+    top: 28%;
+}
+#section05 .cardImg{
+    height:65%;
+    width: 100%;
+    background-image: url("/03-img/section05-image01.png");
+    background-position: 0 90%;
+    background-size: cover;
+}
+#section05 .cardTitle02_threeword{
+    width: 160px;
+    position: absolute;
+    left: -13%;
+    top: 7%;
+    text-align: center;
+}
+#section05 .cardTitle02_fourword{
+    width: 160px;
+    position: absolute;
+    left: -3%;
+    top: 7%;
+    text-align: center;
+}
+#section05 img{
+    width: 100%;
+}
+#section05 .cardTitle02_threeword span{
+    font-size: 32px;
+    position: absolute;
+    top: 5%;
+    left: 20%;
+}
+
+#section05 .cardTitle02_fourword span{
+    font-size: 32px;
+    position: absolute;
+    top: 5%;
+    left: 12%;
+}
+
+#section05 .Centercard02{
+    height: 770px;
+    width: 520px;
+    position: absolute;
+    left: 37%;
+    top: 41%;
+  
+}
+
+#section05 .Centercard02 .cardImg{
+    height:65%;
+    width: 100%;
+    background-image: url("/03-img/section05-image02.png");
+    background-position: 0 90%;
+    background-size: cover;
+}
+
+#section05 .Centercard03{
+    height: 670px;
+    width: 480px;
+    position: absolute;
+    left: 59%;
+    top: 21%;
+}
+
+#section05 .Centercard03 .cardImg{
+    height:65%;
+    width: 100%;
+    background-image: url("/03-img/section05-image03.png");
+    background-position: 0 90%;
+    background-size: cover;
+}
+
+/* section06---------------------------------------------------- */
+
+#section06{
+    height: 100vh;
+    width: 100%;
+    background-image: url("/03-img/section06-background\ \(1\).png");
+    background-position: 0 90%;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+}
+#section06 .title{
+    font-size: 64px;
+    position: absolute;
+    left: 21%;
+    top: 11%;
+    text-shadow:  0px 3px 10px #898787c2;
+}
+#section06 .textBG img{
+    width: 100%;
+    height: 550px;
+} 
+
+#section06 .textBG{
+    width: 805px;
+    height: 200px;
+    position: absolute;
+    left: -31%;
+    top: 75%;
+}
+#section06 .part02{
+    font-size: 32px;
+    position: absolute;
+    z-index: 123;
+    float: left;
+    padding: 90px 90px;
+}
+
+/* section07------------------------------------------------- */
+#section07{
+    background-image: url("/03-img/section07-background.png");
+    background-position: 0 90%;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+#section07 .Centercard{
+    height: 900px;
+    width: 600px;
+    position: absolute;
+    left: 12%;
+    top: 19%;
+}
+
+#section07 .cardImg{
+    height:65%;
+    width: 100%;
+    background-image: url("/03-img/section07-image01.png");
+    background-position: 0 90%;
+    background-size: cover;
+}
+
+#section07 .cardTitle_fiveword{
+    width: 100px;
+    height: 390px;
+    position: absolute;
+    left: 21%;
+    top: 33%;
+    text-align: center;
+}
+
+#section07 .cardTitle_fiveword span{
+    font-size: 50px;
+    position: absolute;
+    top: 14%;
+    left: 15%;
+    writing-mode: vertical-lr;
+}
+
+#section07 .cardTitle_twoword{
+    width: 100px;
+    height: 250px;
+    position: absolute;
+    left: 12%;
+    top: 40%;
+    text-align: center;
+}
+
+#section07 .cardTitle_twoword span{
+    font-size: 50px;
+    position: absolute;
+    top: 25%;
+    left: 13%;
+    writing-mode: vertical-lr;
+}
+
+#section07 .cardTitle_fourword{
+    width: 100px;
+    height: 300px;
+    position: absolute;
+    left: 18%;
+    top: 50%;
+    text-align: center;
+}
+
+#section07 .cardTitle_fourword span{
+    font-size: 50px;
+    position: absolute;
+    top: 14%;
+    left: 15%;
+    writing-mode: vertical-lr;
+}
+
+#section07 .Centercard02{
+    height: 1000px;
+    width: 635px;
+    position: absolute;
+    left: 34%;
+    top: 34%;
+}
+
+#section07 .Centercard02 .cardImg{
+    height:65%;
+    width: 100%;
+    background-image: url("/03-img/section07-image02.png");
+    background-position: 0 90%;
+    background-size: cover;
+}
+
+#section07 .Centercard03{
+    height: 900px;
+    width: 600px;
+    position: absolute;
+    left: 58%;
+    top: 11%;
+}
+
+#section07 .Centercard03 .cardImg{
+    height:65%;
+    width: 100%;
+    background-image: url("/03-img/section07-image03.png");
+    background-position: 0 90%;
+    background-size: cover;
+}
+
+#section07 img{
+    width: 100%;
+    height: 100%;
+}
+
+/* section08----------------------------------------------- */
+#section08{
+    height: 100vh;
+    width: 100%;
+    /* background-image: url("/03-img/section08-background.jpg"); */
+    background-position: 0 90%;
+    background-size: cover;
+    position: relative;
+}
+#section08 .nav{
+    padding-top: 10%;
+}
+
+#section08 .nav-link {
+    display: block;
+    margin-left: 65px; 
+    line-height: 45px;
+    text-align: center;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: transparent !important;
+    background-image: url("/03-img/dot.png");
+    width: 80px;
+    height: 80px;
+    background-position: 0 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.nav-item a{
+    color: black;
+}
+.line{
+    margin-top: -30px;
+    margin-left: -20px;
+}
+.icon{
+    width: 50px;
+    height: 50px;
+}
+.icon img{
+    width: 100%;
+}
+.icon_bowl{
+    width: 50px;
+    height: 50px;
+}
+.icon_bowl img{
+    width: 90%;
+}
+/* 天數1------------------------------------ */
+h3{
+    font-family: 'wt024';
+}
+h5{
+    font-family: 'wt024';
+}
+#play .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D1-1.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#play .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D1-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#play .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D1-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+
+#food .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D1-1.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+#food .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D1-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#food .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D1-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+#hotel .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D1-1.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#hotel .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D1-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#hotel .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D1-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+/* 游nover */
+#play .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#play .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#play .cardImg01 span{
+   line-height: 10px;
+}
+
+/* 食物hover */
+#food .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#food .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#food .cardImg01 span{
+   line-height: 10px;
+}
+
+/* 這裡是圖片hover */
+#hotel .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#hotel .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#hotel .cardImg01 span{
+   line-height: 10px;
+}
+
+/* 天數2 -----------------------------------------------------------------------------------*/
+
+#play2 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D2-1.png");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#play2 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D2-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#play2 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D2-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+
+#food2 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D2-1.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#food2 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D2-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#food2 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D2-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+#hotel2 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D2-1\ \(1\).jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#hotel2 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D2-1\ \(2\).jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#hotel2 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D2-1\ \(3\).jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+/* 游nover */
+#play2 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#play2 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#play2 .cardImg01 span{
+   line-height: 10px;
+}
+/* 食hover */
+#food2 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#food2 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#food2 .cardImg01 span{
+   line-height: 10px;
+}
+/* 這裡是圖片hover */
+#hotel2 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#hotel2 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#hotel2 .cardImg01 span{
+   line-height: 10px;
+}
+
+/* 天數3------------------------------------------------------------------------- */
+#play3 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D3-1.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#play3 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D3-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#play3 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D3-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+
+#food3 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D3-1.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#food3 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D3-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#food3 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D3-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+#hotel3 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D3-1.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#hotel3 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D3-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#hotel3 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D3-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+/* 游nover */
+#play3 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#play3 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#play3 .cardImg01 span{
+   line-height: 10px;
+}
+
+/* 食hover */
+#food3 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#food3 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#food3 .cardImg01 span{
+   line-height: 10px;
+}
+/* 這裡是圖片hover */
+#hotel3 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#hotel3 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#hotel3 .cardImg01 span{
+   line-height: 10px;
+}
+
+/* 天數4----------------------------------------------------------------- */
+#play4 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D4-1.JPG");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#play4 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D4-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#play4 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D4-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+
+#food4 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D4-1.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#food4 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D4-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#food4 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D4-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+#hotel4 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D3-1.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#hotel4 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D3-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#hotel4 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D3-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+/* 游nover */
+#play4 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#play4 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#play4 .cardImg01 span{
+   line-height: 10px;
+}
+
+/* 食hover */
+#food4 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#food4 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#food4 .cardImg01 span{
+   line-height: 10px;
+}
+/* 這裡是圖片hover */
+#hotel4 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#hotel4 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#hotel4 .cardImg01 span{
+   line-height: 10px;
+}
+/* 天數五----------------------------------------------- */
+#play5 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D5-1.JPG");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#play5 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D5-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#play5 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D5-3.jpeg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+
+#food5 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D5-1.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#food5 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D5-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#food5 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D5-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+#hotel5 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D5-1.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#hotel5 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D5-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#hotel5 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D5-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+/* 游nover */
+#play5 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#play5 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#play5 .cardImg01 span{
+   line-height: 10px;
+}
+
+/* 食hover */
+#food5 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#food5 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#food5 .cardImg01 span{
+   line-height: 10px;
+}
+/* 這裡是圖片hover */
+#hotel5 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#hotel5 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#hotel5 .cardImg01 span{
+   line-height: 10px;
+}
+
+/* 天數6------------------------------------------------------------- */
+#play6 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D6-1.JPG");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#play6 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D6-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#play6 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D6-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+
+#food6 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D6-1.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#food6 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D6-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#food6 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D6-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+#hotel6 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D5-1.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#hotel6 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D5-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#hotel6 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D5-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+/* 游nover */
+#play6 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#play6 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#play6 .cardImg01 span{
+   line-height: 10px;
+}
+
+/* 食hover */
+#food6 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#food6 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#food6 .cardImg01 span{
+   line-height: 10px;
+}
+/* 這裡是圖片hover */
+#hotel6 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#hotel6 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#hotel6 .cardImg01 span{
+   line-height: 10px;
+}
+
+/* 天數7------------------------------------------------------------------ */
+#play7 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D7-1.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#play7 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D7-2.JPG");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#play7 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D7-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+
+#food7 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D7-1.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#food7 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D7-2.jpeg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#food7 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D7-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+#hotel7 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D1-1.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#hotel7 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D1-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#hotel7 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/H-D1-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+/* 游nover */
+#play7 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#play7 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#play7 .cardImg01 span{
+   line-height: 10px;
+}
+
+/* 食hover */
+#food7 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#food7 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#food7 .cardImg01 span{
+   line-height: 10px;
+}
+/* 這裡是圖片hover */
+#hotel7 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#hotel7 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#hotel7 .cardImg01 span{
+   line-height: 10px;
+}
+
+/* 天數8 -----------------------------------------------------------*/
+
+#play8 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D8-1.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#play8 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D8-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#play8 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/D8-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+
+#food8 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D8-1.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#food8 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D8-2.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#food8 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/F-D8-3.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+#hotel8 .cardImg01{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/home.jpg");
+    background-position: -84px 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#hotel8 .cardImg02{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/home2.jpg");
+    background-position: 0 -140px;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+#hotel8 .cardImg03{
+    width: 380px;
+    height: 300px;
+    background-image: url("/03-img/home.jpg");
+    background-position: -84px 0;
+    background-size: cover;
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+/* 游nover */
+#play8 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#play8 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#play8 .cardImg01 span{
+   line-height: 10px;
+}
+
+/* 食hover */
+#food8 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#food8 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#food8 .cardImg01 span{
+   line-height: 10px;
+}
+/* 這裡是圖片hover */
+#hotel8 .card_Hover{
+    width: 100%;
+    height: 100%; 
+    color: transparent;
+    transition: 0.35s;
+    text-align: center;
+    padding-top: 30px;
+}
+#hotel8 .card_Hover:hover{
+    background-color: rgba(0,0,0, 0.8);
+    color:white;
+    transition: 1s;
+}
+#hotel8 .cardImg01 span{
+   line-height: 10px;
+}
+
+/* #section09---------------------------------------------------- */
+#section09{
+    height: 100vh;
+    width: 100%;
+    /* background-image: url("/03-img/section08-background.jpg");
+    background-position: 0 90%;
+    background-size: cover; */
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.detail{
+    margin-top:-60px; 
+}
+
+.explain_title{
+    margin: 30px auto;
+    text-align: center;
+    font-size: 50px;
+    float: left;
+    /* position: absolute;
+    top: 0%; */
+}
+
+.explain{
+    clear: left;
+    position: relative;
+}
+#section09 img:nth-last-child(){
+     position: absolute;
+     top: 0%;
+}
+.section09-block{
+    background-image: url("/03-img/section09-block.png");
+    background-position: 0 0;
+    width: 1170px;
+    height: 74px;
+    background-size: cover;
+    line-height: 75px;
+   
+}
+#section09 .explain_title span{
+    margin-left: 485px;
+    font-size: 50px;
+    color: white;
+    
+}
+
+#section09 .section09-block span{
+    margin-left: 50px;
+    font-size: 24px;
+    color: white;
+    font-family: '微軟正黑體';
+}
+
+hr{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 0;
+    border-top: 2px solid rgba(0,0,0,1);
+}
+
+/* footer--------------------------------------------- */
+.footer_Logo{
+    width: 100px;
+    height: 50px; 
+}
+
+.footer_LogoBox{
+    display: flex;
+    justify-content: center;
+    line-height: 250px;
+}
+.footer_Logo img{
+    width: 100%;
+}
+
+.footerlink{
+    display: flex;
+    justify-content: space-around; 
+    align-items: baseline;
+    width: 100%;
+    margin-top: 10%;  
+    font-size: 20px;
+    font-family: '微軟正黑體'; 
+    
+}
+
+.footer_Copyright{
+    text-align: center;
+    line-height: 30PX;
+    margin-top: 50px;
+    font-family: '微軟正黑體'; 
+}
+
+#footer{
+    width: 100%;
+    height: 160px;
+    color: white;
+}
+a{
+    color: white;
+   
+}
+a:hover{
+     text-decoration:none;
+     color:goldenrod;
+}
+
+/* ---------------------------------- */
+#twoSection_bg{
+    height: 100%;
+    width: 100%;
+    background-image: url("/03-img/section08-background02.jpg");
+    background-position: 0 90%;
+    background-size: cover;
+    /* position: relative; */ 
+}
+
+/* 這裡是影片動畫 */
+.dsnone{
+    /* display: none; */
+    animation-name: fadeout;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeout{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+
+}
+
+
+/* ---------------------------------------- */
+
+/* @keyframes flipInX {
+    from {
+      transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+  
+    40% {
+      transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+      animation-timing-function: ease-in;
+    }
+  
+    60% {
+      transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+      opacity: 1;
+    }
+  
+    80% {
+      transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    }
+  
+    to {
+      transform: perspective(400px);
+    }
+  }
+  
+  .explain_title {
+    backface-visibility: visible !important;
+    animation-name: flipInX;
+  } */
