@@ -189,6 +189,7 @@ html {
 }
 /* section04------------------------------- */
 #section04{
+    overflow: hidden;
     height: 100vh;
     width: 100%;
     background-image: url("../03-img/section04-background.png");
