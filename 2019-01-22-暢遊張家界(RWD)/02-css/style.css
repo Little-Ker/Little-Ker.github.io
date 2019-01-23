@@ -19,7 +19,7 @@ html {
     scroll-behavior: smooth;
 }
 /* nav */
-nav{
+.all-PC nav{
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-family: "wt024";
@@ -42,7 +42,7 @@ nav{
   }
   
 
-.logo{
+.all-PC .logo{
     width: 250px;
     position: absolute;
     top: calc(50% - 317.5px);
@@ -50,11 +50,11 @@ nav{
     z-index: 66666;
 }
 
-.logo img{
+.all-PC .logo img{
     width: 100%;
 }
 
-.swiper-slide img{
+.all-PC .swiper-slide img{
     height: 100vh;
     width: 100%;
     /* float: left; */
@@ -62,7 +62,7 @@ nav{
 
 
 /* nav+section02-------------------------------- */
-.swiper-container-horizontal > .swiper-pagination-progressbar, .swiper-container-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite
+.all-PC .swiper-container-horizontal > .swiper-pagination-progressbar, .swiper-container-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite
 {
     width: 100%;
     height: 12px !important;
@@ -489,7 +489,7 @@ nav{
     background-color: transparent !important;
     background-image: url("/03-img/dot.png");
     width: 80px;
-    height: 80px;
+    height: 100px;
     background-position: 0 0;
     background-size: contain;
     background-repeat: no-repeat;
@@ -516,10 +516,13 @@ nav{
     width: 90%;
 }
 /* 天數1------------------------------------ */
-h3{
+.all-PC h3{
     font-family: 'wt024';
 }
-h5{
+.all-PC{
+    font-family: 'wt024';
+}
+.all-PC h5{
     font-family: 'wt024';
 }
 #play .cardImg01{
@@ -1778,7 +1781,7 @@ hr{
     width: 100%;
 }
 
-.footerlink{
+.all-PC .footerlink{
     display: flex;
     justify-content: space-around; 
     align-items: baseline;
@@ -1789,7 +1792,7 @@ hr{
     
 }
 
-.footer_Copyright{
+.all-PC .footer_Copyright{
     text-align: center;
     line-height: 30PX;
     margin-top: 50px;

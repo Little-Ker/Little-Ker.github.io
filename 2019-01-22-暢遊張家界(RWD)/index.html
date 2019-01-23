@@ -50,8 +50,8 @@
             width: 100%;
             height: 90%;
         }
-
-        .swiper-slide {
+        
+        .all-phone .swiper-slide {
             text-align: center;
             font-size: 18px;
             background: rgba(255, 255, 255, 0);
@@ -72,6 +72,28 @@
             width: 500px;
 
 
+        }
+        .swiper-container {
+             width: 100%;
+             height: 100%;
+            }
+        .all-PC .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
         }
 
         .swiper-slide:nth-child(1n) {
@@ -114,6 +136,16 @@
             display: none;
          }
         }
+        .menuBoxUp.cover.show p{
+            margin-bottom: 0px;
+        }
+        .rightcopy{
+            margin-bottom: 0rem;
+        }
+        .navbar.sticky-top.navbar-expand-lg.navbar-light 
+        {
+            height: 75px;
+        }
         
     </style>
 
@@ -129,7 +161,7 @@
             <img class="downTag" src="img/indicator_down.svg" width="60px" alt="">
         </div>
 
-        <nav>
+        <nav class="phone-nav">
             <div class="container ">
                 <div id="menu" class="menu">
                     <div class="whiteBTN1 "></div>
@@ -1812,7 +1844,7 @@
             </div>
 
 
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper" id="Mainswiper">
 
                 <div class="swiper-slide">
                     <img src="03-img/banner01.jpg" alt="">
@@ -3608,7 +3640,22 @@
 
         </div>
     </div>
-
+     <!-- Swiper JS -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.js"></script>
+     <!-- Initialize Swiper -->
+     <script>
+         var swiper00 = new Swiper('#Mainswiper', {
+             pagination: {
+                 el: '.swiper-pagination',
+                 type: 'progressbar',
+             },
+             navigation: {
+                 nextEl: '.swiper-button-next',
+                 prevEl: '.swiper-button-prev',
+             },
+             
+         });
+     </script>
     <!-- AOS特效 -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
