@@ -82,7 +82,7 @@ html {
 #section02{
     height: 100vh;
     width: 100%;
-    background-image: url("03-img/section02-background-2.png");
+    background-image: url("../03-img/section02-background-2.png");
     background-position: 0 90%;
     background-size: cover;
     position: relative;
