@@ -117,7 +117,7 @@ html {
 
 /* section03----------------------------------*/
 #section03{
-    background-image: url("/03-img/section03-background.png");
+    background-image: url("../03-img/section03-background.png");
     background-position: 0 90%;
     background-size: cover;
     height: 100vh;
