@@ -415,11 +415,11 @@
 
 .download{
     text-align: center;
-    height: 31px;
+    height: 27px;
     width: 30px;
     float: right;
     border-left: 2px solid rgba(0, 0, 0, 0.74);
-    line-height: 35px;
+    line-height: 20px;
 }
 
 .otherBox{    

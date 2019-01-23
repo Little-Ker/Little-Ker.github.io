@@ -515,6 +515,11 @@ html {
 .icon_bowl img{
     width: 90%;
 }
+.nav-tabs .nav-link {
+    border: 3px solid #cccccc;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: 1.5rem; 
+}
 /* 天數1------------------------------------ */
 .all-PC h3{
     font-family: 'wt024';
@@ -1768,14 +1773,25 @@ hr{
 
 /* footer--------------------------------------------- */
 .footer_Logo{
-    width: 100px;
+    text-align: center;
     height: 50px; 
+    font-size: 28px;
+    font-family: '微軟正黑體'; 
+}
+.footer_Logo a{
+    color:goldenrod;
+    opacity: 0.5;
+}
+.footer_Logo a:hover{
+    color:goldenrod;
+    opacity: 1;
 }
 
 .footer_LogoBox{
     display: flex;
     justify-content: center;
-    line-height: 250px;
+    align-items: center;
+    line-height: 200px; 
 }
 .footer_Logo img{
     width: 100%;
@@ -1786,7 +1802,7 @@ hr{
     justify-content: space-around; 
     align-items: baseline;
     width: 100%;
-    margin-top: 10%;  
+    margin-top: 8%;  
     font-size: 20px;
     font-family: '微軟正黑體'; 
     
@@ -1811,6 +1827,15 @@ a{
 a:hover{
      text-decoration:none;
      color:goldenrod;
+}
+#section08 .everyday{
+    text-align: center;
+    padding-top: 150px;
+    font-size: 50px;
+    color: rgb(8, 8, 8);
+}
+.everyday_tab{
+    margin-top: -70px;
 }
 
 /* ---------------------------------- */
