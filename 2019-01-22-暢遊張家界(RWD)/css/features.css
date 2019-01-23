@@ -386,7 +386,8 @@
     background-color: white;
     border: 1px solid rgba(66, 66, 66, 0.397);
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.356);
-    font-family: "微軟正黑體";     
+    font-family: "微軟正黑體";   
+    text-align: center;  
 }
 
 .eatcard{
