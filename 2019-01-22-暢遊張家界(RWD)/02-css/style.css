@@ -35,7 +35,7 @@ html {
 } 
 
 #myVideo {
-    width: 100%;
+    width: 110%;
     height: 100vh;
     position: fixed;
     z-index: 9999; 
@@ -82,7 +82,7 @@ html {
 #section02{
     height: 100vh;
     width: 100%;
-    background-image: url("/03-img/section02-background\ \(2\).png");
+    background-image: url("../03-img/section02-background-2.png");
     background-position: 0 90%;
     background-size: cover;
     position: relative;
@@ -117,7 +117,7 @@ html {
 
 /* section03----------------------------------*/
 #section03{
-    background-image: url("/03-img/section03-background.png");
+    background-image: url("../03-img/section03-background.png");
     background-position: 0 90%;
     background-size: cover;
     height: 100vh;
@@ -134,14 +134,14 @@ html {
 #section03 .cardImg{
     height:65%;
     width: 100%;
-    background-image: url("/03-img/section03-image01.png");
+    background-image: url("../03-img/section03-image01.png");
     background-position: 0 90%;
     background-size: cover;
 }
 #section03 .cardTitle{
     height: 20%;
     width: 100%;
-    background-image: url("/03-img/section03-text\ box.png");
+    background-image: url("../03-img/section03-text\ box.png");
     background-position: 0 90%;
     background-size: cover;
     position: absolute;
@@ -167,7 +167,7 @@ html {
 #section03 .Centercard02 .cardImg{
     height:65%;
     width: 100%;
-    background-image: url("/03-img/section03-image02.png");
+    background-image: url("../03-img/section03-image02.png");
     background-position: 0 90%;
     background-size: cover;
 }
@@ -183,15 +183,16 @@ html {
 #section03 .Centercard03 .cardImg{
     height:65%;
     width: 100%;
-    background-image: url("/03-img/section03-image03.png");
+    background-image: url("../03-img/section03-image03.png");
     background-position: 0 90%;
     background-size: cover;
 }
 /* section04------------------------------- */
 #section04{
+    overflow: hidden;
     height: 100vh;
     width: 100%;
-    background-image: url("/03-img/section04-background\ \(1\).png");
+    background-image: url("../03-img/section04-background.png");
     background-position: 0 90%;
     background-size: cover;
     position: relative;
@@ -227,7 +228,7 @@ html {
 
 /* section05---------------------------------*/
 #section05{
-    background-image: url("/03-img/section05-background.png");
+    background-image: url("../03-img/section05-background.png");
     background-position: 0 90%;
     background-size: cover;
     height: 100vh;
@@ -244,7 +245,7 @@ html {
 #section05 .cardImg{
     height:65%;
     width: 100%;
-    background-image: url("/03-img/section05-image01.png");
+    background-image: url("../03-img/section05-image01.png");
     background-position: 0 90%;
     background-size: cover;
 }
@@ -291,7 +292,7 @@ html {
 #section05 .Centercard02 .cardImg{
     height:65%;
     width: 100%;
-    background-image: url("/03-img/section05-image02.png");
+    background-image: url("../03-img/section05-image02.png");
     background-position: 0 90%;
     background-size: cover;
 }
@@ -307,7 +308,7 @@ html {
 #section05 .Centercard03 .cardImg{
     height:65%;
     width: 100%;
-    background-image: url("/03-img/section05-image03.png");
+    background-image: url("../03-img/section05-image03.png");
     background-position: 0 90%;
     background-size: cover;
 }
@@ -317,7 +318,7 @@ html {
 #section06{
     height: 100vh;
     width: 100%;
-    background-image: url("/03-img/section06-background\ \(1\).png");
+    background-image: url("../03-img/section06-background\ \(1\).png");
     background-position: 0 90%;
     background-size: cover;
     position: relative;
@@ -352,7 +353,7 @@ html {
 
 /* section07------------------------------------------------- */
 #section07{
-    background-image: url("/03-img/section07-background.png");
+    background-image: url("../03-img/section07-background.png");
     background-position: 0 90%;
     background-size: cover;
     height: 100vh;
@@ -371,7 +372,7 @@ html {
 #section07 .cardImg{
     height:65%;
     width: 100%;
-    background-image: url("/03-img/section07-image01.png");
+    background-image: url("../03-img/section07-image01.png");
     background-position: 0 90%;
     background-size: cover;
 }
@@ -438,7 +439,7 @@ html {
 #section07 .Centercard02 .cardImg{
     height:65%;
     width: 100%;
-    background-image: url("/03-img/section07-image02.png");
+    background-image: url("../03-img/section07-image02.png");
     background-position: 0 90%;
     background-size: cover;
 }
@@ -454,7 +455,7 @@ html {
 #section07 .Centercard03 .cardImg{
     height:65%;
     width: 100%;
-    background-image: url("/03-img/section07-image03.png");
+    background-image: url("../03-img/section07-image03.png");
     background-position: 0 90%;
     background-size: cover;
 }
@@ -468,7 +469,7 @@ html {
 #section08{
     height: 100vh;
     width: 100%;
-    /* background-image: url("/03-img/section08-background.jpg"); */
+    /* background-image: url("../03-img/section08-background.jpg"); */
     background-position: 0 90%;
     background-size: cover;
     position: relative;
@@ -487,7 +488,7 @@ html {
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     color: #fff;
     background-color: transparent !important;
-    background-image: url("/03-img/dot.png");
+    background-image: url("../03-img/dot.png");
     width: 80px;
     height: 100px;
     background-position: 0 0;
@@ -533,7 +534,7 @@ html {
 #play .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D1-1.jpg");
+    background-image: url("../03-img/D1-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -543,7 +544,7 @@ html {
 #play .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D1-2.jpg");
+    background-image: url("../03-img/D1-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -553,7 +554,7 @@ html {
 #play .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D1-3.jpg");
+    background-image: url("../03-img/D1-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -565,7 +566,7 @@ html {
 #food .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D1-1.jpg");
+    background-image: url("../03-img/F-D1-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -576,7 +577,7 @@ html {
 #food .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D1-2.jpg");
+    background-image: url("../03-img/F-D1-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -586,7 +587,7 @@ html {
 #food .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D1-3.jpg");
+    background-image: url("../03-img/F-D1-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -597,7 +598,7 @@ html {
 #hotel .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D1-1.jpg");
+    background-image: url("../03-img/H-D1-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -607,7 +608,7 @@ html {
 #hotel .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D1-2.jpg");
+    background-image: url("../03-img/H-D1-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -617,7 +618,7 @@ html {
 #hotel .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D1-3.jpg");
+    background-image: url("../03-img/H-D1-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -683,7 +684,7 @@ html {
 #play2 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D2-1.png");
+    background-image: url("../03-img/D2-1.png");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -693,7 +694,7 @@ html {
 #play2 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D2-2.jpg");
+    background-image: url("../03-img/D2-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -703,7 +704,7 @@ html {
 #play2 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D2-3.jpg");
+    background-image: url("../03-img/D2-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -715,7 +716,7 @@ html {
 #food2 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D2-1.jpg");
+    background-image: url("../03-img/F-D2-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -725,7 +726,7 @@ html {
 #food2 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D2-2.jpg");
+    background-image: url("../03-img/F-D2-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -735,7 +736,7 @@ html {
 #food2 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D2-3.jpg");
+    background-image: url("../03-img/F-D2-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -746,7 +747,7 @@ html {
 #hotel2 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D2-1\ \(1\).jpg");
+    background-image: url("../03-img/H-D2-1\ \(1\).jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -756,7 +757,7 @@ html {
 #hotel2 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D2-1\ \(2\).jpg");
+    background-image: url("../03-img/H-D2-1\ \(2\).jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -766,7 +767,7 @@ html {
 #hotel2 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D2-1\ \(3\).jpg");
+    background-image: url("../03-img/H-D2-1\ \(3\).jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -829,7 +830,7 @@ html {
 #play3 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D3-1.jpg");
+    background-image: url("../03-img/D3-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -839,7 +840,7 @@ html {
 #play3 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D3-3.jpg");
+    background-image: url("../03-img/D3-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -849,7 +850,7 @@ html {
 #play3 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D3-2.jpg");
+    background-image: url("../03-img/D3-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -861,7 +862,7 @@ html {
 #food3 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D3-1.jpg");
+    background-image: url("../03-img/F-D3-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -871,7 +872,7 @@ html {
 #food3 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D3-2.jpg");
+    background-image: url("../03-img/F-D3-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -881,7 +882,7 @@ html {
 #food3 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D3-3.jpg");
+    background-image: url("../03-img/F-D3-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -892,7 +893,7 @@ html {
 #hotel3 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D3-1.jpg");
+    background-image: url("../03-img/H-D3-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -902,7 +903,7 @@ html {
 #hotel3 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D3-2.jpg");
+    background-image: url("../03-img/H-D3-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -912,7 +913,7 @@ html {
 #hotel3 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D3-3.jpg");
+    background-image: url("../03-img/H-D3-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -976,7 +977,7 @@ html {
 #play4 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D4-1.JPG");
+    background-image: url("../03-img/D4-1.JPG");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -986,7 +987,7 @@ html {
 #play4 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D4-2.jpg");
+    background-image: url("../03-img/D4-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -996,7 +997,7 @@ html {
 #play4 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D4-3.jpg");
+    background-image: url("../03-img/D4-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1008,7 +1009,7 @@ html {
 #food4 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D4-1.jpg");
+    background-image: url("../03-img/F-D4-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1018,7 +1019,7 @@ html {
 #food4 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D4-2.jpg");
+    background-image: url("../03-img/F-D4-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1028,7 +1029,7 @@ html {
 #food4 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D4-3.jpg");
+    background-image: url("../03-img/F-D4-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1039,7 +1040,7 @@ html {
 #hotel4 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D3-1.jpg");
+    background-image: url("../03-img/H-D3-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1049,7 +1050,7 @@ html {
 #hotel4 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D3-2.jpg");
+    background-image: url("../03-img/H-D3-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1059,7 +1060,7 @@ html {
 #hotel4 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D3-3.jpg");
+    background-image: url("../03-img/H-D3-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1122,7 +1123,7 @@ html {
 #play5 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D5-1.JPG");
+    background-image: url("../03-img/D5-1.JPG");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1132,7 +1133,7 @@ html {
 #play5 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D5-2.jpg");
+    background-image: url("../03-img/D5-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1142,7 +1143,7 @@ html {
 #play5 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D5-3.jpeg");
+    background-image: url("../03-img/D5-3.jpeg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1154,7 +1155,7 @@ html {
 #food5 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D5-1.jpg");
+    background-image: url("../03-img/F-D5-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1164,7 +1165,7 @@ html {
 #food5 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D5-2.jpg");
+    background-image: url("../03-img/F-D5-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1174,7 +1175,7 @@ html {
 #food5 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D5-3.jpg");
+    background-image: url("../03-img/F-D5-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1185,7 +1186,7 @@ html {
 #hotel5 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D5-1.jpg");
+    background-image: url("../03-img/H-D5-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1195,7 +1196,7 @@ html {
 #hotel5 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D5-2.jpg");
+    background-image: url("../03-img/H-D5-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1205,7 +1206,7 @@ html {
 #hotel5 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D5-3.jpg");
+    background-image: url("../03-img/H-D5-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1269,7 +1270,7 @@ html {
 #play6 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D6-1.JPG");
+    background-image: url("../03-img/D6-1.JPG");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1279,7 +1280,7 @@ html {
 #play6 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D6-2.jpg");
+    background-image: url("../03-img/D6-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1289,7 +1290,7 @@ html {
 #play6 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D6-3.jpg");
+    background-image: url("../03-img/D6-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1301,7 +1302,7 @@ html {
 #food6 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D6-1.jpg");
+    background-image: url("../03-img/F-D6-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1311,7 +1312,7 @@ html {
 #food6 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D6-2.jpg");
+    background-image: url("../03-img/F-D6-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1321,7 +1322,7 @@ html {
 #food6 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D6-3.jpg");
+    background-image: url("../03-img/F-D6-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1332,7 +1333,7 @@ html {
 #hotel6 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D5-1.jpg");
+    background-image: url("../03-img/H-D5-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1342,7 +1343,7 @@ html {
 #hotel6 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D5-2.jpg");
+    background-image: url("../03-img/H-D5-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1352,7 +1353,7 @@ html {
 #hotel6 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D5-3.jpg");
+    background-image: url("../03-img/H-D5-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1416,7 +1417,7 @@ html {
 #play7 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D7-1.jpg");
+    background-image: url("../03-img/D7-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1426,7 +1427,7 @@ html {
 #play7 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D7-2.JPG");
+    background-image: url("../03-img/D7-2.JPG");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1436,7 +1437,7 @@ html {
 #play7 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D7-3.jpg");
+    background-image: url("../03-img/D7-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1448,7 +1449,7 @@ html {
 #food7 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D7-1.jpg");
+    background-image: url("../03-img/F-D7-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1458,7 +1459,7 @@ html {
 #food7 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D7-2.jpeg");
+    background-image: url("../03-img/F-D7-2.jpeg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1468,7 +1469,7 @@ html {
 #food7 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D7-3.jpg");
+    background-image: url("../03-img/F-D7-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1479,7 +1480,7 @@ html {
 #hotel7 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D1-1.jpg");
+    background-image: url("../03-img/H-D1-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1489,7 +1490,7 @@ html {
 #hotel7 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D1-2.jpg");
+    background-image: url("../03-img/H-D1-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1499,7 +1500,7 @@ html {
 #hotel7 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/H-D1-3.jpg");
+    background-image: url("../03-img/H-D1-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1564,7 +1565,7 @@ html {
 #play8 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D8-1.jpg");
+    background-image: url("../03-img/D8-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1574,7 +1575,7 @@ html {
 #play8 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D8-2.jpg");
+    background-image: url("../03-img/D8-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1584,7 +1585,7 @@ html {
 #play8 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/D8-3.jpg");
+    background-image: url("../03-img/D8-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1596,7 +1597,7 @@ html {
 #food8 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D8-1.jpg");
+    background-image: url("../03-img/F-D8-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1606,7 +1607,7 @@ html {
 #food8 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D8-2.jpg");
+    background-image: url("../03-img/F-D8-2.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1616,7 +1617,7 @@ html {
 #food8 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/F-D8-3.jpg");
+    background-image: url("../03-img/F-D8-3.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1627,7 +1628,7 @@ html {
 #hotel8 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/home.jpg");
+    background-image: url("../03-img/home.jpg");
     background-position: -84px 0;
     background-size: cover;
     float: left;
@@ -1637,7 +1638,7 @@ html {
 #hotel8 .cardImg02{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/home2.jpg");
+    background-image: url("../03-img/home2.jpg");
     background-position: 0 -140px;
     background-size: cover;
     float: left;
@@ -1647,7 +1648,7 @@ html {
 #hotel8 .cardImg03{
     width: 380px;
     height: 300px;
-    background-image: url("/03-img/home.jpg");
+    background-image: url("../03-img/home.jpg");
     background-position: -84px 0;
     background-size: cover;
     float: left;
@@ -1711,7 +1712,7 @@ html {
 #section09{
     height: 100vh;
     width: 100%;
-    /* background-image: url("/03-img/section08-background.jpg");
+    /* background-image: url("../03-img/section08-background.jpg");
     background-position: 0 90%;
     background-size: cover; */
     /* position: relative; */
@@ -1742,7 +1743,7 @@ html {
      top: 0%;
 }
 .section09-block{
-    background-image: url("/03-img/section09-block.png");
+    background-image: url("../03-img/section09-block.png");
     background-position: 0 0;
     width: 1170px;
     height: 74px;
@@ -1842,7 +1843,7 @@ a:hover{
 #twoSection_bg{
     height: 100%;
     width: 100%;
-    background-image: url("/03-img/section08-background02.jpg");
+    background-image: url("../03-img/section08-background02.jpg");
     background-position: 0 90%;
     background-size: cover;
     /* position: relative; */ 
