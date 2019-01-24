@@ -1130,7 +1130,7 @@ html {
 #play5 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("../03-img/D5-1.JPG");
+    background-image: url("../03-img/D5-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
@@ -1277,7 +1277,7 @@ html {
 #play6 .cardImg01{
     width: 380px;
     height: 300px;
-    background-image: url("../03-img/D6-1.JPG");
+    background-image: url("../03-img/D6-1.jpg");
     background-position: 0 0;
     background-size: cover;
     float: left;
