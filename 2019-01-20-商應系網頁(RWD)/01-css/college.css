@@ -226,7 +226,7 @@
        box-shadow: 1PX 1PX 3PX rgb(30, 52, 77);
 }
 .sseBTN{
-    margin-top: 20px;
+    margin-bottom: 5px;
     width: 90px;
     height: 35px;
     border: #9FAEC4 1px solid;
@@ -240,7 +240,7 @@
     color: black;
 }
 .BTN3D{
-    margin-top: 145px;
+    margin-bottom: 5px;
     width: 90px;
     height: 35px;
     border: #9FAEC4 1px solid;
