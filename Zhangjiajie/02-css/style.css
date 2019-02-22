@@ -53,8 +53,9 @@ html {
 .all-PC .logo{
     width: 250px;
     position: absolute;
-    top: calc(50% - 317.5px);
-    left: calc(50% - 125px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 66666;
 }
 
