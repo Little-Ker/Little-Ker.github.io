@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'wd01';
+    src: url('A-OTF-A1MinchoStd-Bold.otf');
+  }
+.logo h2{
+    font-family: "wd01";
+    line-height: 38px;
+    color: aliceblue;
+    font-size: 28px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.281);
+}
+.logo .title{
+  font-family: "wd01";
+  line-height: 28px;
+  font-size: 28px;  
+}
+
+.bigmargin{
+  margin-top: 20%;
+}
+.bigmargin2{
+  margin-top: 50%;
+}
+.bigmarginRight{
+  margin-top: 5%;
+}
+.bigmarginRight2{
+  margin-top: 10%;
+}
+.RainBetweenWord{
+  margin-top: 0%;
+}
+.cloudLeft{
+  position: absolute;
+  left: -250px;
+  bottom: -585px
+}
+.cloudLeft02{
+  position: absolute;
+  left: -70px;
+  bottom: 50px;
+}
+.cloudRight{
+  position: absolute;
+  right: -70px;
+  bottom: -180px;
+}

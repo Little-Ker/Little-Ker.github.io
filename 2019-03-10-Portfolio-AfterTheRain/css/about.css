@@ -1,0 +1,453 @@
+.navbar{
+    text-align: center;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+/* 雨滴LOGO+英文標題 */
+.navbar .logo{
+    margin-top:40px;
+    margin-bottom: 1000px;
+    width:100%;
+    margin: 0 auto;
+   
+    /* background-image:url("/2019-03-10-Portfolio-AfterTheRain/image/logo.png"); */
+   
+}
+.navbar .logo img{
+    margin-top:40px;
+    width:45%;
+    /* margin-left: calc( 50% - 20px); */
+}
+.navbar .logo h2{
+    width: 100%;
+   
+
+}
+.navbar .logo .title{
+    /* margin-left: calc( 50% - 50px);
+  margin-top: 50px; */
+  
+  line-height: 24px;
+    font-size: 16px;
+      /* transform: rotate(90deg);   */
+  
+
+}
+
+/* 主選單內容 */
+.navbar a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.link_about{
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: "微軟正黑體";
+
+}
+.link_portfolio{
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: "微軟正黑體";
+}
+.link_contact{
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: "微軟正黑體";
+}
+.menu{
+    
+    text-align: center;
+  margin-top: 100%;
+  margin-bottom: 5vh;
+  
+  
+}
+/* 漢堡條形狀 */
+.menu .long_top{
+    margin: 0 auto;
+    width: 45px;
+    height: 3px;
+    background-color: rgb(66, 66, 66);
+    border-radius: 50px;
+     margin-bottom: 10px; 
+    transition: 1s;
+    display: block;
+    
+    height: .1rem;
+ 
+}
+.menu .long_center{
+    margin: 0 auto;
+    width: 45px;
+    height: 3px;
+    border-radius: 50px;
+    background-color: rgb(66, 66, 66);
+     height: .1rem; 
+     transition: 1s;
+     margin-bottom: 10px; 
+}
+.menu .long_down{
+    margin: 0 auto;
+    width: 45px;
+    height: 3plong_centerx;
+    border-radius: 50px;
+    background-color: rgb(66, 66, 66);
+    transition: 1s;
+    height: .1rem;
+ 
+}
+.navbar .EnglishTitle{
+    width: 100%;
+    /* height: 400px; */
+    transform: rotate(90deg);
+   
+}
+.EnglishTitle .WebDate{
+    /* float: left; */
+    width: 180px;
+    /* font-family: "wd01"; */
+  line-height: 10px;
+  font-size: 13px;  
+  letter-spacing: 2px;
+  position: absolute;
+  top: 80%;
+ 
+}
+.EnglishTitle .English{
+    
+    width: 180px;
+    font-family: "wd01"; 
+     font-family: 'ZCOOL XiaoWei', serif;
+  line-height: 20px;
+  font-size: 16px; 
+  letter-spacing: 2.5px; 
+}
+.FBiCon{
+    width: 35px;
+    height: 35px;
+    margin: 0 auto;
+    padding: 3px;
+    background-color: rgb(44, 43, 43);
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    border-radius: 100%;
+}
+
+.downmenubox{
+    transform: translate(0,-1rem) rotate(-45deg); 
+    transition: 1s;
+}
+.upmenubox{
+    transform: translate(0,0.45rem) rotate(45deg); 
+    transition: 1s;
+}
+.centermenubox{
+   
+    background-color: rgba(14, 113, 199, 0);
+    height: 0px;
+    opacity: 0;
+    transition: 1s;
+}
+
+/* 跑出作品集的選單 */
+
+.Contects{
+    
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+   
+   
+    left: -100%;
+    z-index: 50;
+   
+    background-color: rgba(255, 255, 255, 0.95);
+    transition: 0.8s;
+    opacity:100;
+}
+.ContectsClick{
+    
+    width: 100%;
+    transition: 1.5s;
+    
+    left: 0%;
+    }
+.ShowOpacity100{
+    opacity: 100;
+}
+
+.content_Right{
+    position: relative;
+}
+.content_Right .navbarAppear{
+      position: fixed;   
+    
+  
+    background-color: white;
+   
+   
+    width: 100vw;
+    height: 100vh;
+}
+.main{
+    position: relative;
+    top:50%;
+    transform:translateY(-50%);
+}
+/* 主頁main水滴功能 */
+.grayLong{
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.541);
+    position: relative;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.575);
+}
+.grayLong .blackBox{
+    float: right;
+    width: 150px;
+    height: 55px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 1px;
+    position: absolute;
+    top: -2.5px;
+    right: 0px;
+}
+.grayLong .blackBox .title{
+    color: white;
+    text-align: center;
+    margin: 7px;
+    font-family:wd01; 
+    font-size: 18px;
+    letter-spacing: 1px;
+    
+}
+.drip .rightExplaintbox {
+    position: relative;
+}
+.drip .lefExplaintbox{
+    position: relative;
+}
+.drip h3{
+    /* font-family: "wd01"; */
+    font-family: "微軟正黑體";
+   font-weight: 500;
+    font-size: 25px;
+    box-sizing: content-box;
+}
+.drip {
+   position: relative;
+    width: 600px;
+    margin: 0 auto;
+    height: 360px;
+    
+}
+.drip .dripImg{
+    width: 100%;
+    position: absolute;
+    /* right: 210px; */
+    /* right: calc(50% - 110px); */
+    
+    text-align: center;
+    
+}
+.drip .dripImg img{
+    width: 220px;
+}
+.drip .lefExplaintbox .codeTitle{
+    position: absolute;
+    width: 150px;
+    left: 10px;
+    top: 175px;
+
+}
+.drip .lefExplaintbox .codeExplain{
+    position: absolute;
+    top: 260px;
+    left: 10px;
+}
+.drip .rightExplaintbox .designExplain{
+    position: absolute;
+    top: 10px;
+    right: 70px;
+}
+ .drip .rightExplaintbox .DesignTitle{
+    position: absolute;
+    right: 70px;
+    top: -75px;
+} 
+.drip .rightExplaintbox .WebExplain{
+    position: absolute;
+    top: 200px;
+    right: 0px;
+}
+.drip .rightExplaintbox .WebTitle{
+    position: absolute;
+    right: 0px;
+    top: 115px;
+}
+.drip .lefExplaintbox{
+    float: left;
+}  
+.drip .rightExlpainbox{
+    float: left;
+}  
+.drip .dripImg{
+    float: left;
+}
+.MainWord p{
+    font-family: "wd01";
+    font-size: 20px;
+    color: black;
+}
+.MainWord{
+    text-align: center;
+    padding: 5px 200px;
+}
+
+
+/* 雨滴掉落 */
+.swiper-slide2{
+    position: relative;
+}
+.rain01{
+    width: 4.5px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.7;
+    animation-name:rainDrop;
+    animation-duration:2.5s;
+    animation-iteration-count:infinite; 
+    animation-timing-function: ease;
+}
+.rain02{
+    width: 3.5px;
+    height: 23px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.5;
+    animation-name:rainDrop2;
+    animation-duration:2s;
+    animation-iteration-count:infinite; 
+    animation-timing-function: ease;
+}
+.rain03{
+    width: 4.2px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.5;
+    animation-name:rainDrop3;
+    animation-duration:3s;
+    animation-iteration-count:infinite; 
+    animation-timing-function: ease;
+}
+.rain04{
+    width: 4px;
+    height: 27px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.6;
+    animation-name:rainDrop4;
+    animation-duration:3.5s;
+    animation-iteration-count:infinite; 
+    animation-timing-function: ease;
+}
+.rain05{
+    width: 4px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.7;
+    animation-name:rainDrop5;
+    animation-duration:2.5s;
+    animation-iteration-count:infinite; 
+    animation-timing-function: ease;
+}
+/* Scroll小傘 */
+.umbrellaBox{
+    width: 100%;
+   display: flex;
+   justify-content: center;
+    margin-top: 5%;
+}
+
+.umbrellaBox img{
+    height: 100px;
+
+    animation-name: umbrellaScroll;
+    animation-duration:2s;
+    animation-iteration-count:infinite; 
+    position: absolute;
+}
+
+/* 主頁雲霧效果 */
+.main .upcloud{
+   position: absolute;
+   top: -320px;
+   /* animation-name: CloudToRight;
+    animation-duration:10s;
+    animation-iteration-count:infinite;  */
+}
+.main .downcloud{
+    position: absolute;
+    
+}
+.downcloud2{
+   width: 1920px;
+   height: 100px;
+   background-color: #fff;
+    
+}
+/* .white{
+    width: 100%;
+   height: 20px;
+   background-color: #fff;
+   position: absolute;
+   top: 140px;
+} */
+.main .downcloud img{
+   position: absolute;
+   top: 100px;
+    /* animation-name: CloudToRight;
+     animation-duration:10s;
+     animation-iteration-count:infinite;  */
+ }
+.main .cloudDrip{
+    position: absolute;
+    top: -350px;
+    left: 350px;
+     animation-name: CloudToRight;
+    animation-duration:100s;
+    animation-iteration-count:1; 
+}  
+.main .cloudDrip2{
+    position: absolute;
+    top: -400px;
+    left: 0px;
+     animation-name: CloudToRight2;
+    animation-duration:200s;
+    animation-iteration-count:infinite; 
+}  
+.main .cloudDrip3{
+    position: absolute;
+    top: -350px;
+    left: 0px;
+     animation-name: CloudToRight3;
+    animation-duration:300s;
+    animation-iteration-count8:infinite; 
+} 
+/* .main .cloudDrip2{
+    position: absolute;
+   top: -150px;
+   left: -800px;
+}  */
+
+
+
+
