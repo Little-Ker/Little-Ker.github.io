@@ -1,0 +1,1803 @@
+.DesignWorkTitle{
+    font-family: "wd01";
+}
+
+.webDate{
+    text-align: center;
+    line-height: 22px;
+    
+    border: 2px solid rgb(70, 68, 68);
+
+    width: 65px;
+    height: 80px;
+    border: solid 3px rgb(87, 86, 86);
+    color: rgb(65, 64, 64);
+    padding: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-family: "wd01";
+    font-family: 'Bitter', serif;
+   
+}
+.card01 img{
+    float: left;
+}
+.psbox .psName{
+    font-size: 25px;
+    font-family: "wd01";
+}
+.psbox .psdate{
+    font-size: 16px;
+    font-family: "wd01";
+    margin-top: 0px;
+    letter-spacing: 5px;
+}
+.psbox2 .psName{
+    font-size: 16px;
+    font-family: "wd01";
+}
+.psbox2 .psdate{
+    font-size: 14px;
+    font-family: "wd01";
+    margin-top: 5px;
+    letter-spacing: 5px;
+}
+.psbox3 .psName{
+    font-size: 25px;
+    font-family: "wd01";
+}
+.psbox3 .psdate{
+    font-size: 16px;
+    font-family: "wd01";
+    margin-top: 0px;
+    letter-spacing: 5px;
+}
+.psHover:hover .psbox{
+    opacity: 1;
+    transition: 1s;
+}
+.psHover:hover .psbox3{
+    opacity: 1;
+    transition: 1s;
+}
+.psHover2:hover .psbox2{
+    opacity: 1;
+    transition: 1s;
+}
+.shutterOut{
+    width: 100%;
+    height: 100%;;
+}
+.psbg{
+     width: 495px; 
+    background-image: url("../image/work/PS1.jpg");
+    height:350px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+.web_Section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+.psbox{
+    transition: 1s;
+    opacity: 0;
+   padding-top: 60px;
+    position: absolute;
+    top: 75px;
+    left: 150px;
+    width: 200px;
+    height: 200px;
+    color: white;
+    text-align: center;
+    border: #ffffff 2px solid;
+}
+.psbox3{
+    transition: 1s;
+    opacity: 0;
+   padding-top: 60px;
+    position: absolute;
+    top: 75px;
+    left: 90px;
+    width: 200px;
+    height: 200px;
+    color: white;
+    text-align: center;
+    border: #ffffff 2px solid;
+}
+.psbox2{
+    transition: 1s;
+    opacity: 0;
+   padding-top: 20px;
+    position: absolute;
+    top: 38px;
+    left: 60px;
+    width: 140px;
+    height: 100px;
+    color: white;
+    text-align: center;
+    border: #ffffff 1.5px solid;
+}
+.ps02{
+    position: relative;
+    width: 261px;
+    height: 175px;
+    background-image: url("../image/work/PS2.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    float: left;
+}
+.card-text{
+    font-size: 20px;
+    font-family: "wd01";
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 20px;
+    
+}
+.card-body{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+margin-top: 20px;
+
+}
+.shortLine{
+    
+    margin: 0 auto;
+    height: 2.4px;
+    width: 50px;
+    background-color: rgb(251, 251, 253);
+}
+.card{
+    
+    width:200px;
+    margin-right: 60PX;
+    margin-top: 20px;
+    color: #ffffff;
+    /* padding-LEFT: 60px; */
+    background-color: rgba(255, 253, 253, 0);
+    border: 2px solid rgba(245, 245, 220, 0.007);
+    /* box-shadow: 2px 2px 3px rgba(97, 96, 96, 0.438);  */
+}
+.WebMoreBtn{
+    
+    margin: 0 auto;
+    width: 160px;
+    height: 40px;
+    padding: 5px;
+    margin-top: 10px;
+    color: #ffffff;
+    border: 2px solid white;
+}
+.coloerboxWhite{
+    width: 50%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    float: left;
+}
+.portfolioBox .webList {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+.PersonalBox02{
+    height: 100%;
+    background-color: white;
+    /* padding: 40px 80px;  */
+    display: flex;
+    justify-content: center;
+    
+}
+.PortfolioContent {
+    width: 100%;
+    height: 100%;
+}
+.webWorks{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* HOVER效果 */
+.hvr-shutter-out-horizontal {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    background: #e1e1e1;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+  .hvr-shutter-out-horizontal:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(36, 36, 36, 0.76);
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .hvr-shutter-out-horizontal:hover, .hvr-shutter-out-horizontal:focus, .hvr-shutter-out-horizontal:active {
+    color: rgb(255, 255, 255);
+  }
+  .hvr-shutter-out-horizontal:hover:before, .hvr-shutter-out-horizontal:focus:before, .hvr-shutter-out-horizontal:active:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+
+/* WEB HOVER */
+
+
+/* 作品集-網頁-標題 */
+.DesignBigTitle {
+    /* position: absolute;
+    top: 250px; */
+    text-align: center;
+    width: 300PX;
+    height: 100px;
+    color: #ffffff;
+    border: solid 2px rgb(255, 255, 255);
+    padding-right: 0%;
+    padding: 8px;
+    font-family: "wd01";
+    
+}
+.DesignBigTitle2 {
+    /* position: absolute;
+    top: 250px; */
+    text-align: center;
+    width: 250PX;
+    height: 100px;
+    font-size: 24px;
+    color: #030303;
+    border: solid 2px rgb(48, 47, 47);
+    padding-right: 0%;
+    padding: 8px;
+    font-family: "wd01";
+    
+}
+.portofolioTitle .DesignBigTitle .ChineseTitle{
+    font-size: 24px;
+    font-family: "wd01";
+   
+}
+.portofolioTitle .DesignBigTitle .EnglishTitle{
+    font-size: 24px;
+    font-family: "wd01";
+    
+}
+
+/* 網頁作品排版 */
+.webChoose{
+    width: 90%;
+    height: 60%;
+    margin-left: 5%;
+    margin-right: 5%; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.webChoose .webWork01{
+  
+    width: 300px;
+    height: 400px;
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.829);
+    position: relative;
+
+}
+
+/* 網頁作品HOVER效果 */
+.webChoose .webWork01 .WebafterHover{
+    width: 40px;
+    height: 370px;
+    background-color: rgba(255, 255, 255, 0.925);
+}
+
+.webChoose .webWork01 .WebafterHover .webWorkTitle{
+    font-size: 18px;
+    font-family: "wd01";
+    line-height: 23px;
+    width: 100%;
+    text-align: center;
+   
+}
+
+.webWork01 .WebBeforeHover {
+    /* padding: 0px 30px; */
+    width: 100%;
+    
+    text-align: center;
+    font-size: 24px;
+    font-family: "wd01";
+    opacity: 100;
+    /* background-color: black; */
+}
+
+.webWork01 .WebBeforeHover .WebTitle{
+    margin-bottom:100px; 
+    margin-top: 80px;
+}
+
+.webWork01 .WebBeforeHover .webMore .webMoreBtn{
+    position: absolute;
+    left: 0;
+    /* left: -150px; */
+    margin-top: 10px;
+    font-size: 16px;
+    width: 100%;
+    background-color: rgba(41, 40, 40, 0.63);
+}
+.webMoreBtn :hover{
+    position: absolute;
+    left: 0px;
+}
+.Web01{
+    background-image: url("../image/Web01.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.Web02{
+    background-image: url("../image/work/Web02.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.Web03{
+    background-image: url("../image/work/Web03.jpg");
+    background-repeat: none;
+    background-size: 100%;
+}
+
+
+
+.webChoose  a{
+    width: 100%;
+    height: 320px;
+    text-decoration: none;
+    /* display: none; */
+    color: rgba(240, 248, 255, 0);
+    
+}
+
+.Word3d{
+    float: left;
+    margin-left: 30PX;
+    font-family: "wd01";
+    
+}
+.sketchfab-embed-wrapper{
+    float: left;
+}
+.Work3d .Word3d{
+     display: flex; 
+     height: 100%;
+     flex-direction: column;
+     align-content:flex-end;
+    justify-content: flex-end;
+    width: 360px;
+}
+.word3dP{
+    margin-bottom: 10px;
+}
+
+
+/* 作品集-設計-影像合成-標題 */
+.portofolioTitle{
+    margin-top: 24PX;
+}
+
+.portofolioTitle .DesignLittleTitle .ChineseTitle{
+    font-size: 24px;
+    font-family: "wd01";
+    
+}
+.portofolioTitle .DesignLittleTitle .EnglishTitle{
+    
+    font-size: 24px;
+    font-family: "wd01";
+    margin-top: -8px;
+}
+.DesignContect .portofolioTitle .DesignBigTitle{
+    float: left;
+}
+.posterWork{
+    width: 100%;
+}
+/* 作品集-設計-海報設計-作品+創作理念 */
+.posterWork .posterImg{
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.466);
+    /* width: 230px; */
+    width: 35%;
+     height: 300px; 
+     height: 45vh; 
+    
+    
+    float: left;
+    background-color: rgba(0, 0, 0, 0.692);
+    
+}
+.posterWork .posterMore{
+    float: left;
+    width: 460px;
+    width: 520px;
+    margin-left: 5%;
+    ;
+}
+.posterWork .posterMore .posterTitle{
+    font-size: 30px;
+    font-family: "wd01";
+    float: left;
+}
+.posterWork .posterMore .posterUse{
+    font-size: 20px;
+    font-family: "微軟正黑體";
+}
+.posterMore .posterUptitle{
+    float: left;
+    margin-left: 3%;
+    margin-top: -2%;
+}
+
+.posterWork .posterMore .postDate{
+   /* float: left;
+   margin-top: 28px;
+   margin-left: 18px; */
+   width: 60px;
+   height: 80px;
+   border: solid 3px rgb(87, 86, 86);
+   color: rgb(65, 64, 64);
+   padding: 5px;
+   text-align: center;
+   font-size: 18px;
+   font-family: "wd01";
+   font-family: 'Bitter', serif;
+   float: left;
+  
+}
+
+
+.posterWork .posterMore .postWord{
+    margin-top: 6%;
+    font-size: 20px;
+    
+    line-height: 36px;
+    font-family: "微軟正黑體";
+
+}
+
+
+.imageWord{
+    color: #ffffff;
+}
+/* 互動視窗 */
+.blackBox{
+    display: none;
+    max-width: 1920px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.678);
+    position: fixed;
+    top: 0;
+    z-index: -999;
+    opacity: 0;
+    transition: 1s;
+    
+  }
+  .blackBox .little_image1{
+    display: block;
+   
+    /* margin: calc(50% - 150px ); 
+   margin-top: calc( 15% );
+     */
+    
+    font-family: "微軟正黑體";
+    
+  }
+
+  
+  .blackBoxShow{  
+    opacity: 1;
+    z-index: 999;
+    display: block;
+  }
+  
+  .blackBoxCover{
+    opacity: 0;
+   transition: 0.5s;
+  
+  }
+
+
+  /* 跑出互動視窗 */
+.modalWebBoxClick{ 
+    transition: 0.5s;
+    top: 0;
+    }
+.ShowOpacity100{
+    opacity: 100;
+}
+  /* 網頁互動視窗  */
+  .modalWeb{
+    max-width: 1920px;
+      width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    top: -100vh;
+    z-index: 1024;
+    background-color: rgba(3, 3, 3, 0.808);
+    transition: 0.8s;
+    opacity:100;
+  }
+.modalWeb .modalWebBox .webImg img{
+    width: 50%;
+}
+ .modalWebBox{
+    /* width: 18.5%; */
+    /* width: 100%; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ps合成數值設定 */
+.blackPSbox{
+    font-family: "wd01";
+    letter-spacing: 1px;
+    line-height: 24px;
+
+}
+.psMaterial img{
+    
+    height: 60px;
+}
+.psMaterialROW{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.psWord .psTitle{
+    font-size: 40px;
+    /* margin-top: 50px; */
+}
+.psMaterial{
+    margin-top: 40px;
+}
+.psworkword{
+    letter-spacing: 1px;
+    line-height: 24px;
+    margin-top: 30px;
+}
+.blackPSbox{
+      color: #ffffff;
+      font-family: "wd01";
+      padding: 60px 20px;
+      
+  }
+  .blackPSbox{
+      position: absolute;
+      right: 35px;
+      width: 280px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.685);
+  }
+ /* 設計MATTE01互動視窗  */
+ .modalDesignMatte01{
+    max-width: 1920px;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    z-index: 1024;
+    background-color: rgba(3, 3, 3, 0.808);
+    transition: 0.8s;
+    opacity:100;
+    transition: 0.8s;
+    /* text-align: center; */
+  }
+  .modalDesignMatte01Click{
+    transition: 0.8s;
+    top: 0vh;
+
+  }
+  .modalDesignMatte01 .modalDesignBoxMatte01 .webImg{
+      width: 960px;
+      height: 680px; 
+      border-radius: 10px;
+      box-shadow: 1px 1px 3px #030303d3;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-image: url("../image/work/PS1.jpg");
+      position: relative;
+  }
+ .modalDesignBoxMatte01{
+    /* width: 18.5%; */
+    /* width: 100%; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.psMatteclose01 .whitebox01{
+    height: 3px;
+    width: 40px;
+    background-color: #ffffff;
+    transform: translate(0,-0.82rem) rotate(45deg); 
+    translate: 1s;
+}
+.psMatteclose01 .whitebox02{
+    height: 3px;
+    width: 40px;
+    background-color: #ffffff;
+    transform: translate(0,-1rem) rotate(-45deg); 
+    translate: 1s;
+}
+.psMatteclose01{
+    position: absolute;
+    right: 16px;
+    bottom: 25px;
+}
+.psMatteclose01:hover  .whitebox01{
+    translate: 1s;
+    background-color: #ffffff93;
+}
+.psMatteclose01:hover  .whitebox02{
+    translate: 1s;
+    background-color: #ffffff93;
+}
+
+/* 設計MATTE02互動視窗  */
+.modalDesignMatte02{
+    max-width: 1920px;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    /* top: 0vh; */
+    z-index: 1024;
+    background-color: rgba(3, 3, 3, 0.808);
+    transition: 0.8s;
+    opacity:100;
+    transition: 0.8s;
+    /* text-align: center; */
+  }
+  .modalDesignMatte02Click{
+    transition: 0.8s;
+    top: 0vh;
+  }
+  .PSwork{
+    position: relative;
+    top:50%;
+    transform:translateY(-50%);
+  }
+  .modalDesignMatte02 .modalDesignBoxMatte02 .webImg{
+      width: 960px;
+      height: 680px; 
+      border-radius: 10px;
+      box-shadow: 1px 1px 3px #030303d3;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-image: url("../image/work/PS2.png");
+      position: relative;
+  }
+ .modalDesignBoxMatte02{
+    /* width: 18.5%; */
+    /* width: 100%; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.psMatteclose02 .whitebox01{
+    height: 3px;
+    width: 40px;
+    background-color: #ffffff;
+    transform: translate(0,-0.82rem) rotate(45deg); 
+    translate: 1s;
+}
+.psMatteclose02 .whitebox02{
+    height: 3px;
+    width: 40px;
+    background-color: #ffffff;
+    transform: translate(0,-1rem) rotate(-45deg); 
+    translate: 1s;
+}
+.psMatteclose02{
+    position: absolute;
+    right: -4px;
+    bottom: -80px;
+}
+.psMatteclose02:hover  .whitebox01{
+    translate: 1s;
+    background-color: #ffffff93;
+}
+.psMatteclose02:hover  .whitebox02{
+    translate: 1s;
+    background-color: #ffffff93;
+}
+/* 設計MATTE03互動視窗  */
+.modalDesignMatte03{
+    max-width: 1920px;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    /* top: 0vh; */
+    z-index: 1024;
+    background-color: rgba(3, 3, 3, 0.808);
+    transition: 0.8s;
+    opacity:100;
+    transition: 0.8s;
+    /* text-align: center; */
+  }
+  .modalDesignMatte03Click{
+    transition: 0.8s;
+    top: 0vh;
+  }
+  .modalDesignMatte03 .modalDesignBoxMatte02 .webImg{
+    width: 960px;
+    height: 680px; 
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px #030303d3;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url("../image/work/PS2.png");
+    position: relative;
+}
+.modalDesignBoxMatte03{
+  /* width: 18.5%; */
+  /* width: 100%; */
+  height: 100vh;
+  z-index: -10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.psMatteclose03 .whitebox01{
+  height: 3px;
+  width: 40px;
+  background-color: #ffffff;
+  transform: translate(0,-0.82rem) rotate(45deg); 
+  translate: 1s;
+}
+.psMatteclose03 .whitebox02{
+  height: 3px;
+  width: 40px;
+  background-color: #ffffff;
+  transform: translate(0,-1rem) rotate(-45deg); 
+  translate: 1s;
+}
+
+
+
+/* 設計CARD-手工煙斗 */
+.cardbg01{
+    position: relative;
+    width: 386px;
+    height:355px;
+    background-image: url("../image/work/card1-1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    float: left;
+}
+.cardbg02{
+    position: relative;
+    width: 250px;
+    height:166px;
+    background-image: url("../image/work/card2-1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    float: left;
+}
+.cardbg03{
+    position: relative;
+    width: 250px;
+    height:187px;
+    background-image: url("../image/work/card3-1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    float: left;
+}
+/* 設計名片01互動視窗  */
+.blackPSbox2{
+    float: right;
+    /* right: 35px; */
+    width: 240px;
+    height: 581px;
+    background-color: rgba(0, 0, 0, 0.685);
+    color: #ffffff;
+      font-family: "wd01";
+      padding: 0px 20px;
+      letter-spacing: 1px;
+      line-height: 24px;
+}
+.blackPSbox2 .psTitle{
+    line-height: 30px;
+    font-size: 20px;
+}
+.modalDesignCard01{
+    max-width: 1920px;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    /* top: 0vh; */
+    z-index: 1024;
+    background-color: rgba(3, 3, 3, 0.808);
+    transition: 0.8s;
+    opacity:100;
+    transition: 0.8s;
+    /* text-align: center; */
+  }
+  .modalDesignCard01Click{
+    transition: 0.8s;
+    top: 0vh;
+  }
+  .modalDesignCard01 .modalDesignBoxMatte02 .webImg img{
+     /* width: 1960px; */
+    /*height: 680px;  */
+    float: left;
+    /* box-shadow: 1px 1px 3px #030303d3; */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+}
+.modalDesignBoxMatte03{
+  /* width: 18.5%; */
+  /* width: 100%; */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.psMatteclose03 .whitebox01{
+  height: 3px;
+  width: 40px;
+  background-color: #ffffff;
+  transform: translate(0,-0.82rem) rotate(45deg); 
+  translate: 1s;
+}
+.psMatteclose03 .whitebox02{
+  height: 3px;
+  width: 40px;
+  background-color: #ffffff;
+  transform: translate(0,-1rem) rotate(-45deg); 
+  translate: 1s;
+}
+/* 設計名片02互動視窗  */
+.modalDesignCard02{
+    max-width: 1920px;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    /* top: 0vh; */
+    z-index: 1024;
+    background-color: rgba(3, 3, 3, 0.808);
+    transition: 0.8s;
+    opacity:100;
+    transition: 0.8s;
+    /* text-align: center; */
+  }
+  .blackPSbox3{
+    float: right;
+    /* right: 35px; */
+    width: 240px;
+    height: 421px;
+    background-color: rgba(0, 0, 0, 0.685);
+    color: #ffffff;
+      font-family: "wd01";
+      padding: 0px 20px;
+      letter-spacing: 1px;
+      line-height: 24px;
+}
+.blackPSbox3 .psTitle{
+    font-size: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.blackPSbox3 .psDate{
+    margin-top: 0px;
+}
+  .modalDesignCard02Click{
+    transition: 0.8s;
+    top: 0vh;
+  }
+  .modalDesignCard02 .modalDesignBoxMatte02 .webImg img{
+    float: left;
+    /* box-shadow: 1px 1px 3px #030303d3; */
+    position: relative;
+}
+
+.psCardclose02{
+    position: absolute;
+    right: 5px;
+    bottom: -40px;
+}
+.psCardclose02 .whitebox01{
+    height: 3px;
+    width: 40px;
+    background-color: #ffffff;
+    transform: translate(0,-0.82rem) rotate(45deg); 
+    translate: 1s;
+}
+.psCardclose02 .whitebox02{
+    height: 3px;
+    width: 40px;
+    background-color: #ffffff;
+    transform: translate(0,-1rem) rotate(-45deg); 
+    translate: 1s;
+}
+.psCardclose02:hover .whitebox01{
+    background-color: #ffffff93;
+    translate: 1s;
+}
+.psCardclose02:hover .whitebox02{
+    background-color: #ffffff93;
+    translate: 1s;
+}
+/* 設計名片03互動視窗  */
+.modalDesignCard03{
+    max-width: 1920px;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    /* top: 0vh; */
+    z-index: 1024;
+    background-color: rgba(3, 3, 3, 0.808);
+    transition: 0.8s;
+    opacity:100;
+    transition: 0.8s;
+    /* text-align: center; */
+  }
+  .blackPSbox3{
+    float: right;
+    /* right: 35px; */
+    width: 240px;
+    height: 421px;
+    background-color: rgba(0, 0, 0, 0.685);
+    color: #ffffff;
+      font-family: "wd01";
+      padding: 0px 20px;
+      letter-spacing: 1px;
+      line-height: 24px;
+}
+.blackPSbox3 .psTitle{
+    font-size: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.blackPSbox3 .psDate{
+    margin-top: 0px;
+}
+  .modalDesignCard03Click{
+    transition: 0.8s;
+    top: 0vh;
+  }
+  .modalDesignCard02 .modalDesignBoxMatte02 .webImg img{
+    float: left;
+    /* box-shadow: 1px 1px 3px #030303d3; */
+    position: relative;
+}
+
+/* 遊戲總設定 */
+.chooseGame01img{
+    width: 660px;
+    height: 480px;
+}
+.hoverBlackGame11{
+    width: 110px;
+    height: 80px;
+    background-color: #03030300;
+}
+.hoverBlackGame12{
+    width: 110px;
+    height: 80px;
+    background-color: #03030300;
+}
+.hoverBlackGame13{
+    width: 110px;
+    height: 80px;
+    background-color: #03030300;
+}
+.hoverBlackGame14{
+    width: 110px;
+    height: 80px;
+    background-color: #03030300;
+}
+.hoverBlackGame15{
+    width: 110px;
+    height: 80px;
+    background-color: #03030300;
+}
+
+.gameBtn11:hover .hoverBlackGame11{
+    background-color: #030303ad;
+}
+.gameBtn12:hover .hoverBlackGame12{
+    background-color: #030303ad;
+}
+.gameBtn13:hover .hoverBlackGame13{
+    background-color: #030303ad;
+}
+.gameBtn14:hover .hoverBlackGame14{
+    background-color: #030303ad;
+}
+.gameBtn15:hover .hoverBlackGame15{
+    background-color: #030303ad;
+}
+
+.hoverBlackGame21{
+    width: 110px;
+    height: 80px;
+    background-color: #03030300;
+}
+.hoverBlackGame22{
+    width: 110px;
+    height: 80px;
+    background-color: #03030300;
+}
+.hoverBlackGame23{
+    width: 110px;
+    height: 80px;
+    background-color: #03030300;
+}
+.hoverBlackGame24{
+    width: 110px;
+    height: 80px;
+    background-color: #03030300;
+}
+.hoverBlackGame25{
+    width: 110px;
+    height: 80px;
+    background-color: #03030300;
+}
+.gameBtn21:hover .hoverBlackGame21{
+    background-color: #030303ad;
+}
+.gameBtn22:hover .hoverBlackGame22{
+    background-color: #030303ad;
+}
+.gameBtn23:hover .hoverBlackGame23{
+    background-color: #030303ad;
+}
+.gameBtn24:hover .hoverBlackGame24{
+    background-color: #030303ad;
+}
+.gameBtn25:hover .hoverBlackGame25{
+    background-color: #030303ad;
+}
+.hoverBlackGame31{
+    width: 110px;
+    height: 80px;
+    background-color: #03030300;
+}
+.hoverBlackGame32{
+    width: 110px;
+    height: 80px;
+    background-color: #03030300;
+}
+.hoverBlackGame33{
+    width: 110px;
+    height: 80px;
+    background-color: #03030300;
+}
+.hoverBlackGame34{
+    width: 110px;
+    height: 80px;
+    background-color: #03030300;
+}
+.hoverBlackGame35{
+    width: 110px;
+    height: 80px;
+    background-color: #03030300;
+}
+.gameBtn31:hover .hoverBlackGame31{
+    background-color: #030303ad;
+}
+.gameBtn32:hover .hoverBlackGame32{
+    background-color: #030303ad;
+}
+.gameBtn33:hover .hoverBlackGame33{
+    background-color: #030303ad;
+}
+.gameBtn34:hover .hoverBlackGame34{
+    background-color: #030303ad;
+}
+.gameBtn35:hover .hoverBlackGame35{
+    background-color: #030303ad;
+}
+
+
+.hoverBlackGameBefore{
+    background-color: #030303ad;
+}
+/* 遊戲-小紅帽more */
+.modalGame02{
+    max-width: 1920px;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    /* top: 0vh; */
+    z-index: 1024;
+    background-color: rgba(3, 3, 3, 0.808);
+    transition: 0.8s;
+    opacity:100;
+    /* text-align: center; */
+  }
+  .blackPSbox3{
+    float: right;
+    /* right: 35px; */
+    width: 240px;
+    height: 421px;
+    background-color: rgba(0, 0, 0, 0.685);
+    color: #ffffff;
+      font-family: "wd01";
+      padding: 0px 20px;
+      letter-spacing: 1px;
+      line-height: 24px;
+}
+.blackPSbox3 .psTitle{
+    font-size: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.blackPSbox3 .psDate{
+    margin-top: 0px;
+}
+  .modalGame02Click{
+    transition: 0.8s;
+    top: 0vh;
+  }
+  .modalDesignCard02 .modalDesignBoxMatte02 .webImg img{
+    float: left;
+    /* box-shadow: 1px 1px 3px #030303d3; */
+    position: relative;
+}
+.modalGame01 .psTitle{
+    margin-left: -15px;
+}
+.GameImg1{
+    float: left;
+    width: 661px;
+
+    height: 581px;
+    background-color: rgba(0, 0, 0, 0.686);;
+}
+.GameImgBTN{
+    padding: 10px 25px;
+}
+.GameImgBTN img{
+    float: left;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    margin-left: 10px;
+}
+.gameBtn21{
+    z-index: 99;
+    float: left;
+    width: 110px;
+    height: 80px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    background-image: url("../image/work/Game2-1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 10px;
+}
+.gameBtn22{
+    z-index: 99;
+    float: left;
+    width: 110px;
+    height: 80px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    background-image: url("../image/work/Game2-2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 10px;
+}
+.gameBtn23{
+    z-index: 99;
+    float: left;
+    width: 110px;
+    height: 80px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    background-image: url("../image/work/Game2-3.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 10px;
+}
+.gameBtn24{
+    z-index: 99;
+    float: left;
+    width: 110px;
+    height: 80px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    background-image: url("../image/work/Game2-4.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 10px;
+}
+
+.gameBtn25{
+    z-index: 99;
+    float: left;
+    width: 110px;
+    height: 80px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    background-image: url("../image/work/Game2-5.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 10px;
+}
+.ChooseGame21{
+    display: block;
+}
+.ChooseGame22{
+    display: none;
+}
+.ChooseGame23{
+    display: none;
+}
+.ChooseGame24{
+    display: none;
+}
+.ChooseGame25{
+    display: none;
+}
+
+.CloseGamemore02{
+    position: absolute;
+    right: 5px;
+    bottom: -60px;
+}
+.CloseGamemore02 .whitebox01{
+    height: 3px;
+    width: 40px;
+    background-color: #ffffff;
+    transform: translate(0,-0.82rem) rotate(45deg); 
+    translate: 1s;
+}
+.CloseGamemore02 .whitebox02{
+    height: 3px;
+    width: 40px;
+    background-color: #ffffff;
+    transform: translate(0,-1rem) rotate(-45deg); 
+    translate: 1s;
+}
+.CloseGamemore02:hover .whitebox01{
+    background-color: #ffffff93;
+    translate: 1s;
+}
+.CloseGamemore02:hover .whitebox02{
+    background-color: #ffffff93;
+    translate: 1s;
+}
+
+/* 遊戲-跳跳more */
+.modalGame01{
+    max-width: 1920px;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    /* top: 0vh; */
+    z-index: 1024;
+    background-color: rgba(3, 3, 3, 0.808);
+    transition: 0.8s;
+    opacity:100;
+    /* text-align: center; */
+  }
+  .blackPSbox3{
+    float: right;
+    /* right: 35px; */
+    width: 240px;
+    height: 421px;
+    background-color: rgba(0, 0, 0, 0.685);
+    color: #ffffff;
+      font-family: "wd01";
+      padding: 0px 20px;
+      letter-spacing: 1px;
+      line-height: 24px;
+}
+.blackPSbox3 .psTitle{
+    font-size: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.blackPSbox3 .psDate{
+    margin-top: 0px;
+}
+  .modalGame01Click{
+    transition: 0.8s;
+    top: 0vh;
+  }
+  .modalDesignCard02 .modalDesignBoxMatte02 .webImg img{
+    float: left;
+    /* box-shadow: 1px 1px 3px #030303d3; */
+    position: relative;
+}
+.modalGame01 .psTitle{
+    margin-left: -15px;
+}
+.GameImg1{
+    float: left;
+    width: 661px;
+
+    height: 581px;
+    background-color: rgba(0, 0, 0, 0.686);;
+}
+.GameImgBTN{
+    padding: 10px 25px;
+}
+.GameImgBTN img{
+    float: left;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    margin-left: 10px;
+}
+.gameBtn11{
+    z-index: 99;
+    float: left;
+    width: 110px;
+    height: 80px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    background-image: url("../image/work/Game1-1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 10px;
+}
+.gameBtn12{
+    z-index: 99;
+    float: left;
+    width: 110px;
+    height: 80px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    background-image: url("../image/work/Game1-2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 10px;
+}
+.gameBtn13{
+    z-index: 99;
+    float: left;
+    width: 110px;
+    height: 80px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    background-image: url("../image/work/Game1-3.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 10px;
+}
+.gameBtn14{
+    z-index: 99;
+    float: left;
+    width: 110px;
+    height: 80px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    background-image: url("../image/work/Game1-4.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 10px;
+}
+
+.gameBtn15{
+    z-index: 99;
+    float: left;
+    width: 110px;
+    height: 80px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    background-image: url("../image/work/Game1-5.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 10px;
+}
+.ChooseGame11{
+    display: block;
+}
+.ChooseGame12{
+    display: none;
+}
+.ChooseGame13{
+    display: none;
+}
+.ChooseGame14{
+    display: none;
+}
+.ChooseGame15{
+    display: none;
+}
+
+.CloseGamemore01{
+    position: absolute;
+    right: 5px;
+    bottom: -60px;
+}
+.CloseGamemore01 .whitebox01{
+    height: 3px;
+    width: 40px;
+    background-color: #ffffff;
+    transform: translate(0,-0.82rem) rotate(45deg); 
+    translate: 1s;
+}
+.CloseGamemore01 .whitebox02{
+    height: 3px;
+    width: 40px;
+    background-color: #ffffff;
+    transform: translate(0,-1rem) rotate(-45deg); 
+    translate: 1s;
+}
+.CloseGamemore01:hover .whitebox01{
+    background-color: #ffffff93;
+    translate: 1s;
+}
+.CloseGamemore01:hover .whitebox02{
+    background-color: #ffffff93;
+    translate: 1s;
+}
+/* 遊戲-海底生物鏈more */
+.modalGame03{
+    max-width: 1920px;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+     /* top: 0vh; */
+    z-index: 1024;
+    background-color: rgba(3, 3, 3, 0.808);
+    transition: 0.8s;
+    opacity:100;
+    /* text-align: center; */
+  }
+  .blackPSbox3{
+    float: right;
+    /* right: 35px; */
+    width: 240px;
+    height: 421px;
+    background-color: rgba(0, 0, 0, 0.685);
+    color: #ffffff;
+      font-family: "wd01";
+      padding: 0px 20px;
+      letter-spacing: 1px;
+      line-height: 24px;
+}
+.blackPSbox3 .psTitle{
+    font-size: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.blackPSbox3 .psDate{
+    margin-top: 0px;
+}
+  .modalGame03Click{
+    transition: 0.8s;
+    top: 0vh;
+  }
+  .modalDesignCard02 .modalDesignBoxMatte02 .webImg img{
+    float: left;
+    /* box-shadow: 1px 1px 3px #030303d3; */
+    position: relative;
+}
+.modalGame01 .psTitle{
+    margin-left: -15px;
+}
+.GameImg1{
+    float: left;
+    width: 661px;
+
+    height: 581px;
+    background-color: rgba(0, 0, 0, 0.686);;
+}
+.GameImgBTN{
+    padding: 10px 25px;
+}
+.GameImgBTN img{
+    float: left;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    margin-left: 10px;
+}
+.gameBtn31{
+    z-index: 99;
+    float: left;
+    width: 110px;
+    height: 80px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    background-image: url("../image/work/Game3-1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 10px;
+}
+.gameBtn32{
+    z-index: 99;
+    float: left;
+    width: 110px;
+    height: 80px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    background-image: url("../image/work/Game3-2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 10px;
+}
+.gameBtn33{
+    z-index: 99;
+    float: left;
+    width: 110px;
+    height: 80px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    background-image: url("../image/work/Game3-3.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 10px;
+}
+.gameBtn34{
+    z-index: 99;
+    float: left;
+    width: 110px;
+    height: 80px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    background-image: url("../image/work/Game3-4.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 10px;
+}
+
+.gameBtn35{
+    z-index: 99;
+    float: left;
+    width: 110px;
+    height: 80px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.808);
+    background-image: url("../image/work/Game3-5.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 10px;
+}
+.ChooseGame31{
+    display: block;
+}
+.ChooseGame32{
+    display: none;
+}
+.ChooseGame33{
+    display: none;
+}
+.ChooseGame34{
+    display: none;
+}
+.ChooseGame35{
+    display: none;
+}
+
+.CloseGamemore03{
+    position: absolute;
+    right: 5px;
+    bottom: -60px;
+}
+.CloseGamemore03 .whitebox01{
+    height: 3px;
+    width: 40px;
+    background-color: #ffffff;
+    transform: translate(0,-0.82rem) rotate(45deg); 
+    translate: 1s;
+}
+.CloseGamemore03 .whitebox02{
+    height: 3px;
+    width: 40px;
+    background-color: #ffffff;
+    transform: translate(0,-1rem) rotate(-45deg); 
+    translate: 1s;
+}
+.CloseGamemore03:hover .whitebox01{
+    background-color: #ffffff93;
+    translate: 1s;
+}
+.CloseGamemore03:hover .whitebox02{
+    background-color: #ffffff93;
+    translate: 1s;
+}
+
+
+/* 網頁01互動視窗  */
+.modalWeb01MCMA{
+    max-width: 1920px;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    /* top: 0vh; */
+    z-index: 1024;
+    background-color: rgba(3, 3, 3, 0.808);
+    transition: 0.8s;
+    opacity:100;
+    transition: 0.8s;
+    /* text-align: center; */
+  }
+  .blackPSbox4{
+    float: right;
+    /* right: 35px; */
+    width: 240px;
+    height: 581px;
+    background-color: rgba(0, 0, 0, 0.685);
+    color: #ffffff;
+      font-family: "wd01";
+      padding: 0px 20px;
+      letter-spacing: 1px;
+      line-height: 24px;
+}
+.blackPSbox4 .psTitle{
+    font-size: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.blackPSbox4 .psDate{
+    margin-top: 0px;
+}
+  .modalWeb01Click{
+    transition: 0.8s;
+    top: 0vh;
+  }
+  .modalDesignCard02 .modalDesignBoxMatte02 .webImg img{
+    float: left;
+    /* box-shadow: 1px 1px 3px #030303d3; */
+    position: relative;
+}
+.webclose01{
+    position: absolute;
+    right: 5px;
+    top: 25px;
+}
+.webclose01 .whitebox01{
+    height: 3px;
+    width: 40px;
+    background-color: #ffffff;
+    transform: translate(0,-0.82rem) rotate(45deg); 
+    translate: 1s;
+}
+.webclose01 .whitebox02{
+    height: 3px;
+    width: 40px;
+    background-color: #ffffff;
+    transform: translate(0,-1rem) rotate(-45deg); 
+    translate: 1s;
+}
+.webclose01:hover .whitebox01{
+    background-color: #ffffff93;
+    translate: 1s;
+}
+.webclose01:hover .whitebox02{
+    background-color: #ffffff93;
+    translate: 1s;
+}
+.GoWeb01{
+    color: #ffffff;
+    position: absolute;
+    bottom: -8px;
+    width: 100px;
+    height: 47px;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.384);
+}
+
+/* 網頁02互動視窗  */
+.modalWeb02MCMA{
+    max-width: 1920px;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+     /* top: 0vh; */
+    z-index: 1024;
+    background-color: rgba(3, 3, 3, 0.808);
+    transition: 0.8s;
+    opacity:100;
+    transition: 0.8s;
+    /* text-align: center; */
+  }
+  .blackPSbox4{
+    float: right;
+    /* right: 35px; */
+    width: 240px;
+    height: 581px;
+    background-color: rgba(0, 0, 0, 0.685);
+    color: #ffffff;
+      font-family: "wd01";
+      padding: 0px 20px;
+      letter-spacing: 1px;
+      line-height: 24px;
+}
+.blackPSbox4 .psTitle{
+    font-size: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.blackPSbox4 .psDate{
+    margin-top: 0px;
+}
+  .modalWeb02Click{
+    transition: 0.8s;
+    top: 0vh;
+  }
+  .modalDesignCard02 .modalDesignBoxMatte02 .webImg img{
+    float: left;
+    /* box-shadow: 1px 1px 3px #030303d3; */
+    position: relative;
+}
+.webclose02{
+    position: absolute;
+    right: 5px;
+    top: 25px;
+}
+.webclose02 .whitebox01{
+    height: 3px;
+    width: 40px;
+    background-color: #ffffff;
+    transform: translate(0,-0.82rem) rotate(45deg); 
+    translate: 1s;
+}
+.webclose02 .whitebox02{
+    height: 3px;
+    width: 40px;
+    background-color: #ffffff;
+    transform: translate(0,-1rem) rotate(-45deg); 
+    translate: 1s;
+}
+.webclose02:hover .whitebox01{
+    background-color: #ffffff93;
+    translate: 1s;
+}
+.webclose02:hover .whitebox02{
+    background-color: #ffffff93;
+    translate: 1s;
+}
+.GoWeb01{
+    color: #ffffff;
+    position: absolute;
+    bottom: -8px;
+    width: 100px;
+    height: 47px;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.384);
+}
