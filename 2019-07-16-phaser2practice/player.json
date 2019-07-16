@@ -1,0 +1,41 @@
+{
+	"textures": [
+		{
+			"image": "player.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 309,
+				"h": 178
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "FDHsu.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 309,
+						"h": 178
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 309,
+						"h": 178
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 309,
+						"h": 178
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:58ce05e018f2ce3d43cb4a1e7538a322:86a7e844e1ebf4fd2302d532554fe9d7:86d5339b780aedd87b35e2b7c0a7e11b$"
+	}
+}

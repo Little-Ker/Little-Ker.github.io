@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="phaser.min.js"></script>
+</head>
+
+<body>
+    <script>
+        var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', {
+            preload: preload,
+            create: create
+        });
+
+        function preload() {
+
+            game.load.image('mushroom', 'player.png');
+
+        }
+
+        function create() {
+
+            //  This simply creates a sprite using the mushroom image we loaded above and positions it at 200 x 200
+            var test = game.add.sprite(200, 200, 'mushroom');
+
+        }
+    </script>
+</body>
+
+</html>
