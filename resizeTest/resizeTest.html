@@ -155,18 +155,18 @@
         // }
 
 
-        function toFullScreen() {
-          let elem = document.body;
-          elem.webkitRequestFullScreen ?
-            elem.webkitRequestFullScreen() :
-            elem.mozRequestFullScreen ?
-            elem.mozRequestFullScreen() :
-            elem.msRequestFullscreen ?
-            elem.msRequestFullscreen() :
-            elem.requestFullScreen ?
-            elem.requestFullScreen() :
-            alert("浏览器不支持全屏");
-        }
+        // function toFullScreen() {
+        //   let elem = document.body;
+        //   elem.webkitRequestFullScreen ?
+        //     elem.webkitRequestFullScreen() :
+        //     elem.mozRequestFullScreen ?
+        //     elem.mozRequestFullScreen() :
+        //     elem.msRequestFullscreen ?
+        //     elem.msRequestFullscreen() :
+        //     elem.requestFullScreen ?
+        //     elem.requestFullScreen() :
+        //     alert("浏览器不支持全屏");
+        // }
 
         // document.querySelector('.btn1').addEventListener('click', function () {//点击按钮进入全屏
         //   toFullScreen()
@@ -206,13 +206,19 @@
             endY = event.touches[0].pageY;
         });
 
+
         document.addEventListener('touchend', () => {
             if (Math.abs(endX - startX) < Math.abs(endY - startY)) {
                 if (endY < startY && isVertical) {
                   console.log('往上滑', isFullScreen)
                     // if (isFullScreen) {
                         setIsShowTip(false);
-                        enterFullScreen();
+                        // enterFullScreen();
+
+                        const elem = document.body;
+                        // requestFullScreen(elem);
+
+
                         // toFullScreen();
 
     //                     var elem = document.getElementById("game");
@@ -223,9 +229,9 @@
                     // }
                 }
 
-                if (endY > startY && isVertical) {
-                    exitFullScreen();
-                }
+                // if (endY > startY && isVertical) {
+                //     exitFullScreen();
+                // }
             }
         });
 
