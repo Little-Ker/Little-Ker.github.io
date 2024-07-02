@@ -47,7 +47,7 @@
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/screenfull.js/1.0.4/screenfull.min.js"></script> -->
     <script>
         const dom = document.querySelector('#game');
-        let isVertical = false;
+        let isVertical = true;
 
         let isShowTip = true;
         const tipText = document.getElementById('tipView');
@@ -152,18 +152,18 @@
         // }
 
 
-        // function toFullScreen() {
-        //   let elem = document.body;
-        //   elem.webkitRequestFullScreen ?
-        //     elem.webkitRequestFullScreen() :
-        //     elem.mozRequestFullScreen ?
-        //     elem.mozRequestFullScreen() :
-        //     elem.msRequestFullscreen ?
-        //     elem.msRequestFullscreen() :
-        //     elem.requestFullScreen ?
-        //     elem.requestFullScreen() :
-        //     alert("浏览器不支持全屏");
-        // }
+        function toFullScreen() {
+          let elem = document.body;
+          elem.webkitRequestFullScreen ?
+            elem.webkitRequestFullScreen() :
+            elem.mozRequestFullScreen ?
+            elem.mozRequestFullScreen() :
+            elem.msRequestFullscreen ?
+            elem.msRequestFullscreen() :
+            elem.requestFullScreen ?
+            elem.requestFullScreen() :
+            alert("浏览器不支持全屏");
+        }
 
         // document.querySelector('.btn1').addEventListener('click', function () {//点击按钮进入全屏
         //   toFullScreen()
