@@ -3,264 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resize Test</title>
+    <title>Scroll Detection</title>
     <style>
         body {
-          margin: 0;
-          color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 2000px; /* 设置较高的页面高度以启用滚动 */
         }
-
-        .root {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: #000;
-            height: 100vh;
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            transition: transform 0.3s ease;
         }
-
-        .tipView {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 2000px;
-          background: #000;
-          color: #fff;
-          display: none;
-          justify-content: center;
-          align-items: center;
+        .content {
+            padding-top: 60px; /* 确保内容不被固定的标题遮挡 */
         }
-
-        .showTip {
-            display: flex;
+        .hidden {
+            transform: translateY(-100%);
         }
     </style>
 </head>
 <body>
-    <div class="root">
-        <!-- <iframe id="game" width="524" height="932" src="https://www.youtube.com/embed/FRRA1X_I5IE?si=QYqoZ094C7ETuX-3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe> -->
-        <p>1.0.2</p>
-        <button id="fullscreenButton" class="button">Toggle Fullscreen</button>
-        <div id="status"></div>
-        <div id="text"></div>
-
-        <!-- <div id="tipView" class="tipView">上滑開啟全畫面</div> -->
-        <!-- <button class="btn1">click</button> -->
+    <div class="header" id="header">Header</div>
+    <div class="content">
+        <p>Scroll down to see the header hide.</p>
+        <!-- 其他内容 -->
     </div>
 
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/screenfull.js/1.0.4/screenfull.min.js"></script> -->
     <script>
-       document.addEventListener('DOMContentLoaded', () => {
-        const body = document.documentElement
-            const button = document.getElementById('fullscreenButton');
-            const status = document.getElementById('status');
-            const text = document.getElementById('text');
-            // const tipText = document.getElementById('tipView');
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('header');
+            let lastScrollY = window.scrollY || document.documentElement.scrollTop;
 
+            window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY || document.documentElement.scrollTop;
 
-            const updateStatus = () => {
-                if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
-                    status.textContent = 'Currently in fullscreen mode.';
-                    setIsShowTip(false);
+                if (currentScrollY > lastScrollY) {
+                    // 用户在向下滚动，隐藏标题栏
+                    header.classList.add('hidden');
                 } else {
-                    status.textContent = 'Not in fullscreen mode.';
-                    setIsShowTip(true);
+                    // 用户在向上滚动，显示标题栏
+                    header.classList.remove('hidden');
                 }
-            };
 
-            const setIsShowTip = (show) => {
-            if (show) {
-                // tipText.classList.add('showTip');
-            } else {
-                // tipText.classList.remove('showTip');
-            }
-        }
-
-
-            // const toggleFullScreen = () => {
-                // if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.mozFullScreenElement && !document.msFullscreenElement) {
-                //     // Enter fullscreen
-                //     if (document.documentElement.requestFullscreen) {
-                //         document.documentElement.requestFullscreen();
-                //     } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
-                //         document.documentElement.webkitRequestFullscreen();
-                //     } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
-                //         document.documentElement.mozRequestFullScreen();
-                //     } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
-                //         document.documentElement.msRequestFullscreen();
-                //     }
-                // } else {
-                //     // Exit fullscreen
-                //     if (document.exitFullscreen) {
-                //         document.exitFullscreen();
-                //     } else if (document.webkitExitFullscreen) { /* Safari */
-                //         document.webkitExitFullscreen();
-                //     } else if (document.mozCancelFullScreen) { /* Firefox */
-                //         document.mozCancelFullScreen();
-                //     } else if (document.msExitFullscreen) { /* IE/Edge */
-                //         document.msExitFullscreen();
-                //     }
-                // }
-
-
-                function toggleFullScreen(e) {
-    if (document.fullscreenElement || document.msFullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.userDefinedFullscreenElement ? true : false) {
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-        } else if (document.webkitCancelFullScreen) {
-            document.webkitCancelFullScreen();
-        } else if (document.msExitFullscreen) {
-            document.msExitFullscreen();
-        } else if (document.userDefinedFullscreenElement) {
-            document.userDefinedFullscreenElement = null;
-            document.styleSheets[0].deleteRule(".UserDefinedFullscreenElement");
-            e.className = e.className.replace(" UserDefinedFullscreenElement", "");
-            window.removeEventListener("keydown", function (ev) {
-                if (ev.key === "Escape") {
-                    toggleFullScreen(e);
-                }
+                lastScrollY = currentScrollY;
             });
-
-
-        }
-    } else {
-        if (e.requestFullscreen) {
-            e.requestFullscreen();
-        }/*FireFox */ else if (e.mozRequestFullScreen) {
-            e.mozRequestFullScreen();
-        }/*Chrome等 */ else if (e.webkitRequestFullScreen) {
-            e.webkitRequestFullScreen();
-        }/*IE11*/ else if (e.msRequestFullscreen) {
-            e.msRequestFullscreen();
-        }/* 适配safari */else {
-            document.styleSheets[0].insertRule(".UserDefinedFullscreenElement{position:fixed !important;top:0px !important;left:0px !important;height:100% !important;width:100% !important;z-index:9999999 !important;}");
-            document.userDefinedFullscreenElement = e;
-            e.className += " UserDefinedFullscreenElement";
-            window.addEventListener("keydown", function (ev) {
-                if (ev.key === "Escape") {
-                    toggleFullScreen(e);
-                }
-            });
-        }
-
-    }
-}
-            // };
-
-            button.addEventListener('click', () => {
-                toggleFullScreen(body);
-                updateStatus();
-            });
-
-            document.addEventListener('fullscreenchange', updateStatus);
-            document.addEventListener('webkitfullscreenchange', updateStatus);
-            document.addEventListener('mozfullscreenchange', updateStatus);
-            document.addEventListener('MSFullscreenChange', updateStatus);
-
-            function isFullScreenSupported() {
-    return document.fullscreenEnabled ||
-           document.webkitFullscreenEnabled ||
-           document.mozFullScreenEnabled ||
-           document.msFullscreenEnabled;
-}
-
-
-let startX, startY, endX, endY;
-
-        document.addEventListener('touchstart', (event) => {
-            startX = event.touches[0].pageX;
-            startY = event.touches[0].pageY;
-        });
-
-        document.addEventListener('touchmove', (event) => {
-            endX = event.touches[0].pageX;
-            endY = event.touches[0].pageY;
-        });
-
-        document.addEventListener('touchend', () => {
-            if (Math.abs(endX - startX) < Math.abs(endY - startY)) {
-                if (endY < startY) {
-                  console.log('往上滑')
-
-                  if (document.documentElement.requestFullscreen) {
-                        document.documentElement.requestFullscreen();
-                    } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
-                        document.documentElement.webkitRequestFullscreen();
-                    } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
-                        document.documentElement.mozRequestFullScreen();
-                    } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
-                        document.documentElement.msRequestFullscreen();
-                    }
-
-
-                //   toggleFullScreen()
-                    // if (isFullScreen) {
-                    //     setIsShowTip(false);
-                    //     toFullScreen();
-                    // }
-                    // setIsShowTip(false);
-                    // toFullScreen();
-
-                    // if (document.documentElement.requestFullscreen) {
-                    //     document.documentElement.requestFullscreen();
-                    // } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
-                    //     document.documentElement.webkitRequestFullscreen();
-                    // } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
-                    //     document.documentElement.mozRequestFullScreen();
-                    // } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
-                    //     document.documentElement.msRequestFullscreen();
-                    // }
-
-
-
-
-                } else {
-                    if (document.exitFullscreen) {
-                        document.exitFullscreen();
-                    } else if (document.webkitExitFullscreen) { /* Safari */
-                        document.webkitExitFullscreen();
-                    } else if (document.mozCancelFullScreen) { /* Firefox */
-                        document.mozCancelFullScreen();
-                    } else if (document.msExitFullscreen) { /* IE/Edge */
-                        document.msExitFullscreen();
-                    }
-                }
-
-                // if (endY > startY && isVertical) {
-                //   console.log('往下滑', isFullScreen)
-                //     // if (isFullScreen) {
-                //     //     setIsShowTip(false);
-                //     //     toFullScreen();
-                //     // }
-                //     setIsShowTip(true);
-                //     // toFullScreen();
-
-                //     if (document.exitFullscreen) {
-                //         document.exitFullscreen();
-                //     } else if (document.webkitExitFullscreen) { /* Safari */
-                //         document.webkitExitFullscreen();
-                //     } else if (document.mozCancelFullScreen) { /* Firefox */
-                //         document.mozCancelFullScreen();
-                //     } else if (document.msExitFullscreen) { /* IE/Edge */
-                //         document.msExitFullscreen();
-                //     }
-                // }
-            }
-        });
-
-
-
-
-        if (isFullScreenSupported()) {
-        text.textContent = "This browser supports fullscreen mode.";
-        } else {
-            text.textContent = "Fullscreen mode is not supported in this browser.";
-        }
         });
     </script>
 </body>
