@@ -3,339 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resize Test</title>
+    <title>Fullscreen Toggle</title>
     <style>
-        body {
-          margin: 0;
-        }
-
-        .root {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #000;
-            height: 100vh;
-            width: 100%;
-        }
-
-        .tipView {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100vh;
-          background: #000;
-          color: #fff;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .closeTip {
-            display: none;
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="root">
-        <!-- <iframe id="game" width="524" height="932" src="https://www.youtube.com/embed/FRRA1X_I5IE?si=QYqoZ094C7ETuX-3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe> -->
-        <div id="tipView" class="tipView">上滑開啟全畫面</div>
-        <!-- <button class="btn1">click</button> -->
-
-        <button class="btn1">click</button>
-        <button class="btn2">noclick</button>
+    <div class="content">
+        <p>Click the button to toggle fullscreen mode:</p>
+        <button id="fullscreenButton" class="button">Toggle Fullscreen</button>
     </div>
 
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/screenfull.js/1.0.4/screenfull.min.js"></script> -->
     <script>
-        const dom = document.querySelector('#game');
-        let isVertical = true;
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.getElementById('fullscreenButton');
 
-        // let isShowTip = true;
-        const tipText = document.getElementById('tipView');
-
-        const setTipText = (text) => {
-          tipText.innerText = text;
-        }
-
-        const setIsShowTip = (show) => {
-            if (!show) {
-                tipText.classList.add('closeTip');
-            } else {
-                tipText.classList.remove('closeTip');
-            }
-        }
-
-        const orientation = () => {
-            if (window.orientation === 90 || window.orientation === -90) {
-                setTipText('手機請轉直');
-                isVertical = false;
-                setIsShowTip(true);
-            } else if (window.orientation === 180 || window.orientation === 0) {
-                isVertical = true;
-                setTipText('上滑開啟全畫面');
-            }
-        }
-
-        const mobile = () => {
-            try {
-                document.createEvent('TouchEvent');
-                return true;
-            } catch (e) {
-                return false;
-            }
-        }
-
-        const resize = () => {
-            if (!dom) return;
-            const pageW = 720;
-            const pageH = 1280;
-            const ratio = pageW / pageH;
-
-            const winW = (window.innerWidth > 600) ? 600 : window.innerWidth;
-            const winH = window.innerHeight;
-
-            let width = winW;
-            let height = winW / ratio;
-
-            if (width / winH >= ratio) {
-                width = winH * ratio;
-                height = winH;
-            }
-
-            dom.style.width = `${width || 0}px`;
-            dom.style.height = `${height || 0}px`;
-        }
-
-        let isFullScreen = document.fullscreenElement
-                      || document.msFullscreenElement
-                      || document.mozFullScreenElement
-                      || document.webkitFullscreenElement
-                      || false;
-
-        // function fullScreen() {
-        //          /*判断是否全屏*/
-
-
-        //               console.log('isFullscreen',isFullscreen)
-        //         //  if (!isFullscreen) {
-        //         //   console.log('退出全屏')
-        //         //      var el = document.documentElement;
-        //         //      if (el.requestFullscreen) {
-        //         //           el.requestFullscreen();
-        //         //       } else if (el.mozRequestFullScreen) {
-        //         //           el.mozRequestFullScreen();
-        //         //       } else if (el.webkitRequestFullscreen) {
-        //         //           el.webkitRequestFullscreen();
-        //         //       } else if (el.msRequestFullscreen) {
-        //         //           el.msRequestFullscreen();
-        //         //       }
-        //         //   } else {
-        //         //     console.log('进入全屏')
-        //         //      if (document.exitFullscreen) {
-        //         //          document.exitFullscreen();
-        //         //       } else if (document.msExitFullscreen) {
-        //         //          document.msExitFullscreen();
-        //         //       } else if (document.mozCancelFullScreen) {
-        //         //          document.mozCancelFullScreen();
-        //         //       } else if (document.webkitCancelFullScreen) {
-        //         //          document.webkitCancelFullScreen();
-        //         //       }
-        //         //   }
-        //       }
-
-
-        // const isFullScreen = document.fullscreenElement
-
-        // if (isFullScreen) {
-        //   console.log('退出全屏')
-        // } else {
-        //   console.log('進入全屏')
-        // }
-
-
-        // function toFullScreen() {
-        //   let elem = document.body;
-        //   elem.webkitRequestFullScreen ?
-        //     elem.webkitRequestFullScreen() :
-        //     elem.mozRequestFullScreen ?
-        //     elem.mozRequestFullScreen() :
-        //     elem.msRequestFullscreen ?
-        //     elem.msRequestFullscreen() :
-        //     elem.requestFullScreen ?
-        //     elem.requestFullScreen() :
-        //     alert("浏览器不支持全屏");
-        // }
-
-        // document.querySelector('.btn1').addEventListener('click', function () {//点击按钮进入全屏
-        //   toFullScreen()
-        // }, false)
-
-
-        // const isFullScreen = () => {
-        //   console.log('document',document.fullscreenElement)
-        //     return document.fullscreenElement ||
-        //            document.webkitFullscreenElement ||
-        //            document.mozFullScreenElement ||
-        //            document.msFullscreenElement;
-        // }
-
-
-        window.addEventListener('resize', () => {
-            resize();
-            orientation();
-            // fullScreen();
-            // console.log('isFullScreen();',isFullScreen())
-            // isFullScreen();
-        });
-
-        let startX, startY, endX, endY;
-
-        document.addEventListener('touchstart', (event) => {
-            console.log('touchstart')
-            startX = event.touches[0].pageX;
-            startY = event.touches[0].pageY;
-            // exitFullScreen();
-            enterFullScreen();
-        });
-
-        document.addEventListener('touchmove', (event) => {
-             console.log('touchmove')
-            endX = event.touches[0].pageX;
-            endY = event.touches[0].pageY;
-        });
-
-
-        document.addEventListener('touchend', () => {
-            if (Math.abs(endX - startX) < Math.abs(endY - startY)) {
-                if (endY < startY && isVertical) {
-                  console.log('往上滑', isFullScreen)
-                    // if (isFullScreen) {
-                        setIsShowTip(false);
-                        // enterFullScreen();
-
-                        const elem = document.body;
-                        // requestFullScreen(elem);
-
-
-                        // toFullScreen();
-
-    //                     var elem = document.getElementById("game");
-    // elem.style.width = "100%";
-    // elem.style.height = "100%";
-    // elem.style.overflowY = "scroll";
-    // requestFullScreen(elem); // 某个页面元素
-                    // }
+            button.addEventListener('click', () => {
+                if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+                    // Exit fullscreen
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) { /* Safari */
+                        document.webkitExitFullscreen();
+                    } else if (document.mozCancelFullScreen) { /* Firefox */
+                        document.mozCancelFullScreen();
+                    } else if (document.msExitFullscreen) { /* IE/Edge */
+                        document.msExitFullscreen();
+                    }
+                } else {
+                    // Enter fullscreen
+                    const docEl = document.documentElement;
+                    if (docEl.requestFullscreen) {
+                        docEl.requestFullscreen();
+                    } else if (docEl.webkitRequestFullscreen) { /* Safari */
+                        docEl.webkitRequestFullscreen();
+                    } else if (docEl.mozRequestFullScreen) { /* Firefox */
+                        docEl.mozRequestFullScreen();
+                    } else if (docEl.msRequestFullscreen) { /* IE/Edge */
+                        docEl.msRequestFullscreen();
+                    }
                 }
-
-                // if (endY > startY && isVertical) {
-                //     exitFullScreen();
-                // }
-            }
+            });
         });
-
-        // if (screenfull.enabled) {
-        //   console.log('screenfull',screenfull.request())
-        //     screenfull.request();
-        // }
-
-
-// //全屏功能
-// document.getElementById("game").onclick = function() {
-//     var elem = document.getElementById("game");
-//     elem.style.width = "100%";
-//     elem.style.height = "100%";
-//     elem.style.overflowY = "scroll";
-//     requestFullScreen(elem); // 某个页面元素
-//     //requestFullScreen(document.documentElement); // 整个网页
-// };
-
-// function requestFullScreen(element) {
-//     // 判断各种浏览器，找到正确的方法
-//     var requestMethod = element.requestFullScreen || //W3C
-//         element.webkitRequestFullScreen || //FireFox
-//         element.mozRequestFullScreen || //Chrome等
-//         element.msRequestFullScreen; //IE11
-//     if (requestMethod) {
-//         requestMethod.call(element);
-//     } else if (typeof window.ActiveXObject !== "undefined") { //for Internet Explorer
-//         var wscript = new ActiveXObject("WScript.Shell");
-//         if (wscript !== null) {
-//             wscript.SendKeys("{F11}");
-//         }
-//     }
-// }
-//退出全屏 判断浏览器种类
-// function exitFull() {
-//     // 判断各种浏览器，找到正确的方法
-//     var exitMethod = document.exitFullscreen || //W3C
-//         document.mozCancelFullScreen || //FireFox
-//         document.webkitExitFullscreen || //Chrome等
-//         document.webkitExitFullscreen; //IE11
-//     if (exitMethod) {
-//         exitMethod.call(document);
-//     } else if (typeof window.ActiveXObject !== "undefined") { //for Internet Explorer
-//         var wscript = new ActiveXObject("WScript.Shell");
-//         if (wscript !== null) {
-//             wscript.SendKeys("{F11}");
-//         }
-//     }
-// }
-
-function enterFullScreen() {
-            // const docEl = document.documentElement;
-            // if (docEl.requestFullscreen) {
-            //     docEl.requestFullscreen();
-            // } else if (docEl.webkitRequestFullscreen) {
-            //     docEl.webkitRequestFullscreen();
-            // } else if (docEl.mozRequestFullScreen) {
-            //     docEl.mozRequestFullScreen();
-            // } else if (docEl.msRequestFullscreen) {
-            //     docEl.msRequestFullscreen();
-            // }
-console.log('enterFullScreen')
-
-if(document.fullscreenElement) {
-    document.exitFullscreen();
-} else {
-    document.documentElement.requestFullscreen();
-
-}
-
-        }
-
-        function exitFullScreen() {
-            if (!document) return
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            } else if (document.webkitExitFullscreen) {
-                document.webkitExitFullscreen();
-            } else if (document.mozCancelFullScreen) {
-                document.mozCancelFullScreen();
-            } else if (document.msExitFullscreen) {
-                document.msExitFullscreen();
-            }
-        }
-
-document.querySelector('.btn1').addEventListener('click', function () {//点击按钮进入全屏
-    enterFullScreen()
-        }, false)
-
-        document.querySelector('.btn2').addEventListener('click', function () {//点击按钮进入全屏
-            exitFullScreen()
-        }, false)
-
-        window.onload = () => {
-            orientation();
-            if (mobile()) {
-                setIsShowTip(true);
-            } else {
-                setIsShowTip(false);
-            }
-            resize();
-            // exitFullScreen();
-        }
     </script>
 </body>
 </html>
