@@ -15,40 +15,59 @@
 </head>
 <body>
     <div class="content">
+        <p>1.0.0</p>
         <p>Click the button to toggle fullscreen mode:</p>
         <button id="fullscreenButton" class="button">Toggle Fullscreen</button>
+        <div id="status"></div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const button = document.getElementById('fullscreenButton');
+            const status = document.getElementById('status');
+
+            const updateStatus = () => {
+                if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+                    status.textContent = 'Currently in fullscreen mode.';
+                } else {
+                    status.textContent = 'Not in fullscreen mode.';
+                }
+            };
 
             button.addEventListener('click', () => {
+                const docEl = document.documentElement;
                 if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
                     // Exit fullscreen
                     if (document.exitFullscreen) {
-                        document.exitFullscreen();
+                        document.exitFullscreen().catch(err => console.log(err));
                     } else if (document.webkitExitFullscreen) { /* Safari */
-                        document.webkitExitFullscreen();
+                        document.webkitExitFullscreen().catch(err => console.log(err));
                     } else if (document.mozCancelFullScreen) { /* Firefox */
-                        document.mozCancelFullScreen();
+                        document.mozCancelFullScreen().catch(err => console.log(err));
                     } else if (document.msExitFullscreen) { /* IE/Edge */
-                        document.msExitFullscreen();
+                        document.msExitFullscreen().catch(err => console.log(err));
                     }
                 } else {
                     // Enter fullscreen
-                    const docEl = document.documentElement;
                     if (docEl.requestFullscreen) {
-                        docEl.requestFullscreen();
+                        docEl.requestFullscreen().catch(err => console.log(err));
                     } else if (docEl.webkitRequestFullscreen) { /* Safari */
-                        docEl.webkitRequestFullscreen();
+                        docEl.webkitRequestFullscreen().catch(err => console.log(err));
                     } else if (docEl.mozRequestFullScreen) { /* Firefox */
-                        docEl.mozRequestFullScreen();
+                        docEl.mozRequestFullScreen().catch(err => console.log(err));
                     } else if (docEl.msRequestFullscreen) { /* IE/Edge */
-                        docEl.msRequestFullscreen();
+                        docEl.msRequestFullscreen().catch(err => console.log(err));
                     }
                 }
             });
+
+            document.addEventListener('fullscreenchange', updateStatus);
+            document.addEventListener('webkitfullscreenchange', updateStatus);
+            document.addEventListener('mozfullscreenchange', updateStatus);
+            document.addEventListener('msfullscreenchange', updateStatus);
+
+            // Initial status update
+            updateStatus();
         });
     </script>
 </body>
