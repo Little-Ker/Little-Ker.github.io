@@ -284,16 +284,25 @@
 // }
 
 function enterFullScreen() {
-            const docEl = document.documentElement;
-            if (docEl.requestFullscreen) {
-                docEl.requestFullscreen();
-            } else if (docEl.webkitRequestFullscreen) {
-                docEl.webkitRequestFullscreen();
-            } else if (docEl.mozRequestFullScreen) {
-                docEl.mozRequestFullScreen();
-            } else if (docEl.msRequestFullscreen) {
-                docEl.msRequestFullscreen();
-            }
+            // const docEl = document.documentElement;
+            // if (docEl.requestFullscreen) {
+            //     docEl.requestFullscreen();
+            // } else if (docEl.webkitRequestFullscreen) {
+            //     docEl.webkitRequestFullscreen();
+            // } else if (docEl.mozRequestFullScreen) {
+            //     docEl.mozRequestFullScreen();
+            // } else if (docEl.msRequestFullscreen) {
+            //     docEl.msRequestFullscreen();
+            // }
+console.log('enterFullScreen')
+
+if(document.fullscreenElement) {
+    document.exitFullscreen();
+} else {
+    document.documentElement.requestFullscreen();
+
+}
+
         }
 
         function exitFullScreen() {
