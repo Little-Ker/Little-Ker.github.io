@@ -7,11 +7,13 @@
     <style>
         body {
           margin: 0;
+          color: #fff;
         }
 
         .root {
             position: relative;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             background: #000;
@@ -27,20 +29,7 @@
           height: 2000px;
           background: #000;
           color: #fff;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .tipText {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          /* height: 100vh; */
-          background: #000;
-          color: #fff;
-          display: flex;
+          display: none;
           justify-content: center;
           align-items: center;
         }
@@ -58,19 +47,18 @@
         <div id="status"></div>
         <div id="text"></div>
 
-        <div id="tipView" class="tipView">
-            <p class="tipText">上滑開啟全畫面</p>
-            </div>
+        <!-- <div id="tipView" class="tipView">上滑開啟全畫面</div> -->
         <!-- <button class="btn1">click</button> -->
     </div>
 
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/screenfull.js/1.0.4/screenfull.min.js"></script> -->
     <script>
        document.addEventListener('DOMContentLoaded', () => {
+        const body = document.getElementsByTagName('body')[0];
             const button = document.getElementById('fullscreenButton');
             const status = document.getElementById('status');
             const text = document.getElementById('text');
-            const tipText = document.getElementById('tipView');
+            // const tipText = document.getElementById('tipView');
 
 
             const updateStatus = () => {
@@ -85,14 +73,14 @@
 
             const setIsShowTip = (show) => {
             if (show) {
-                tipText.classList.add('showTip');
+                // tipText.classList.add('showTip');
             } else {
-                tipText.classList.remove('showTip');
+                // tipText.classList.remove('showTip');
             }
         }
 
 
-            const toggleFullScreen = () => {
+            // const toggleFullScreen = () => {
                 // if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.mozFullScreenElement && !document.msFullscreenElement) {
                 //     // Enter fullscreen
                 //     if (document.documentElement.requestFullscreen) {
@@ -116,10 +104,56 @@
                 //         document.msExitFullscreen();
                 //     }
                 // }
-            };
+
+
+                function toggleFullScreen(e) {
+    if (document.fullscreenElement || document.msFullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.userDefinedFullscreenElement ? true : false) {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen) {
+            document.webkitCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        } else if (document.userDefinedFullscreenElement) {
+            document.userDefinedFullscreenElement = null;
+            document.styleSheets[0].deleteRule(".UserDefinedFullscreenElement");
+            e.className = e.className.replace(" UserDefinedFullscreenElement", "");
+            window.removeEventListener("keydown", function (ev) {
+                if (ev.key === "Escape") {
+                    toggleFullScreen(e);
+                }
+            });
+
+
+        }
+    } else {
+        if (e.requestFullscreen) {
+            e.requestFullscreen();
+        }/*FireFox */ else if (e.mozRequestFullScreen) {
+            e.mozRequestFullScreen();
+        }/*Chrome等 */ else if (e.webkitRequestFullScreen) {
+            e.webkitRequestFullScreen();
+        }/*IE11*/ else if (e.msRequestFullscreen) {
+            e.msRequestFullscreen();
+        }/* 适配safari */else {
+            document.styleSheets[0].insertRule(".UserDefinedFullscreenElement{position:fixed !important;top:0px !important;left:0px !important;height:100% !important;width:100% !important;z-index:9999999 !important;}");
+            document.userDefinedFullscreenElement = e;
+            e.className += " UserDefinedFullscreenElement";
+            window.addEventListener("keydown", function (ev) {
+                if (ev.key === "Escape") {
+                    toggleFullScreen(e);
+                }
+            });
+        }
+
+    }
+}
+            // };
 
             button.addEventListener('click', () => {
-                toggleFullScreen();
+                toggleFullScreen(body);
                 updateStatus();
             });
 
@@ -152,6 +186,19 @@ let startX, startY, endX, endY;
             if (Math.abs(endX - startX) < Math.abs(endY - startY)) {
                 if (endY < startY) {
                   console.log('往上滑')
+
+                  if (document.documentElement.requestFullscreen) {
+                        document.documentElement.requestFullscreen();
+                    } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
+                        document.documentElement.webkitRequestFullscreen();
+                    } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
+                        document.documentElement.mozRequestFullScreen();
+                    } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
+                        document.documentElement.msRequestFullscreen();
+                    }
+
+
+                //   toggleFullScreen()
                     // if (isFullScreen) {
                     //     setIsShowTip(false);
                     //     toFullScreen();
@@ -172,6 +219,16 @@ let startX, startY, endX, endY;
 
 
 
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) { /* Safari */
+                        document.webkitExitFullscreen();
+                    } else if (document.mozCancelFullScreen) { /* Firefox */
+                        document.mozCancelFullScreen();
+                    } else if (document.msExitFullscreen) { /* IE/Edge */
+                        document.msExitFullscreen();
+                    }
                 }
 
                 // if (endY > startY && isVertical) {
