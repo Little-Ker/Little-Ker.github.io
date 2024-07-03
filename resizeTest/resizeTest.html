@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resize Test</title>
+    <title>Resize</title>
     <style>
         body {
           margin: 0;
@@ -11,104 +11,22 @@
 
         .root {
             position: relative;
-            /* display: flex; */
+            display: flex;
             justify-content: center;
             align-items: center;
             background: #000;
-            /* height: 100vh; */
+            height: 100vh;
             width: 100%;
-        }
-
-        .tipView {
-          position: relative;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 1000px;
-          background: #000;
-          color: #fff;
-          display: none;
-          justify-content: center;
-          align-items: center;
-          z-index: 999;
-        }
-
-        #game {
-          position: relative;
-          top: 0;
-          left: 0;
-          z-index: 1;
-          display: none;
-        }
-
-        .showTip {
-            display: flex;
-        }
-
-        .showGame {
-            z-index: 9999999999999 !important;
-            display: block !important;
-            position: fixed !important;
         }
     </style>
 </head>
 <body>
     <div class="root">
-        <div id="tipView" class="tipView">上滑開啟全畫面</div>
         <iframe id="game" width="524" height="932" src="https://www.youtube.com/embed/FRRA1X_I5IE?si=QYqoZ094C7ETuX-3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-
-        <!-- <button class="btn1">click</button> -->
     </div>
 
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/screenfull.js/1.0.4/screenfull.min.js"></script> -->
     <script>
         const dom = document.querySelector('#game');
-        let isVertical = false;
-
-        let isShowTip = true;
-        const tipText = document.getElementById('tipView');
-
-        const setTipText = (text) => {
-          tipText.innerText = text;
-        }
-
-        const setIsShowTip = (show) => {
-            if (show) {
-                tipText.classList.add('showTip');
-            } else {
-                tipText.classList.remove('showTip');
-            }
-        }
-
-
-        const setIsShowGame = (show) => {
-            console.log('show',show)
-            if (show) {
-                dom.classList.add('showGame');
-            } else {
-                dom.classList.remove('showGame');
-            }
-        }
-
-        const orientation = () => {
-            if (window.orientation === 90 || window.orientation === -90) {
-                setTipText('手機請轉直');
-                isVertical = false;
-                setIsShowTip(true);
-            } else if (window.orientation === 180 || window.orientation === 0) {
-                isVertical = true;
-                setTipText('上滑開啟全畫面');
-            }
-        }
-
-        const mobile = () => {
-            try {
-                document.createEvent('TouchEvent');
-                return true;
-            } catch (e) {
-                return false;
-            }
-        }
 
         const resize = () => {
             if (!dom) return;
@@ -116,7 +34,7 @@
             const pageH = 1280;
             const ratio = pageW / pageH;
 
-            const winW = (window.innerWidth > 600) ? 600 : window.innerWidth;
+            const winW = window.innerWidth
             const winH = window.innerHeight;
 
             let width = winW;
@@ -131,128 +49,17 @@
             dom.style.height = `${height || 0}px`;
         }
 
-        let isFullScreen = document.fullscreenElement
-                      || document.msFullscreenElement
-                      || document.mozFullScreenElement
-                      || document.webkitFullscreenElement
-                      || false;
-
-        // function fullScreen() {
-        //          /*判断是否全屏*/
-
-
-        //               console.log('isFullscreen',isFullscreen)
-        //         //  if (!isFullscreen) {
-        //         //   console.log('退出全屏')
-        //         //      var el = document.documentElement;
-        //         //      if (el.requestFullscreen) {
-        //         //           el.requestFullscreen();
-        //         //       } else if (el.mozRequestFullScreen) {
-        //         //           el.mozRequestFullScreen();
-        //         //       } else if (el.webkitRequestFullscreen) {
-        //         //           el.webkitRequestFullscreen();
-        //         //       } else if (el.msRequestFullscreen) {
-        //         //           el.msRequestFullscreen();
-        //         //       }
-        //         //   } else {
-        //         //     console.log('进入全屏')
-        //         //      if (document.exitFullscreen) {
-        //         //          document.exitFullscreen();
-        //         //       } else if (document.msExitFullscreen) {
-        //         //          document.msExitFullscreen();
-        //         //       } else if (document.mozCancelFullScreen) {
-        //         //          document.mozCancelFullScreen();
-        //         //       } else if (document.webkitCancelFullScreen) {
-        //         //          document.webkitCancelFullScreen();
-        //         //       }
-        //         //   }
-        //       }
-
-
-        // const isFullScreen = document.fullscreenElement
-
-        // if (isFullScreen) {
-        //   console.log('退出全屏')
-        // } else {
-        //   console.log('進入全屏')
-        // }
-
-
-        // function toFullScreen() {
-        //   let elem = document.body;
-        //   elem.webkitRequestFullScreen ?
-        //     elem.webkitRequestFullScreen() :
-        //     elem.mozRequestFullScreen ?
-        //     elem.mozRequestFullScreen() :
-        //     elem.msRequestFullscreen ?
-        //     elem.msRequestFullscreen() :
-        //     elem.requestFullScreen ?
-        //     elem.requestFullScreen() :
-        //     alert("浏览器不支持全屏");
-        // }
-
-        // document.querySelector('.btn1').addEventListener('click', function () {//点击按钮进入全屏
-        //   toFullScreen()
-        // }, false)
-
-
-        // const isFullScreen = () => {
-        //   console.log('document',document.fullscreenElement)
-        //     return document.fullscreenElement ||
-        //            document.webkitFullscreenElement ||
-        //            document.mozFullScreenElement ||
-        //            document.msFullscreenElement;
-        // }
-
 
         window.addEventListener('resize', () => {
             resize();
-            orientation();
-            // fullScreen();
-            // console.log('isFullScreen();',isFullScreen())
-            // isFullScreen();
         });
-
-        let startX, startY, endX, endY;
-
-        document.addEventListener('touchstart', (event) => {
-            startX = event.touches[0].pageX;
-            startY = event.touches[0].pageY;
-        });
-
-        document.addEventListener('touchmove', (event) => {
-            endX = event.touches[0].pageX;
-            endY = event.touches[0].pageY;
-        });
-
-        document.addEventListener('touchend', () => {
-            if (Math.abs(endX - startX) < Math.abs(endY - startY)) {
-                console.log('startY - endY',startY - endY)
-                if (endY < startY && isVertical && (startY - endY) > 8) {
-                  console.log('往上滑', isFullScreen)
-                //   setIsShowTip(false);
-                setIsShowGame(true)
-                    // if (isFullScreen) {
-                        // setIsShowTip(false);
-                    //     toFullScreen();
-                    // }
-                }
-            }
-        });
-
-        // if (screenfull.enabled) {
-        //   console.log('screenfull',screenfull.request())
-        //     screenfull.request();
-        // }
 
         window.onload = () => {
-            orientation();
-            if (mobile()) {
-                setIsShowTip(true);
-            } else {
-                setIsShowTip(false);
-            }
             resize();
+
+            console.log(screen.width); // 螢幕寬度
+            console.log(window.innerWidth); // 瀏覽器寬度
+  console.log(document.documentElement.scrollWidth); // 網頁正文全文寬度
         }
     </script>
 </body>
