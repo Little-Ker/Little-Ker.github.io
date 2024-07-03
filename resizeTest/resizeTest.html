@@ -29,7 +29,6 @@
 
         #game {
             background: #ffd900;
-            border: 3px solid #fff;
         }
     </style>
 </head>
@@ -60,7 +59,7 @@
             }
 
             dom.style.width = `${width || 0}px`;
-            dom.style.height = `${height - 3 || 0}px`;
+            dom.style.height = `${height || 0}px`;
         }
 
 
@@ -71,7 +70,7 @@
         window.onload = () => {
             resize();
 
-            console.log('1.0.3');
+            console.log('1.0.4');
 
   const scrollWindow = document.documentElement
       const scrollTop = scrollWindow.scrollTop
