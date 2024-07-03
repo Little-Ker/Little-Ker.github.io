@@ -4,10 +4,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-    <meta content="black" name="apple-mobile-web-app-status-bar-style"> <!-- 設定狀態欄顏色 -->
-    <meta content="yes" name="apple-mobile-web-app-capable"> <!-- 啟用全螢幕模式 -->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="yes" name="apple-touch-fullscreen" />
-    <meta name="theme-color" content="#000000"/>
+    <meta name="theme-color" content="#000000"/> <!-- 設定狀態欄顏色 -->
 
 
 
@@ -26,11 +26,16 @@
             height: 100vh;
             width: 100%;
         }
+
+        #game {
+            background: #ffd900;
+        }
     </style>
 </head>
 <body>
     <div class="root">
-        <iframe id="game" width="524" height="932" src="https://www.youtube.com/embed/FRRA1X_I5IE?si=QYqoZ094C7ETuX-3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <!-- <iframe id="game" width="524" height="932" src="https://www.youtube.com/embed/FRRA1X_I5IE?si=QYqoZ094C7ETuX-3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe> -->
+        <canvas id='game'>111</canvas>
     </div>
 
     <script>
