@@ -43,7 +43,7 @@
     <div class="root">
         <!-- <iframe id="game" width="524" height="932" src="https://www.youtube.com/embed/FRRA1X_I5IE?si=QYqoZ094C7ETuX-3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe> -->
         <!-- <div id="tipView" class="tipView">上滑開啟全畫面</div> -->
-        <button class="btn1">click</button>
+        <button class="btn1">clickQQ</button>
     </div>
 
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/screenfull.js/1.0.4/screenfull.min.js"></script> -->
@@ -88,23 +88,25 @@
 
         const resize = (init) => {
             if (!dom) return;
-            const pageW = 720;
-            const pageH = 1280;
-            const ratio = pageW / pageH;
+            // const pageW = 720;
+            // const pageH = 1280;
+            // const ratio = pageW / pageH;
 
-            const winW = (window.innerWidth > 600) ? 600 : window.innerWidth;
-            const winH = window.innerHeight;
+            // const winW = (window.innerWidth > 600) ? 600 : window.innerWidth;
+            const height = window.innerHeight;
 
-            let width = winW;
-            let height = winW / ratio;
+            // let width = winW;
+            // let height = winW / ratio;
 
-            if (width / winH >= ratio) {
-                width = winH * ratio;
-                height = winH;
-            }
+            // if (width / winH >= ratio) {
+            //     width = winH * ratio;
+            //     height = winH;
+            // }
 
-            dom.style.width = `${width || 0}px`;
-            dom.style.height = `${height || 0}px`;
+            // dom.style.width = `${width || 0}px`;
+            // dom.style.height = `${height || 0}px`;
+
+            dom.style.height = `${(height || 0)}px`;
 
             if (init) {
                 dom.style.height = `${(height || 0) + 50}px`;
