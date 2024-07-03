@@ -2,60 +2,238 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scroll Detection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>Resize Test</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 2000px; /* 设置较高的页面高度以启用滚动 */
+          margin: 0;
         }
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
+
+        .root {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            height: 100vh;
             width: 100%;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            transition: transform 0.3s ease;
         }
-        .content {
-            padding-top: 60px; /* 确保内容不被固定的标题遮挡 */
+
+        .tipView {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background: #000;
+          color: #fff;
+          display: none;
+          justify-content: center;
+          align-items: center;
         }
-        .hidden {
-            transform: translateY(-100%);
+
+        .showTip {
+            display: flex;
         }
     </style>
 </head>
 <body>
-    <div class="header" id="header">Header</div>
-    <div class="content">
-        <p>Scroll down to see the header hide.</p>
-        <!-- 其他内容 -->
+    <div class="root">
+        <iframe id="game" width="524" height="932" src="https://www.youtube.com/embed/FRRA1X_I5IE?si=QYqoZ094C7ETuX-3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <div id="tipView" class="tipView">上滑開啟全畫面</div>
+        <!-- <button class="btn1">click</button> -->
     </div>
 
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/screenfull.js/1.0.4/screenfull.min.js"></script> -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const header = document.getElementById('header');
-            let lastScrollY = window.scrollY || document.documentElement.scrollTop;
+        const dom = document.querySelector('#game');
+        let isVertical = false;
 
-            window.addEventListener('scroll', () => {
-                const currentScrollY = window.scrollY || document.documentElement.scrollTop;
+        let isShowTip = true;
+        const tipText = document.getElementById('tipView');
 
-                if (currentScrollY > lastScrollY) {
-                    // 用户在向下滚动，隐藏标题栏
-                    header.classList.add('hidden');
-                } else {
-                    // 用户在向上滚动，显示标题栏
-                    header.classList.remove('hidden');
-                }
+        const setTipText = (text) => {
+          tipText.innerText = text;
+        }
 
-                lastScrollY = currentScrollY;
-            });
+        const setIsShowTip = (show) => {
+            if (show) {
+                tipText.classList.add('showTip');
+            } else {
+                tipText.classList.remove('showTip');
+            }
+        }
+
+        const orientation = () => {
+            if (window.orientation === 90 || window.orientation === -90) {
+                setTipText('手機請轉直');
+                isVertical = false;
+                setIsShowTip(true);
+            } else if (window.orientation === 180 || window.orientation === 0) {
+                isVertical = true;
+                setTipText('上滑開啟全畫面');
+            }
+        }
+
+        const mobile = () => {
+            try {
+                document.createEvent('TouchEvent');
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        const resize = () => {
+            if (!dom) return;
+            const pageW = 720;
+            const pageH = 1280;
+            const ratio = pageW / pageH;
+
+            const winW = (window.innerWidth > 600) ? 600 : window.innerWidth;
+            const winH = window.innerHeight;
+
+            let width = winW;
+            let height = winW / ratio;
+
+            if (width / winH >= ratio) {
+                width = winH * ratio;
+                height = winH;
+            }
+
+            dom.style.width = `${width || 0}px`;
+            dom.style.height = `${height || 0}px`;
+        }
+
+        let isFullScreen = document.fullscreenElement
+                      || document.msFullscreenElement
+                      || document.mozFullScreenElement
+                      || document.webkitFullscreenElement
+                      || false;
+
+        // function fullScreen() {
+        //          /*判断是否全屏*/
+
+
+        //               console.log('isFullscreen',isFullscreen)
+        //         //  if (!isFullscreen) {
+        //         //   console.log('退出全屏')
+        //         //      var el = document.documentElement;
+        //         //      if (el.requestFullscreen) {
+        //         //           el.requestFullscreen();
+        //         //       } else if (el.mozRequestFullScreen) {
+        //         //           el.mozRequestFullScreen();
+        //         //       } else if (el.webkitRequestFullscreen) {
+        //         //           el.webkitRequestFullscreen();
+        //         //       } else if (el.msRequestFullscreen) {
+        //         //           el.msRequestFullscreen();
+        //         //       }
+        //         //   } else {
+        //         //     console.log('进入全屏')
+        //         //      if (document.exitFullscreen) {
+        //         //          document.exitFullscreen();
+        //         //       } else if (document.msExitFullscreen) {
+        //         //          document.msExitFullscreen();
+        //         //       } else if (document.mozCancelFullScreen) {
+        //         //          document.mozCancelFullScreen();
+        //         //       } else if (document.webkitCancelFullScreen) {
+        //         //          document.webkitCancelFullScreen();
+        //         //       }
+        //         //   }
+        //       }
+
+
+        // const isFullScreen = document.fullscreenElement
+
+        // if (isFullScreen) {
+        //   console.log('退出全屏')
+        // } else {
+        //   console.log('進入全屏')
+        // }
+
+
+        // function toFullScreen() {
+        //   let elem = document.body;
+        //   elem.webkitRequestFullScreen ?
+        //     elem.webkitRequestFullScreen() :
+        //     elem.mozRequestFullScreen ?
+        //     elem.mozRequestFullScreen() :
+        //     elem.msRequestFullscreen ?
+        //     elem.msRequestFullscreen() :
+        //     elem.requestFullScreen ?
+        //     elem.requestFullScreen() :
+        //     alert("浏览器不支持全屏");
+        // }
+
+        // document.querySelector('.btn1').addEventListener('click', function () {//点击按钮进入全屏
+        //   toFullScreen()
+        // }, false)
+
+
+        // const isFullScreen = () => {
+        //   console.log('document',document.fullscreenElement)
+        //     return document.fullscreenElement ||
+        //            document.webkitFullscreenElement ||
+        //            document.mozFullScreenElement ||
+        //            document.msFullscreenElement;
+        // }
+
+
+        window.addEventListener('resize', () => {
+            resize();
+            orientation();
+            // fullScreen();
+            // console.log('isFullScreen();',isFullScreen())
+            // isFullScreen();
         });
+
+        let startX, startY, endX, endY;
+
+        document.addEventListener('touchstart', (event) => {
+            startX = event.touches[0].pageX;
+            startY = event.touches[0].pageY;
+        });
+
+        document.addEventListener('touchmove', (event) => {
+            endX = event.touches[0].pageX;
+            endY = event.touches[0].pageY;
+        });
+
+        document.addEventListener('touchend', () => {
+            if (Math.abs(endX - startX) < Math.abs(endY - startY)) {
+                if (endY < startY && isVertical) {
+                  console.log('往上滑', isFullScreen)
+                    // if (isFullScreen) {
+                        setIsShowTip(false);
+                        // toFullScreen();
+                        window.scrollTo(0, 1);
+                    // }
+                } else {
+                    window.scrollTo(0, 0);
+                }
+            }
+        });
+
+        // if (screenfull.enabled) {
+        //   console.log('screenfull',screenfull.request())
+        //     screenfull.request();
+        // }
+
+        window.onload = () => {
+            orientation();
+            if (mobile()) {
+                setIsShowTip(true);
+            } else {
+                setIsShowTip(false);
+            }
+            resize();
+            if(document.documentElement.scrollHeight <= document.documentElement.clientHeight) {
+					bodyTag = document.getElementsByTagName('body')[0];
+					bodyTag.style.height = document.documentElement.clientWidth / screen.width * screen.height + 'px';
+				}
+        }
     </script>
 </body>
 </html>
