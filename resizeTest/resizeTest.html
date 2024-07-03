@@ -20,7 +20,7 @@
         }
 
         .tipView {
-          position: fixed;
+          position: absolute;
           top: 0;
           left: 0;
           width: 100%;
@@ -209,11 +209,12 @@
 
         document.addEventListener('touchend', () => {
             if (Math.abs(endX - startX) < Math.abs(endY - startY)) {
-                if (endY < startY && isVertical) {
+                console.log('startY - endY',startY - endY)
+                if (endY < startY && isVertical && (startY - endY) > 30) {
                   console.log('往上滑', isFullScreen)
-                  setIsShowTip(false);
+                //   setIsShowTip(false);
                     // if (isFullScreen) {
-                    //     setIsShowTip(false);
+                        setIsShowTip(false);
                     //     toFullScreen();
                     // }
                 }
