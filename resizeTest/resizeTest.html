@@ -38,10 +38,17 @@
           top: 0;
           left: 0;
           z-index: 1;
+          display: none;
         }
 
         .showTip {
             display: flex;
+        }
+
+        .showGame {
+            z-index: 9999999999999 !important;
+            display: block !important;
+            position: fixed !important;
         }
     </style>
 </head>
@@ -70,6 +77,16 @@
                 tipText.classList.add('showTip');
             } else {
                 tipText.classList.remove('showTip');
+            }
+        }
+
+
+        const setIsShowGame = (show) => {
+            console.log('show',show)
+            if (show) {
+                dom.classList.add('showGame');
+            } else {
+                dom.classList.remove('showGame');
             }
         }
 
@@ -213,7 +230,8 @@
                 console.log('startY - endY',startY - endY)
                 if (endY < startY && isVertical && (startY - endY) > 8) {
                   console.log('往上滑', isFullScreen)
-                  setIsShowTip(false);
+                //   setIsShowTip(false);
+                setIsShowGame(true)
                     // if (isFullScreen) {
                         // setIsShowTip(false);
                     //     toFullScreen();
