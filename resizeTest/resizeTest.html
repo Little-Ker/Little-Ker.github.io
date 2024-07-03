@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resize Test</title>
     <style>
         body {
@@ -26,12 +24,20 @@
           top: 0;
           left: 0;
           width: 100%;
-          height: 100%;
+          height: 1000px;
           background: #000;
           color: #fff;
           display: none;
           justify-content: center;
           align-items: center;
+          z-index: 999;
+        }
+
+        #game {
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 1;
         }
 
         .showTip {
@@ -41,29 +47,29 @@
 </head>
 <body>
     <div class="root">
-        <!-- <iframe id="game" width="524" height="932" src="https://www.youtube.com/embed/FRRA1X_I5IE?si=QYqoZ094C7ETuX-3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe> -->
-        <!-- <div id="tipView" class="tipView">上滑開啟全畫面</div> -->
-        <button class="btn1">clickQQ</button>
+        <iframe id="game" width="524" height="932" src="https://www.youtube.com/embed/FRRA1X_I5IE?si=QYqoZ094C7ETuX-3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <div id="tipView" class="tipView">上滑開啟全畫面</div>
+        <!-- <button class="btn1">click</button> -->
     </div>
 
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/screenfull.js/1.0.4/screenfull.min.js"></script> -->
     <script>
-        const dom = document.getElementsByTagName('body')[0];
+        const dom = document.querySelector('#game');
         let isVertical = false;
 
         let isShowTip = true;
         const tipText = document.getElementById('tipView');
 
         const setTipText = (text) => {
-        //   tipText.innerText = text;
+          tipText.innerText = text;
         }
 
         const setIsShowTip = (show) => {
-            // if (show) {
-            //     tipText.classList.add('showTip');
-            // } else {
-            //     tipText.classList.remove('showTip');
-            // }
+            if (show) {
+                tipText.classList.add('showTip');
+            } else {
+                tipText.classList.remove('showTip');
+            }
         }
 
         const orientation = () => {
@@ -86,31 +92,25 @@
             }
         }
 
-        const resize = (init) => {
+        const resize = () => {
             if (!dom) return;
-            // const pageW = 720;
-            // const pageH = 1280;
-            // const ratio = pageW / pageH;
+            const pageW = 720;
+            const pageH = 1280;
+            const ratio = pageW / pageH;
 
-            // const winW = (window.innerWidth > 600) ? 600 : window.innerWidth;
-            const height = window.innerHeight;
+            const winW = (window.innerWidth > 600) ? 600 : window.innerWidth;
+            const winH = window.innerHeight;
 
-            // let width = winW;
-            // let height = winW / ratio;
+            let width = winW;
+            let height = winW / ratio;
 
-            // if (width / winH >= ratio) {
-            //     width = winH * ratio;
-            //     height = winH;
-            // }
-
-            // dom.style.width = `${width || 0}px`;
-            // dom.style.height = `${height || 0}px`;
-
-            dom.style.height = `${(height || 0)}px`;
-
-            if (init) {
-                dom.style.height = `${(height || 0) + 50}px`;
+            if (width / winH >= ratio) {
+                width = winH * ratio;
+                height = winH;
             }
+
+            dom.style.width = `${width || 0}px`;
+            dom.style.height = `${height || 0}px`;
         }
 
         let isFullScreen = document.fullscreenElement
@@ -173,10 +173,9 @@
         //     alert("浏览器不支持全屏");
         // }
 
-        document.querySelector('.btn1').addEventListener('click', function () {//点击按钮进入全屏
+        // document.querySelector('.btn1').addEventListener('click', function () {//点击按钮进入全屏
         //   toFullScreen()
-        window.scrollTo(0, 50);
-        }, false)
+        // }, false)
 
 
         // const isFullScreen = () => {
@@ -189,7 +188,7 @@
 
 
         window.addEventListener('resize', () => {
-            resize(true);
+            resize();
             orientation();
             // fullScreen();
             // console.log('isFullScreen();',isFullScreen())
@@ -210,21 +209,13 @@
 
         document.addEventListener('touchend', () => {
             if (Math.abs(endX - startX) < Math.abs(endY - startY)) {
-                bodyTag = document.getElementsByTagName('body')[0];
                 if (endY < startY && isVertical) {
                   console.log('往上滑', isFullScreen)
-
-                    // console.log('bodyTag', bodyTag, bodyTag.style.height)
-                  resize(false)
+                  setIsShowTip(false);
                     // if (isFullScreen) {
-                        // setIsShowTip(false);
-                        // toFullScreen();
-                        // window.scrollTo(0, 50);
+                    //     setIsShowTip(false);
+                    //     toFullScreen();
                     // }
-                } else {
-                    resize(true)
-                    // console.log('bodyTag', bodyTag.style.height)
-                    // window.scrollTo(0, 0);
                 }
             }
         });
@@ -241,13 +232,7 @@
             } else {
                 setIsShowTip(false);
             }
-            resize(true);
-            // if(document.documentElement.scrollHeight <= document.documentElement.clientHeight) {
-			// 		bodyTag = document.getElementsByTagName('body')[0];
-			// 		bodyTag.style.height = (document.documentElement.clientWidth / screen.width * screen.height + 50) + 'px';
-
-            //         console.log('1111', (document.documentElement.clientWidth / screen.width * screen.height + 50) + 'px')
-			// 	}
+            resize();
         }
     </script>
 </body>
