@@ -17,7 +17,7 @@
             justify-content: center;
             align-items: center;
             background: #000;
-            height: 100%;
+            height: 100vh;
             width: 100%;
         }
 
@@ -48,7 +48,7 @@
 
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/screenfull.js/1.0.4/screenfull.min.js"></script> -->
     <script>
-        const dom = document.querySelector('#game');
+        const dom = document.getElementsByTagName('body')[0];
         let isVertical = false;
 
         let isShowTip = true;
@@ -86,7 +86,7 @@
             }
         }
 
-        const resize = () => {
+        const resize = (init) => {
             if (!dom) return;
             const pageW = 720;
             const pageH = 1280;
@@ -105,6 +105,10 @@
 
             dom.style.width = `${width || 0}px`;
             dom.style.height = `${height || 0}px`;
+
+            if (init) {
+                dom.style.height = `${(height || 0) + 50}px`;
+            }
         }
 
         let isFullScreen = document.fullscreenElement
@@ -183,7 +187,7 @@
 
 
         window.addEventListener('resize', () => {
-            resize();
+            resize(true);
             orientation();
             // fullScreen();
             // console.log('isFullScreen();',isFullScreen())
@@ -204,14 +208,20 @@
 
         document.addEventListener('touchend', () => {
             if (Math.abs(endX - startX) < Math.abs(endY - startY)) {
+                bodyTag = document.getElementsByTagName('body')[0];
                 if (endY < startY && isVertical) {
                   console.log('往上滑', isFullScreen)
+
+                    // console.log('bodyTag', bodyTag, bodyTag.style.height)
+                  resize(false)
                     // if (isFullScreen) {
                         // setIsShowTip(false);
                         // toFullScreen();
                         // window.scrollTo(0, 50);
                     // }
                 } else {
+                    resize(true)
+                    // console.log('bodyTag', bodyTag.style.height)
                     // window.scrollTo(0, 0);
                 }
             }
@@ -229,13 +239,13 @@
             } else {
                 setIsShowTip(false);
             }
-            resize();
-            if(document.documentElement.scrollHeight <= document.documentElement.clientHeight) {
-					bodyTag = document.getElementsByTagName('body')[0];
-					bodyTag.style.height = (document.documentElement.clientWidth / screen.width * screen.height + 50) + 'px';
+            resize(true);
+            // if(document.documentElement.scrollHeight <= document.documentElement.clientHeight) {
+			// 		bodyTag = document.getElementsByTagName('body')[0];
+			// 		bodyTag.style.height = (document.documentElement.clientWidth / screen.width * screen.height + 50) + 'px';
 
-                    console.log('1111', (document.documentElement.clientWidth / screen.width * screen.height + 50) + 'px')
-				}
+            //         console.log('1111', (document.documentElement.clientWidth / screen.width * screen.height + 50) + 'px')
+			// 	}
         }
     </script>
 </body>
