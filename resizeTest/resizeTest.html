@@ -11,16 +11,16 @@
 
         .root {
             position: relative;
-            display: flex;
+            /* display: flex; */
             justify-content: center;
             align-items: center;
             background: #000;
-            height: 100vh;
+            /* height: 100vh; */
             width: 100%;
         }
 
         .tipView {
-          position: absolute;
+          position: relative;
           top: 0;
           left: 0;
           width: 100%;
@@ -34,7 +34,7 @@
         }
 
         #game {
-          position: fixed;
+          position: relative;
           top: 0;
           left: 0;
           z-index: 1;
@@ -47,8 +47,9 @@
 </head>
 <body>
     <div class="root">
-        <iframe id="game" width="524" height="932" src="https://www.youtube.com/embed/FRRA1X_I5IE?si=QYqoZ094C7ETuX-3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         <div id="tipView" class="tipView">上滑開啟全畫面</div>
+        <iframe id="game" width="524" height="932" src="https://www.youtube.com/embed/FRRA1X_I5IE?si=QYqoZ094C7ETuX-3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
         <!-- <button class="btn1">click</button> -->
     </div>
 
@@ -210,11 +211,11 @@
         document.addEventListener('touchend', () => {
             if (Math.abs(endX - startX) < Math.abs(endY - startY)) {
                 console.log('startY - endY',startY - endY)
-                if (endY < startY && isVertical && (startY - endY) > 30) {
+                if (endY < startY && isVertical && (startY - endY) > 8) {
                   console.log('往上滑', isFullScreen)
-                //   setIsShowTip(false);
+                  setIsShowTip(false);
                     // if (isFullScreen) {
-                        setIsShowTip(false);
+                        // setIsShowTip(false);
                     //     toFullScreen();
                     // }
                 }
