@@ -76,7 +76,7 @@
 
             if (toolbarHidden && isVertical) {
                 console.log('關閉工具條')
-                // setIsShowGame(true);
+                setIsShowGame(true);
                 setTipText(`toolbarHidden: ${toolbarHidden} ${isVertical} ${window.outerHeight} ${window.innerHeight} ${(window.outerHeight - window.innerHeight)}`)
                 isMounted = false;
             } else {
@@ -186,7 +186,7 @@
             window.scrollTo(0, 0);
             resize();
 
-            console.log('1.0.12');
+            console.log('1.0.13');
 
         }
     </script>
