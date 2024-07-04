@@ -46,67 +46,34 @@
             left: 0;
             right: 0;
             bottom: 0;
-            z-index: 3;
-            touch-action: none;
-            user-select: none;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-            cursor: inherit;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        }
-
-        #gameBg {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            object-fit: cover;
-            touch-action: none;
-            user-select: none;
-            pointer-events: none;
-            display: none;
             z-index: 2;
         }
 
         .showGame {
             display: block !important;
         }
-
-        .closeTip {
-            display: none !important;
-        }
     </style>
 </head>
 <body>
     <div class="root">
-        <div id="tipView" class="tipView"><p id="tipText"></p></div>
-        <img src="./bg/img_pc_bg.jpg" id="gameBg" />
-        <canvas id='game'></canvas>
+        <div id="tipView" class="tipView"></div>
+        <canvas id='game' style="touch-action: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: inherit;"></canvas>
     </div>
 
     <script>
         const dom = document.querySelector('#game');
         const tipView = document.querySelector('#tipView');
-        const tipText = document.querySelector('#tipText');
-        const gameBg = document.querySelector('#gameBg');
         let isVertical = false;
-        let isHorizontal = false;
         let isMounted = false;
 
         // 工具列顯示判斷
         const isHiddenToolbar = () => {
             const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
 
-            if (toolbarHidden && isVertical && !isHorizontal) {
+            if (toolbarHidden) {
                 setIsShowGame(true);
                 setTipText('')
                 isMounted = false;
-            } else if (isHorizontal && toolbarHidden && isVertical) {
-                window.scrollTo(0, 0);
-                isHorizontal = false;
             } else {
                 setIsShowGame(false);
                 setTipText('上滑開啟全畫面')
@@ -119,26 +86,15 @@
 
         // 設定提示文字
         const setTipText = (text) => {
-            tipText.innerText = text;
+            tipView.innerText = text;
         }
 
         // 是否顯示遊戲
         const setIsShowGame = (show) => {
             if (show) {
                 dom.classList.add('showGame');
-                gameBg.classList.add('showGame');
             } else {
                 dom.classList.remove('showGame');
-                gameBg.classList.remove('showGame');
-            }
-        }
-
-         // 是否關閉提示
-         const setIsCloseTip = (close) => {
-            if (close) {
-                tipView.classList.add('closeTip');
-            } else {
-                tipView.classList.remove('closeTip');
             }
         }
 
@@ -147,15 +103,9 @@
             if (window.orientation === 90 || window.orientation === -90) {
                 setTipText('手機請轉直');
                 isVertical = false;
-                isMounted = false;
-                isHorizontal = true;
-                document.body.style.overflow = 'hidden';
             } else if (window.orientation === 180 || window.orientation === 0) {
                 isVertical = true;
-                document.body.style.overflow = 'auto';
                 setTipText('上滑開啟全畫面');
-                isHiddenToolbar();
-                isMounted = false;
             }
         }
 
@@ -190,36 +140,28 @@
             dom.style.width = `${width || 0}px`;
             dom.style.height = `${height || 0}px`;
 
-            if (mobile())  {
-                dom.style.width = '100%';
-                dom.style.height = '100%';
-            }
-
-            tipView.style.height = `${height + 150 || 0}px`;
+            tipView.style.height = `${height * 2 || 0}px`;
             tipText.style.paddingTop = `${height / 2 - 50 || 0}px`;
         }
 
         window.addEventListener('resize', () => {
-            if (mobile()) {
-                setIsShowGame(false);
-                orientation();
-            } else {
-                setIsShowGame(true);
-                setIsCloseTip(true)
-            }
             resize();
+            orientation();
+            isHiddenToolbar();
         });
 
         window.onload = () => {
             if (mobile()) {
                 setIsShowGame(false);
                 orientation();
+                isHiddenToolbar();
             } else {
                 setIsShowGame(true);
-                setIsCloseTip(true)
             }
             window.scrollTo(0, 0);
             resize();
+
+            console.log('1.0.0')
         }
     </script>
 </body>
