@@ -44,8 +44,8 @@
 
         #game {
             background: #ffd900;
-            /* position: fixed; */
-            position: relative;
+            position: fixed;
+            /* position: relative; */
             margin: auto;
             top: 0;
             left: 0;
@@ -55,12 +55,13 @@
         }
 
         .showTip {
+            z-index: 9;
             /* display: flex !important; */
         }
 
         .showGame {
-            position: fixed !important;
-            z-index: 99999999;
+            /* position: fixed !important; */
+            z-index: 99999999 !important;;
         }
     </style>
 </head>
@@ -210,7 +211,7 @@
             resize();
 
 
-            console.log('1.0.8');
+            console.log('1.0.9');
 
 //   const scrollWindow = document.documentElement
 //       const scrollTop = scrollWindow.scrollTop
