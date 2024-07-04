@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="theme-color" content="#000000"/> <!-- 設定狀態欄顏色 -->
+
+    <title>Resize</title>
+    <style>
+        body {
+          margin: 0;
+        }
+
+        .root {
+            position: relative;
+            background: #000;
+            height: 100vh;
+            width: 100%;
+        }
+
+        #game {
+            background: #ffd900;
+            position: fixed;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="root">
+        <canvas id='game' style="display: block; touch-action: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: inherit;"></canvas>
+    </div>
+
+    <script>
+        const dom = document.querySelector('#game');
+
+        const resize = () => {
+            if (!dom) return;
+            const pageW = 720;
+            const pageH = 1280;
+            const ratio = pageW / pageH;
+
+            const winW = window.innerWidth
+            const winH = window.innerHeight;
+
+            let width = winW;
+            let height = winW / ratio;
+
+            if (width / winH >= ratio) {
+                width = winH * ratio;
+                height = winH;
+            }
+
+            dom.style.width = `${width || 0}px`;
+            dom.style.height = `${height || 0}px`;
+        }
+
+
+        window.addEventListener('resize', () => {
+            resize();
+        });
+
+        window.onload = () => {
+            resize();
+        }
+    </script>
+</body>
+</html>
