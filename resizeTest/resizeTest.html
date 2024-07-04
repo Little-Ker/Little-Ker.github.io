@@ -76,7 +76,7 @@
 
             if (toolbarHidden && isVertical) {
                 console.log('關閉工具條')
-                // setIsShowGame(true);
+                setIsShowGame(true);
                 setTipText(`toolbarHidden: ${toolbarHidden} ${isVertical} ${window.outerHeight} ${window.innerHeight} ${(window.outerHeight - window.innerHeight)}`)
                 isMounted = false;
             } else {
@@ -123,6 +123,10 @@
                 setIsShowGame(false);
                 setTipText('上滑開啟全畫面');
                 isHiddenToolbar()
+
+                const scrollWindow = document.documentElement
+                const scrollTop = scrollWindow.scrollTop
+                document.querySelector('body').style.overflow = 'auto'
 
             }
         }
@@ -179,7 +183,7 @@
             window.scrollTo(0, 0);
             resize();
 
-            console.log('1.0.10');
+            console.log('1.0.11');
 
         }
     </script>
