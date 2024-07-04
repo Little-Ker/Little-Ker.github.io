@@ -34,7 +34,7 @@
           color: #fff;
           justify-content: center;
           z-index: 1;
-          display: flex;
+          display: none;
         }
 
         #game {
@@ -46,11 +46,33 @@
             left: 0;
             right: 0;
             bottom: 0;
-            z-index: 2;
+            z-index: 3;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
 
         .showGame {
             display: block !important;
+        }
+
+        .showTip {
+            display: flex !important;
+        }
+
+        #gameBg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            object-fit: cover;
+            margin: auto;
+            touch-action: none;
+            user-select: none;
+            pointer-events: none;
+            z-index: 2;
+            display: none;
         }
     </style>
 </head>
@@ -59,6 +81,7 @@
         <div id="tipView" class="tipView">
             <p id="tipText">上滑開啟全畫面</p>
         </div>
+        <img src="./bg/img_pc_bg.jpg" id="gameBg" />
         <canvas id='game' style="touch-action: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: inherit;"></canvas>
     </div>
 
@@ -66,17 +89,19 @@
         const dom = document.querySelector('#game');
         const tipView = document.querySelector('#tipView');
         const tipText = document.querySelector('#tipText');
+        const gameBg = document.querySelector('#gameBg');
         let isVertical = false;
         let isMounted = false;
 
 
         // 判斷工具列是否顯示
         const isHiddenToolbar = () => {
+            // const toolbarHidden = false
             const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
 
             if (toolbarHidden && isVertical) {
                 console.log('關閉工具條')
-                // setIsShowGame(true);
+                setIsShowGame(true);
                 setTipText(`toolbarHidden: ${toolbarHidden} ${isVertical} ${window.outerHeight} ${window.innerHeight} ${(window.outerHeight - window.innerHeight)}`)
                 isMounted = false;
             } else {
@@ -85,6 +110,7 @@
                 if (!isMounted) {
                     isMounted = true;
                     window.scrollTo(0, 0);
+                    setTipText('??????????????')
                 }
             }
         }
@@ -99,10 +125,23 @@
             console.log('show',show)
             if (show) {
                 dom.classList.add('showGame');
+                gameBg.classList.add('showGame');
             } else {
                 dom.classList.remove('showGame');
+                gameBg.classList.remove('showGame');
             }
         }
+
+        // 是否顯示提示
+            const setIsShowTip = (show) => {
+            console.log('show',show)
+            if (show) {
+                tipView.classList.add('showTip');
+            } else {
+                tipView.classList.remove('showTip');
+            }
+        }
+
 
         // 判斷手機方向
         const orientation = () => {
@@ -183,13 +222,14 @@
                 setIsShowGame(false);
                 orientation();
                 isHiddenToolbar();
+                setIsShowTip(true);
             } else {
                 setIsShowGame(true);
             }
             window.scrollTo(0, 0);
             resize();
 
-            console.log('1.0.16');
+            console.log('1.0.17');
 
         }
     </script>
