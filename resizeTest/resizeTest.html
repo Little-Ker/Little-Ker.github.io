@@ -89,6 +89,7 @@
         const tipView = document.querySelector('#tipView');
         const tipText = document.querySelector('#tipText');
         let isVertical = false;
+        let isMounted = false;
 
         const isHiddenToolbar = () => {
             // 比較外部高度和內部高度的差異
@@ -100,11 +101,15 @@
                 setIsShowTip(false);
                 setIsShowGame(true);
                 setTipText('')
-                window.scrollTo(0, 0);
+                isMounted = false;
             } else {
                 setIsShowTip(true);
                 setIsShowGame(false);
                 setTipText('上滑開啟全畫面')
+                if (!isMounted) {
+                    isMounted = true;
+                    window.scrollTo(0, 0);
+                }
                 // setTipText('工具列顯示中')
                 console.log("工具列顯示中");
             }
@@ -228,7 +233,7 @@
             resize();
 
 
-            console.log('1.0.13');
+            console.log('1.0.14');
 
         }
     </script>
