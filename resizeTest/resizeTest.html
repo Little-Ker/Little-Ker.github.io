@@ -79,11 +79,15 @@
             const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
 
             if (toolbarHidden) {
-                setTipText('工具列被隱藏')
+                // setTipText('工具列被隱藏')
                 console.log("工具列被隱藏");
+                 setIsShowTip(false);
+                    setIsShowGame(true);
             } else {
-                setTipText('工具列顯示中')
-                console.log("工具列顯示中");
+                setIsShowTip(true);
+                setIsShowGame(false);
+                // setTipText('工具列顯示中')
+                // console.log("工具列顯示中");
             }
         }
 
@@ -154,32 +158,32 @@
 
         let startX, startY, endX, endY;
 
-        document.addEventListener('touchstart', (event) => {
-            startX = event.touches[0].pageX;
-            startY = event.touches[0].pageY;
-        });
+        // document.addEventListener('touchstart', (event) => {
+        //     startX = event.touches[0].pageX;
+        //     startY = event.touches[0].pageY;
+        // });
 
-        document.addEventListener('touchmove', (event) => {
-            endX = event.touches[0].pageX;
-            endY = event.touches[0].pageY;
-        });
+        // document.addEventListener('touchmove', (event) => {
+        //     endX = event.touches[0].pageX;
+        //     endY = event.touches[0].pageY;
+        // });
 
-        document.addEventListener('touchend', () => {
-            console.log('Math.abs(endX - startX) < Math.abs(endY - startY)',Math.abs(endX - startX) < Math.abs(endY - startY))
-            // if (Math.abs(endX - startX) < Math.abs(endY - startY)) {
-                console.log('isVertical',isVertical)
-                console.log('startY - endY',startY - endY)
-                if (endY < startY && isVertical && (startY - endY) >= 5) {
-                    console.log('往上滑')
-                    // setIsShowTip(false);
-                    // setIsShowGame(true);
-                } else if (endY > startY && isVertical) {
-                    console.log('往下滑')
-                    // setIsShowTip(true);
-                    // setIsShowGame(false);
-                }
-            // }
-        });
+        // document.addEventListener('touchend', () => {
+        //     console.log('Math.abs(endX - startX) < Math.abs(endY - startY)',Math.abs(endX - startX) < Math.abs(endY - startY))
+        //     // if (Math.abs(endX - startX) < Math.abs(endY - startY)) {
+        //         console.log('isVertical',isVertical)
+        //         console.log('startY - endY',startY - endY)
+        //         if (endY < startY && isVertical && (startY - endY) >= 5) {
+        //             console.log('往上滑')
+        //             // setIsShowTip(false);
+        //             // setIsShowGame(true);
+        //         } else if (endY > startY && isVertical) {
+        //             console.log('往下滑')
+        //             // setIsShowTip(true);
+        //             // setIsShowGame(false);
+        //         }
+        //     // }
+        // });
 
 
 
