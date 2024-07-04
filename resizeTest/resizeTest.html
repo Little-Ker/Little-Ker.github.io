@@ -74,6 +74,19 @@
         const tipView = document.querySelector('#tipView');
         let isVertical = false;
 
+        const isHiddenToolbar = () => {
+            // 比較外部高度和內部高度的差異
+            const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
+
+            if (toolbarHidden) {
+                setTipText('工具列被隱藏')
+                console.log("工具列被隱藏");
+            } else {
+                setTipText('工具列顯示中')
+                console.log("工具列顯示中");
+            }
+        }
+
         const setTipText = (text) => {
             tipView.innerText = text;
         }
@@ -156,14 +169,14 @@
             // if (Math.abs(endX - startX) < Math.abs(endY - startY)) {
                 console.log('isVertical',isVertical)
                 console.log('startY - endY',startY - endY)
-                if (endY < startY && isVertical && (startY - endY) >= 10) {
+                if (endY < startY && isVertical && (startY - endY) >= 5) {
                     console.log('往上滑')
-                    setIsShowTip(false);
-                    setIsShowGame(true);
+                    // setIsShowTip(false);
+                    // setIsShowGame(true);
                 } else if (endY > startY && isVertical) {
                     console.log('往下滑')
-                    setIsShowTip(true);
-                    setIsShowGame(false);
+                    // setIsShowTip(true);
+                    // setIsShowGame(false);
                 }
             // }
         });
@@ -173,6 +186,7 @@
         window.addEventListener('resize', () => {
             resize();
             orientation();
+            isHiddenToolbar();
         });
 
         window.onload = () => {
@@ -180,6 +194,7 @@
                 setIsShowTip(true);
                 setIsShowGame(false);
                 orientation();
+                isHiddenToolbar();
             } else {
                 console.log('網頁版')
                 setIsShowTip(false);
@@ -187,6 +202,7 @@
             }
             window.scrollTo(0, 0);
             resize();
+
 
             console.log('1.0.7');
 
