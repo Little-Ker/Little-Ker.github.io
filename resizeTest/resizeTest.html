@@ -108,11 +108,18 @@
                 setTipText('手機請轉直');
                 isVertical = false;
                 setIsShowGame(false);
+                window.scrollTo(0, 0);
+
+                const scrollWindow = document.documentElement
+                const scrollTop = scrollWindow.scrollTop
+                document.querySelector('body').style.overflow = 'hidden'
+
             } else if (window.orientation === 180 || window.orientation === 0) {
                 isVertical = true;
                 setIsShowGame(false);
                 setTipText('上滑開啟全畫面');
                 isHiddenToolbar()
+
             }
         }
 
@@ -166,7 +173,7 @@
             window.scrollTo(0, 0);
             resize();
 
-            console.log('1.0.4');
+            console.log('1.0.5');
 
         }
     </script>
