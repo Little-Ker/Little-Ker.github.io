@@ -78,13 +78,16 @@
         const isHiddenToolbar = () => {
             const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
 
-            if (toolbarHidden && isVertical && !isHorizontal) {
-                setIsShowGame(true);
-                setTipText('')
-                isMounted = false;
-            } else if (isHorizontal && toolbarHidden && isVertical) {
-                window.scrollTo(0, 0);
-                isHorizontal = false;
+            if (toolbarHidden && isVertical) {
+                if (!isHorizontal) {
+                    setIsShowGame(true);
+                    setTipText('')
+                    isMounted = false;
+                } else {
+                    setTipText('上滑開啟全畫面')
+                    window.scrollTo(0, 0);
+                    isHorizontal = false;
+                }
             } else {
                 setIsShowGame(false);
                 setTipText('上滑開啟全畫面')
@@ -149,7 +152,7 @@
         const resize = () => {
             if (!dom) return;
             const pageW = 720;
-            const pageH = 1280;
+            const pageH = 1340;
             const ratio = pageW / pageH;
 
             const winW = window.innerWidth
