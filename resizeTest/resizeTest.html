@@ -75,7 +75,8 @@
 
         // 工具列顯示判斷
         const isHiddenToolbar = () => {
-            const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
+            const toolbarHidden = false
+            // const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
 
             if (toolbarHidden) {
                 setIsShowGame(true);
@@ -93,7 +94,7 @@
 
         // 設定提示文字
         const setTipText = (text) => {
-            tipView.innerText = text;
+            tipText.innerText = text;
         }
 
         // 是否顯示遊戲
@@ -119,10 +120,12 @@
             if (window.orientation === 90 || window.orientation === -90) {
                 setTipText('手機請轉直');
                 isVertical = false;
+                isMounted = false;
             } else if (window.orientation === 180 || window.orientation === 0) {
                 isVertical = true;
                 setTipText('上滑開啟全畫面');
                 isHiddenToolbar();
+                isMounted = false;
             }
         }
 
@@ -184,7 +187,7 @@
             window.scrollTo(0, 0);
             resize();
 
-            console.log('1.0.1')
+            console.log('1.0.2')
         }
     </script>
 </body>
