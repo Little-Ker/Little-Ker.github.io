@@ -118,11 +118,9 @@
                 document.querySelector('body').style.overflow = 'hidden'
 
             } else if (window.orientation === 180 || window.orientation === 0) {
-
                 const scrollWindow = document.documentElement
                 const scrollTop = scrollWindow.scrollTop
                 document.querySelector('body').style.overflow = 'auto'
-                window.scrollTo(0, 0);
 
                 console.log('直立中')
                 isVertical = true;
@@ -187,7 +185,7 @@
             window.scrollTo(0, 0);
             resize();
 
-            console.log('1.0.14');
+            console.log('1.0.15');
 
         }
     </script>
