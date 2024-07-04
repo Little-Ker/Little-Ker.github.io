@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
@@ -9,18 +8,15 @@
     <meta content="yes" name="apple-touch-fullscreen" />
     <meta name="theme-color" content="#000000"/> <!-- 設定狀態欄顏色 -->
 
-
-
     <title>Resize</title>
     <style>
 
         body {
-          margin: 0;
+            margin: 0;
         }
 
         .root {
             position: relative;
-            /* display: flex; */
             justify-content: center;
             align-items: center;
             background: #000;
@@ -29,106 +25,72 @@
         }
 
         .tipView {
-          position: relative;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 1000px;
-          background: #000;
-          color: #fff;
-          justify-content: center;
-          /* align-items: center; */
-          z-index: 999;
-          display: flex;
-        }
-
-        #tipText {
-            /* position: fixed; */
-            /* display: flex; */
-            /* align-items: center;
-            justify-content: center; */
-            /* z-index: 999; */
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1000px;
+            background: #000;
+            color: #fff;
+            justify-content: center;
+            z-index: 1;
+            display: flex;
         }
 
         #game {
             background: #ffd900;
-            /* position: fixed; */
-            position: relative;
+            position: fixed;
             display: none;
             margin: auto;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            z-index: 9;
-        }
-
-        .showTip {
-            z-index: 100;
-            /* display: flex !important; */
+            z-index: 2;
         }
 
         .showGame {
-            position: fixed !important;
-            z-index: 99999999 !important;
             display: block !important;
         }
     </style>
 </head>
 <body>
     <div class="root">
-        <!-- <iframe id="game" width="524" height="932" src="https://www.youtube.com/embed/FRRA1X_I5IE?si=QYqoZ094C7ETuX-3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe> -->
-        <div id="tipView" class="tipView">
-            <p id="tipText">上滑開啟全畫面</p>
-        </div>
+        <div id="tipView" class="tipView"></div>
         <canvas id='game' style="touch-action: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: inherit;"></canvas>
     </div>
 
     <script>
         const dom = document.querySelector('#game');
         const tipView = document.querySelector('#tipView');
-        const tipText = document.querySelector('#tipText');
         let isVertical = false;
         let isMounted = false;
 
+        // 工具列顯示判斷
         const isHiddenToolbar = () => {
-            // 比較外部高度和內部高度的差異
             const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
 
             if (toolbarHidden) {
-                // setTipText('工具列被隱藏')
-                console.log("工具列被隱藏");
-                setIsShowTip(false);
                 setIsShowGame(true);
                 setTipText('')
                 isMounted = false;
             } else {
-                setIsShowTip(true);
                 setIsShowGame(false);
                 setTipText('上滑開啟全畫面')
                 if (!isMounted) {
                     isMounted = true;
                     window.scrollTo(0, 0);
                 }
-                // setTipText('工具列顯示中')
-                console.log("工具列顯示中");
             }
         }
 
+        // 設定提示文字
         const setTipText = (text) => {
-            tipText.innerText = text;
+            tipView.innerText = text;
         }
 
-        const setIsShowTip = (show) => {
-            if (show) {
-                tipView.classList.add('showTip');
-            } else {
-                tipView.classList.remove('showTip');
-            }
-        }
-
+        // 是否顯示遊戲
         const setIsShowGame = (show) => {
-            console.log('show',show)
             if (show) {
                 dom.classList.add('showGame');
             } else {
@@ -136,17 +98,18 @@
             }
         }
 
+        // 手機橫直向判斷
         const orientation = () => {
             if (window.orientation === 90 || window.orientation === -90) {
                 setTipText('手機請轉直');
                 isVertical = false;
-                setIsShowTip(true);
             } else if (window.orientation === 180 || window.orientation === 0) {
                 isVertical = true;
                 setTipText('上滑開啟全畫面');
             }
         }
 
+        // 裝置判斷
         const mobile = () => {
             try {
                 document.createEvent('TouchEvent');
@@ -156,6 +119,7 @@
             }
         }
 
+        // 遊戲畫面大小調整
         const resize = () => {
             if (!dom) return;
             const pageW = 720;
@@ -180,37 +144,6 @@
             tipText.style.paddingTop = `${height / 2 - 50 || 0}px`;
         }
 
-        let startX, startY, endX, endY;
-
-        // document.addEventListener('touchstart', (event) => {
-        //     startX = event.touches[0].pageX;
-        //     startY = event.touches[0].pageY;
-        // });
-
-        // document.addEventListener('touchmove', (event) => {
-        //     endX = event.touches[0].pageX;
-        //     endY = event.touches[0].pageY;
-        // });
-
-        // document.addEventListener('touchend', () => {
-        //     console.log('Math.abs(endX - startX) < Math.abs(endY - startY)',Math.abs(endX - startX) < Math.abs(endY - startY))
-        //     // if (Math.abs(endX - startX) < Math.abs(endY - startY)) {
-        //         console.log('isVertical',isVertical)
-        //         console.log('startY - endY',startY - endY)
-        //         if (endY < startY && isVertical && (startY - endY) >= 5) {
-        //             console.log('往上滑')
-        //             // setIsShowTip(false);
-        //             // setIsShowGame(true);
-        //         } else if (endY > startY && isVertical) {
-        //             console.log('往下滑')
-        //             // setIsShowTip(true);
-        //             // setIsShowGame(false);
-        //         }
-        //     // }
-        // });
-
-
-
         window.addEventListener('resize', () => {
             resize();
             orientation();
@@ -219,22 +152,16 @@
 
         window.onload = () => {
             if (mobile()) {
-                console.log('手機版')
-                setIsShowTip(true);
                 setIsShowGame(false);
                 orientation();
                 isHiddenToolbar();
             } else {
-                console.log('網頁版')
-                setIsShowTip(false);
                 setIsShowGame(true);
             }
             window.scrollTo(0, 0);
             resize();
 
-
-            console.log('1.0.14');
-
+            console.log('1.0.0')
         }
     </script>
 </body>
