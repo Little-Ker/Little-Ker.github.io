@@ -42,10 +42,19 @@
           display: flex;
         }
 
+        #tipText {
+            position: fixed;
+            /* display: flex; */
+            /* align-items: center;
+            justify-content: center; */
+            z-index: 999;
+        }
+
         #game {
             background: #ffd900;
             /* position: fixed; */
             position: relative;
+            display: none;
             margin: auto;
             top: 0;
             left: 0;
@@ -61,20 +70,24 @@
 
         .showGame {
             position: fixed !important;
-            z-index: 99999999 !important;;
+            z-index: 99999999 !important;
+            display: block !important;
         }
     </style>
 </head>
 <body>
     <div class="root">
         <!-- <iframe id="game" width="524" height="932" src="https://www.youtube.com/embed/FRRA1X_I5IE?si=QYqoZ094C7ETuX-3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe> -->
-        <div id="tipView" class="tipView">上滑開啟全畫面</div>
+        <div id="tipView" class="tipView">
+            <p id="tipText">上滑開啟全畫面</p>
+        </div>
         <canvas id='game' style="touch-action: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: inherit;"></canvas>
     </div>
 
     <script>
         const dom = document.querySelector('#game');
         const tipView = document.querySelector('#tipView');
+        const tipText = document.querySelector('#tipText');
         let isVertical = false;
 
         const isHiddenToolbar = () => {
@@ -95,7 +108,7 @@
         }
 
         const setTipText = (text) => {
-            tipView.innerText = text;
+            tipText.innerText = text;
         }
 
         const setIsShowTip = (show) => {
@@ -156,7 +169,7 @@
             dom.style.height = `${height || 0}px`;
 
             tipView.style.height = `${height * 2 || 0}px`;
-            tipView.style.paddingTop = `${height / 2 || 0}px`;
+            tipText.style.paddingTop = `${height / 2 - 50 || 0}px`;
         }
 
         let startX, startY, endX, endY;
@@ -201,7 +214,7 @@
                 setIsShowTip(true);
                 setIsShowGame(false);
                 orientation();
-                isHiddenToolbar();
+                // isHiddenToolbar();
             } else {
                 console.log('網頁版')
                 setIsShowTip(false);
