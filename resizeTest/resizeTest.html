@@ -122,6 +122,7 @@
             } else if (window.orientation === 180 || window.orientation === 0) {
                 isVertical = true;
                 setTipText('上滑開啟全畫面');
+                isHiddenToolbar();
             }
         }
 
@@ -164,7 +165,6 @@
             if (mobile()) {
                 setIsShowGame(false);
                 orientation();
-                isHiddenToolbar();
             } else {
                 setIsShowGame(true);
                 setIsCloseTip(true)
@@ -176,7 +176,6 @@
             if (mobile()) {
                 setIsShowGame(false);
                 orientation();
-                isHiddenToolbar();
             } else {
                 console.log('QQQQQQQQQQ')
                 setIsShowGame(true);
@@ -185,7 +184,7 @@
             window.scrollTo(0, 0);
             resize();
 
-            console.log('1.0.0')
+            console.log('1.0.1')
         }
     </script>
 </body>
