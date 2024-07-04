@@ -7,7 +7,6 @@
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="yes" name="apple-touch-fullscreen" />
     <meta name="theme-color" content="#000000"/> <!-- 設定狀態欄顏色 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, orientation=portrait"> <!-- 強制直向顯示 -->
 
     <title>Resize</title>
     <style>
@@ -73,16 +72,20 @@
         const tipText = document.querySelector('#tipText');
         let isVertical = false;
         let isMounted = false;
+        let HTranslateV = false;
 
         // 工具列顯示判斷
         const isHiddenToolbar = () => {
             // const toolbarHidden = false
             const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
 
-            if (toolbarHidden && isVertical) {
+            if (toolbarHidden && isVertical && !HTranslateV) {
                 setIsShowGame(true);
                 setTipText('')
                 isMounted = false;
+            } else if (HTranslateV && toolbarHidden && isVertical) {
+                window.scrollTo(0, 0);
+                HTranslateV = false;
             } else {
                 setIsShowGame(false);
                 setTipText('上滑開啟全畫面')
@@ -122,6 +125,7 @@
                 setTipText('手機請轉直');
                 isVertical = false;
                 isMounted = false;
+                HTranslateV = true;
                 document.body.style.overflow = 'hidden';
             } else if (window.orientation === 180 || window.orientation === 0) {
                 isVertical = true;
@@ -190,7 +194,7 @@
             window.scrollTo(0, 0);
             resize();
 
-            console.log('1.0.5')
+            console.log('1.0.6')
         }
     </script>
 </body>
