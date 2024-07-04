@@ -74,8 +74,9 @@
             const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
 
             if (toolbarHidden && isVertical) {
-                setIsShowGame(true);
-                setTipText('')
+                console.log('關閉工具條')
+                // setIsShowGame(true);
+                setTipText(`toolbarHidden: ${toolbarHidden} ${isVertical}`)
                 isMounted = false;
             } else {
                 setIsShowGame(false);
@@ -105,6 +106,7 @@
         // 判斷手機方向
         const orientation = () => {
             if (window.orientation === 90 || window.orientation === -90) {
+                console.log('橫像中')
                 setTipText('手機請轉直');
                 isVertical = false;
                 setIsShowGame(false);
@@ -115,6 +117,7 @@
                 document.querySelector('body').style.overflow = 'hidden'
 
             } else if (window.orientation === 180 || window.orientation === 0) {
+                console.log('直立中')
                 isVertical = true;
                 setIsShowGame(false);
                 setTipText('上滑開啟全畫面');
@@ -161,10 +164,12 @@
         window.addEventListener('resize', () => {
             resize();
             orientation();
+            console.log('resize')
         });
 
         window.onload = () => {
             if (mobile()) {
+                console.log('phone')
                 setIsShowGame(false);
                 orientation();
             } else {
@@ -173,7 +178,7 @@
             window.scrollTo(0, 0);
             resize();
 
-            console.log('1.0.5');
+            console.log('1.0.6');
 
         }
     </script>
