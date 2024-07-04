@@ -75,8 +75,8 @@
 
         // 工具列顯示判斷
         const isHiddenToolbar = () => {
-            const toolbarHidden = false
-            // const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
+            // const toolbarHidden = false
+            const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
 
             if (toolbarHidden) {
                 setIsShowGame(true);
@@ -189,7 +189,7 @@
             window.scrollTo(0, 0);
             resize();
 
-            console.log('1.0.3')
+            console.log('1.0.4')
         }
     </script>
 </body>
