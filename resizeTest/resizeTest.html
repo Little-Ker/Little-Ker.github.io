@@ -48,6 +48,10 @@
             bottom: 0;
             z-index: 3;
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            touch-action: none;
+            user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            cursor: inherit;
         }
 
         .showGame {
@@ -82,7 +86,7 @@
             <p id="tipText">上滑開啟全畫面</p>
         </div>
         <img src="./bg/img_pc_bg.jpg" id="gameBg" />
-        <canvas id='game' style="touch-action: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: inherit;"></canvas>
+        <canvas id='game'></canvas>
     </div>
 
     <script>
@@ -211,7 +215,7 @@
             resize();
             if (mobile()) {
                 orientation();
-                isHiddenToolbar();
+                // isHiddenToolbar();
             }
             console.log('resize')
         });
@@ -221,7 +225,7 @@
                 console.log('phone')
                 setIsShowGame(false);
                 orientation();
-                isHiddenToolbar();
+                // isHiddenToolbar();
                 setIsShowTip(true);
             } else {
                 setIsShowGame(true);
@@ -229,7 +233,7 @@
             window.scrollTo(0, 0);
             resize();
 
-            console.log('1.0.17');
+            console.log('1.0.18');
 
         }
     </script>
