@@ -71,21 +71,20 @@
         const tipView = document.querySelector('#tipView');
         const tipText = document.querySelector('#tipText');
         let isVertical = false;
+        let isHorizontal = false;
         let isMounted = false;
-        let HTranslateV = false;
 
         // 工具列顯示判斷
         const isHiddenToolbar = () => {
-            // const toolbarHidden = false
             const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
 
-            if (toolbarHidden && isVertical && !HTranslateV) {
+            if (toolbarHidden && isVertical && !isHorizontal) {
                 setIsShowGame(true);
                 setTipText('')
                 isMounted = false;
-            } else if (HTranslateV && toolbarHidden && isVertical) {
+            } else if (isHorizontal && toolbarHidden && isVertical) {
                 window.scrollTo(0, 0);
-                HTranslateV = false;
+                isHorizontal = false;
             } else {
                 setIsShowGame(false);
                 setTipText('上滑開啟全畫面')
@@ -187,14 +186,11 @@
                 setIsShowGame(false);
                 orientation();
             } else {
-                console.log('QQQQQQQQQQ')
                 setIsShowGame(true);
                 setIsCloseTip(true)
             }
             window.scrollTo(0, 0);
             resize();
-
-            console.log('1.0.6')
         }
     </script>
 </body>
