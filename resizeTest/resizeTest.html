@@ -68,11 +68,13 @@
         const tipText = document.querySelector('#tipText');
         let isVertical = false;
         let isMounted = false;
+        let toolbarHidden = false
+
 
         // 判斷工具列是否顯示
         const isHiddenToolbar = () => {
-            const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
-
+            // const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
+            toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
             if (toolbarHidden && isVertical) {
                 console.log('關閉工具條')
                 // setIsShowGame(true);
@@ -105,6 +107,7 @@
 
         // 判斷手機方向
         const orientation = () => {
+            toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
             if (window.orientation === 90 || window.orientation === -90) {
                 console.log('橫像中')
                 setTipText('手機請轉直');
@@ -169,6 +172,7 @@
 
         window.onload = () => {
             if (mobile()) {
+                toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
                 console.log('phone')
                 setIsShowGame(false);
                 orientation();
@@ -178,7 +182,7 @@
             window.scrollTo(0, 0);
             resize();
 
-            console.log('1.0.8');
+            console.log('1.0.9');
 
         }
     </script>
