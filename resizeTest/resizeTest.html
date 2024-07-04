@@ -44,8 +44,8 @@
 
         #game {
             background: #ffd900;
-            position: fixed;
-            /* position: relative; */
+            /* position: fixed; */
+            position: relative;
             margin: auto;
             top: 0;
             left: 0;
@@ -55,12 +55,12 @@
         }
 
         .showTip {
-            z-index: 9;
+            z-index: 100;
             /* display: flex !important; */
         }
 
         .showGame {
-            /* position: fixed !important; */
+            position: fixed !important;
             z-index: 99999999 !important;;
         }
     </style>
@@ -84,13 +84,13 @@
             if (toolbarHidden) {
                 // setTipText('工具列被隱藏')
                 console.log("工具列被隱藏");
-                 setIsShowTip(false);
-                    setIsShowGame(true);
+                setIsShowTip(false);
+                setIsShowGame(true);
             } else {
                 setIsShowTip(true);
                 setIsShowGame(false);
                 // setTipText('工具列顯示中')
-                // console.log("工具列顯示中");
+                console.log("工具列顯示中");
             }
         }
 
