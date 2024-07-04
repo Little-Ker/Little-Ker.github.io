@@ -78,16 +78,13 @@
         const isHiddenToolbar = () => {
             const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
 
-            if (toolbarHidden && isVertical) {
-                if (!isHorizontal) {
-                    setIsShowGame(true);
-                    setTipText('')
-                    isMounted = false;
-                } else {
-                    setTipText('上滑開啟全畫面')
-                    window.scrollTo(0, 0);
-                    isHorizontal = false;
-                }
+            if (toolbarHidden && isVertical && !isHorizontal) {
+                setIsShowGame(true);
+                setTipText('')
+                isMounted = false;
+            } else if (isHorizontal && toolbarHidden && isVertical) {
+                window.scrollTo(0, 0);
+                isHorizontal = false;
             } else {
                 setIsShowGame(false);
                 setTipText('上滑開啟全畫面')
@@ -152,7 +149,7 @@
         const resize = () => {
             if (!dom) return;
             const pageW = 720;
-            const pageH = 1340;
+            const pageH = 1280;
             const ratio = pageW / pageH;
 
             const winW = window.innerWidth
@@ -168,6 +165,11 @@
 
             dom.style.width = `${width || 0}px`;
             dom.style.height = `${height || 0}px`;
+
+            if (mobile())  {
+                dom.style.width = '100%';
+                dom.style.height = '100%';
+            }
 
             tipView.style.height = `${height + 150 || 0}px`;
             tipText.style.paddingTop = `${height / 2 - 50 || 0}px`;
