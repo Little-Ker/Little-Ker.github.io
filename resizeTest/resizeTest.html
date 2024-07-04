@@ -121,11 +121,13 @@
                 setTipText('手機請轉直');
                 isVertical = false;
                 isMounted = false;
+                document.body.style.overflow = 'hidden';
             } else if (window.orientation === 180 || window.orientation === 0) {
                 isVertical = true;
+                document.body.style.overflow = 'auto';
                 setTipText('上滑開啟全畫面');
                 isHiddenToolbar();
-                isMounted = false;
+                // isMounted = false;
             }
         }
 
@@ -187,7 +189,7 @@
             window.scrollTo(0, 0);
             resize();
 
-            console.log('1.0.2')
+            console.log('1.0.3')
         }
     </script>
 </body>
