@@ -76,11 +76,11 @@
             if (toolbarHidden && isVertical) {
                 console.log('關閉工具條')
                 // setIsShowGame(true);
-                setTipText(`toolbarHidden: ${toolbarHidden} ${isVertical}`)
+                setTipText(`toolbarHidden: ${toolbarHidden} ${isVertical} ${toolbarHidden}`)
                 isMounted = false;
             } else {
                 setIsShowGame(false);
-                setTipText('上滑開啟全畫面')
+                setTipText(`上滑開啟全畫面 ${toolbarHidden} ${isVertical} ${toolbarHidden}`)
                 if (!isMounted) {
                     isMounted = true;
                     window.scrollTo(0, 0);
@@ -178,7 +178,7 @@
             window.scrollTo(0, 0);
             resize();
 
-            console.log('1.0.6');
+            console.log('1.0.7');
 
         }
     </script>
