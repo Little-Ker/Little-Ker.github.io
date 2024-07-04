@@ -49,10 +49,6 @@
             z-index: 2;
         }
 
-        /* .showTip {
-            z-index: 100;
-        } */
-
         .showGame {
             display: block !important;
         }
@@ -77,13 +73,11 @@
         const isHiddenToolbar = () => {
             const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
 
-            if (toolbarHidden) {
-                // setIsShowTip(false);
+            if (toolbarHidden && isVertical) {
                 setIsShowGame(true);
                 setTipText('')
                 isMounted = false;
             } else {
-                // setIsShowTip(true);
                 setIsShowGame(false);
                 setTipText('上滑開啟全畫面')
                 if (!isMounted) {
@@ -97,15 +91,6 @@
         const setTipText = (text) => {
             tipText.innerText = text;
         }
-
-        // 是否顯示提示
-        // const setIsShowTip = (show) => {
-        //     if (show) {
-        //         tipView.classList.add('showTip');
-        //     } else {
-        //         tipView.classList.remove('showTip');
-        //     }
-        // }
 
         // 是否顯示遊戲
         const setIsShowGame = (show) => {
@@ -122,10 +107,10 @@
             if (window.orientation === 90 || window.orientation === -90) {
                 setTipText('手機請轉直');
                 isVertical = false;
-                // setIsShowTip(true);
             } else if (window.orientation === 180 || window.orientation === 0) {
                 isVertical = true;
                 setTipText('上滑開啟全畫面');
+                isHiddenToolbar();
             }
         }
 
@@ -167,23 +152,19 @@
         window.addEventListener('resize', () => {
             resize();
             orientation();
-            isHiddenToolbar();
         });
 
         window.onload = () => {
             if (mobile()) {
-                // setIsShowTip(true);
                 setIsShowGame(false);
                 orientation();
-                isHiddenToolbar();
             } else {
-                // setIsShowTip(false);
                 setIsShowGame(true);
             }
             window.scrollTo(0, 0);
             resize();
 
-            console.log('1.0.2');
+            console.log('1.0.3');
 
         }
     </script>
