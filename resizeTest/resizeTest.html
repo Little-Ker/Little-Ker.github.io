@@ -98,6 +98,7 @@
            <p id="testMobile">測試用裝置</p>
            <p id="testDir">測試用方向</p>
            <p id="testTool">測試用工具列顯示</p>
+           <p>1.0.4</p>
         </div>
 
     </div>
@@ -161,6 +162,7 @@
         // 是否顯示遊戲
         const setIsShowGame = (show) => {
             if (show) {
+                document.body.style.overflow = 'hidden';
                 dom.classList.add('showGame');
                 gameBg.classList.add('showGame');
             } else {
@@ -252,8 +254,8 @@
             dom.style.height = `${height || 0}px`;
 
             if (mobile())  {
-                dom.style.width = '100%';
-                dom.style.height = '100%';
+                dom.style.width = winW;
+                dom.style.height = winH;
             }
 
             tipView.style.height = `${height * 2 || 0}px`;
@@ -282,8 +284,6 @@
             }
             window.scrollTo(0, 0);
             resize();
-
-            console.log('1.0.3')
         }
     </script>
 </body>
