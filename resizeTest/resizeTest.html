@@ -94,7 +94,7 @@
            <p id="testDir">測試用方向</p>
            <p id="testTool">測試用工具列顯示</p>
            <p id="testHeight">畫面高度</p>
-           <p>1.0.24</p>
+           <p>1.0.25</p>
         </div>
 
     </div>
@@ -138,8 +138,13 @@
             let toolbarHidden = false;
 
             const userAgent = navigator.userAgent
+
             const hasSafari = userAgent.includes('Safari');
             const hasChrome = userAgent.includes('Chrome');
+            const isFirefox  = userAgent.includes('Firefox');
+            const isIE = userAgent.includes('MSIE');
+            const isIE7 = userAgent.includes('MSIE 7');
+            const isOpera = userAgent.includes('Opera');
 
             if (hasSafari || hasChrome) {
                 toolbarHidden = ((window.outerHeight - window.innerHeight) < 100);
@@ -147,7 +152,7 @@
                 toolbarHidden = (window.innerHeight === screen.height);
             }
 
-            setTESTheight(`瀏覽器測試: Safari:${hasSafari} Chrome${hasChrome} ${window.outerHeight} ${window.innerHeight} ${screen.height}`)
+            setTESTheight(`瀏覽器測試: Safari:${hasSafari} Chrome:${hasChrome} Firefox:${isFirefox} IE:${isIE} IE7:${isIE7} Opera:${isOpera}, ${window.outerHeight} ${window.innerHeight} ${screen.height}`)
 
 
             // setTESTToolText(`工具列隱藏: ${toolbarHidden} ${window.outerHeight} ${window.innerHeight} ${screen.height}`)
