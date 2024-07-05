@@ -178,9 +178,29 @@
             }
         }
 
+        const screenDir = window.matchMedia("(orientation: portrait)");
+        screenDir.addListener(orientation);
+
         // 手機橫直向判斷
         const orientation = () => {
-            if (window.orientation === 90 || window.orientation === -90) {
+            // if (window.orientation === 90 || window.orientation === -90) {
+            //     setTipText('手機請轉直');
+            //     isVertical = false;
+            //     isMounted = false;
+            //     isHorizontal = true;
+            //     window.scrollTo(0, 0);
+            //     document.body.style.overflow = 'hidden';
+            //     setTESTDirText('目前是橫像')
+            // } else if (window.orientation === 180 || window.orientation === 0) {
+            //     isVertical = true;
+            //     document.body.style.overflow = 'auto';
+            //     setTipText('上滑開啟全畫面');
+            //     isHiddenToolbar();
+            //     isMounted = false;
+            //     setTESTDirText('目前是直像')
+            // }
+
+            if (screenDir.matches) {
                 setTipText('手機請轉直');
                 isVertical = false;
                 isMounted = false;
@@ -188,7 +208,7 @@
                 window.scrollTo(0, 0);
                 document.body.style.overflow = 'hidden';
                 setTESTDirText('目前是橫像')
-            } else if (window.orientation === 180 || window.orientation === 0) {
+            } else {
                 isVertical = true;
                 document.body.style.overflow = 'auto';
                 setTipText('上滑開啟全畫面');
@@ -262,6 +282,8 @@
             }
             window.scrollTo(0, 0);
             resize();
+
+            console.log('1.0.0')
         }
     </script>
 </body>
