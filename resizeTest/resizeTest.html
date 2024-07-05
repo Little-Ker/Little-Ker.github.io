@@ -197,7 +197,7 @@
             //     setTESTDirText('目前是直像')
             // }
 
-            if (screenDir.matches) {
+            if (!screenDir.matches) {
                 setTipText('手機請轉直');
                 isVertical = false;
                 isMounted = false;
@@ -283,7 +283,7 @@
             window.scrollTo(0, 0);
             resize();
 
-            console.log('1.0.1')
+            console.log('1.0.2')
         }
     </script>
 </body>
