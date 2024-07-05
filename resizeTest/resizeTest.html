@@ -178,9 +178,6 @@
             }
         }
 
-        const screenDir = window.matchMedia("(orientation: portrait)");
-        screenDir.addListener(orientation);
-
         // 手機橫直向判斷
         const orientation = () => {
             // if (window.orientation === 90 || window.orientation === -90) {
@@ -217,6 +214,9 @@
                 setTESTDirText('目前是直像')
             }
         }
+
+        const screenDir = window.matchMedia("(orientation: portrait)");
+        screenDir.addListener(orientation);
 
         // 裝置判斷
         const mobile = () => {
@@ -283,7 +283,7 @@
             window.scrollTo(0, 0);
             resize();
 
-            console.log('1.0.0')
+            console.log('1.0.1')
         }
     </script>
 </body>
