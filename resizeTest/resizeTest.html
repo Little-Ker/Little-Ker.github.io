@@ -204,14 +204,14 @@
                 isHorizontal = true;
                 window.scrollTo(0, 0);
                 document.body.style.overflow = 'hidden';
-                setTESTDirText('目前是橫像')
+                setTESTDirText(`目前是橫像 ${ document.body.style.overflow}`)
             } else {
                 isVertical = true;
                 document.body.style.overflow = 'auto';
                 setTipText('上滑開啟全畫面');
                 isHiddenToolbar();
                 isMounted = false;
-                setTESTDirText('目前是直像')
+                setTESTDirText(`目前是直像 ${ document.body.style.overflow}`)
             }
         }
 
@@ -283,7 +283,7 @@
             window.scrollTo(0, 0);
             resize();
 
-            console.log('1.0.2')
+            console.log('1.0.3')
         }
     </script>
 </body>
