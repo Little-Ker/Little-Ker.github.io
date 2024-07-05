@@ -99,7 +99,7 @@
            <p id="testDir">測試用方向</p>
            <p id="testTool">測試用工具列顯示</p>
            <p id="testHeight">畫面高度</p>
-           <p>1.0.6</p>
+           <p>1.0.7</p>
         </div>
 
     </div>
@@ -146,11 +146,12 @@
 
             if (toolbarHidden && isVertical && !isHorizontal) {
                 setIsShowGame(true);
-                setTipText('')
+                // setTipText('')
                 isMounted = false;
-            } else if (isHorizontal && toolbarHidden && isVertical) {
+            } else if (toolbarHidden && isVertical && isHorizontal) {
                 window.scrollTo(0, 0);
                 isHorizontal = false;
+                setTipText('上滑開啟全畫面')
             } else {
                 setIsShowGame(false);
                 setTipText('上滑開啟全畫面')
@@ -252,17 +253,17 @@
             let width = winW;
             let height = winW / ratio;
 
-            // if (width / winH >= ratio) {
-            //     width = winH * ratio;
-            //     height = winH;
-            // }
+            if (width / winH >= ratio) {
+                width = winH * ratio;
+                height = winH;
+            }
 
             dom.style.width = `${width || 0}px`;
             dom.style.height = `${height || 0}px`;
 
             if (mobile())  {
-                dom.style.width = winW;
-                dom.style.height = `${window.innerHeight || 0}px`;
+                dom.style.width = `${width}px`;
+                dom.style.height = `${height}px`;
                 // console.log('dom',dom, window.innerHeight)
             }
             setTESTheight(`畫面高度: ${window.outerHeight} ${window.innerHeight}`)
