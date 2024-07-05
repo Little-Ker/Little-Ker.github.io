@@ -98,7 +98,7 @@
            <p id="testMobile">測試用裝置</p>
            <p id="testDir">測試用方向</p>
            <p id="testTool">測試用工具列顯示</p>
-           <p>1.0.4</p>
+           <p>1.0.5</p>
         </div>
 
     </div>
@@ -255,10 +255,10 @@
 
             if (mobile())  {
                 dom.style.width = winW;
-                dom.style.height = winH;
+                dom.style.height = window.outerHeight;
             }
 
-            tipView.style.height = `${height * 2 || 0}px`;
+            tipView.style.height = `${height * 150 || 0}px`;
             tipText.style.paddingTop = `${height / 2 - 50 || 0}px`;
         }
 
