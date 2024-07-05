@@ -94,7 +94,7 @@
            <p id="testDir">測試用方向</p>
            <p id="testTool">測試用工具列顯示</p>
            <p id="testHeight">畫面高度</p>
-           <p>1.0.26</p>
+           <p>1.0.27</p>
         </div>
 
     </div>
@@ -104,6 +104,10 @@
         const testDir = document.querySelector('#testDir');
         const testTool = document.querySelector('#testTool');
         const testHeight = document.querySelector('#testHeight');
+
+        console.log('window.screen.availHeight',window.screen.availHeight)
+        console.log('window.screen.height',window.screen.height)
+        console.log('screen.height',screen.height)
 
         const dom = document.querySelector('#game');
         const tipView = document.querySelector('#tipView');
@@ -182,7 +186,14 @@
             //     toolbarHidden = (window.innerHeight === screen.height);
             // }
 
-            setTESTheight(`瀏覽器測試: Safari:${hasSafari} Chrome:${hasChrome} Firefox:${isFirefox} IE:${isIE} IE7:${isIE7} Opera:${isOpera}, ${window.outerHeight} ${window.innerHeight} ${screen.height}`)
+            // setTESTheight(`瀏覽器測試: Safari:${hasSafari} Chrome:${hasChrome} Firefox:${isFirefox} IE:${isIE} IE7:${isIE7} Opera:${isOpera}, ${window.outerHeight} ${window.innerHeight} ${screen.height}`)
+
+
+            console.log('window.screen.availHeight',window.screen.availHeight)
+        console.log('window.screen.height',window.screen.height)
+        console.log('screen.height',screen.height)
+
+        setTESTheight(`window.outerHeight:${window.outerHeight}, window.innerHeight:${window.innerHeight}, screen.height: ${screen.height}, window.screen.height: ${window.screen.height}, window.screen.availHeight: ${window.screen.availHeight}`)
 
 
             // setTESTToolText(`工具列隱藏: ${toolbarHidden} ${window.outerHeight} ${window.innerHeight} ${screen.height}`)
