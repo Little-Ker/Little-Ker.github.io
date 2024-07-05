@@ -98,7 +98,8 @@
            <p id="testMobile">測試用裝置</p>
            <p id="testDir">測試用方向</p>
            <p id="testTool">測試用工具列顯示</p>
-           <p>1.0.5</p>
+           <p id="testHeight">畫面高度</p>
+           <p>1.0.6</p>
         </div>
 
     </div>
@@ -107,6 +108,7 @@
         const testMobile = document.querySelector('#testMobile');
         const testDir = document.querySelector('#testDir');
         const testTool = document.querySelector('#testTool');
+        const testHeight = document.querySelector('#testHeight');
 
         const dom = document.querySelector('#game');
         const tipView = document.querySelector('#tipView');
@@ -115,6 +117,11 @@
         let isVertical = false;
         let isHorizontal = false;
         let isMounted = false;
+
+        // 設定TEST文字
+        const setTESTheight = (text) => {
+            testHeight.innerText = text;
+        }
 
          // 設定TEST文字
         const setTESMobileText = (text) => {
@@ -245,20 +252,22 @@
             let width = winW;
             let height = winW / ratio;
 
-            if (width / winH >= ratio) {
-                width = winH * ratio;
-                height = winH;
-            }
+            // if (width / winH >= ratio) {
+            //     width = winH * ratio;
+            //     height = winH;
+            // }
 
             dom.style.width = `${width || 0}px`;
             dom.style.height = `${height || 0}px`;
 
             if (mobile())  {
                 dom.style.width = winW;
-                dom.style.height = window.outerHeight;
+                dom.style.height = `${window.innerHeight || 0}px`;
+                // console.log('dom',dom, window.innerHeight)
             }
+            setTESTheight(`畫面高度: ${window.outerHeight} ${window.innerHeight}`)
 
-            tipView.style.height = `${height * 150 || 0}px`;
+            tipView.style.height = `${height + 150 || 0}px`;
             tipText.style.paddingTop = `${height / 2 - 50 || 0}px`;
         }
 
