@@ -94,7 +94,7 @@
            <p id="testDir">測試用方向</p>
            <p id="testTool">測試用工具列顯示</p>
            <p id="testHeight">畫面高度</p>
-           <p>1.0.22</p>
+           <p>1.0.23</p>
         </div>
 
     </div>
@@ -133,29 +133,23 @@
             testDir.innerText = text;
         }
 
+        console.log('!!!!!!!userAgent:::', navigator.userAgent)
+
         // 工具列顯示判斷
         const isHiddenToolbar = () => {
-            const toolbarHidden = (Math.abs(window.outerHeight - window.innerHeight) > 5) ?
-                (window.outerHeight - window.innerHeight) < 100 : (window.innerHeight === screen.height);
-            // const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
-            // const toolbarHidden = (((window.outerHeight - window.innerHeight) < 100) && (window.outerHeight !== window.innerHeight)) || (window.innerHeight === screen.height)
+            let toolbarHidden = false;
 
-            // const userAgent = navigator.userAgent;
+            const hasSafari = userAgent.includes('Safari');
+            const hasChrome = userAgent.includes('Chrome');
 
-            // if (/safari/i.test(userAgent) && !/chrome|crios|android/i.test(userAgent)) {
-            //     // safari
-            //     const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
-            // }
-            // if (/chrome/i.test(userAgent) && !/edge|edg/i.test(userAgent)) {
-            //     // chrome
-            //     const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
-            // }
-            // if () {
-            //     // google
-            // }
+            if (hasSafari || hasChrome) {
+                toolbarHidden = ((window.outerHeight - window.innerHeight) < 100);
+            } else {
+                toolbarHidden = (window.innerHeight === screen.height);
+            }
 
 
-            setTESTToolText(`工具列隱藏: ${toolbarHidden} ${window.outerHeight} ${window.innerHeight} ${screen.height}`)
+            // setTESTToolText(`工具列隱藏: ${toolbarHidden} ${window.outerHeight} ${window.innerHeight} ${screen.height}`)
 
             if (toolbarHidden && isVertical && !isHorizontal) {
                 setIsShowGame(true);
