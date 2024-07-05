@@ -94,7 +94,7 @@
            <p id="testDir">測試用方向</p>
            <p id="testTool">測試用工具列顯示</p>
            <p id="testHeight">畫面高度</p>
-           <p>1.0.12</p>
+           <p>1.0.13</p>
         </div>
 
     </div>
@@ -138,6 +138,7 @@
             // console.log( document.visibilityState );
             // console.log(document.hidden);
             const toolbarHidden = document.hidden
+            setTESTToolText(`工具列隱藏: ${toolbarHidden}`)
 
             if (toolbarHidden && isVertical && !isHorizontal) {
                 setIsShowGame(true);
