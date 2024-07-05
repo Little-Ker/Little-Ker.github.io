@@ -94,7 +94,7 @@
            <p id="testDir">測試用方向</p>
            <p id="testTool">測試用工具列顯示</p>
            <p id="testHeight">畫面高度</p>
-           <p>1.0.27</p>
+           <p>1.0.28</p>
         </div>
 
     </div>
@@ -116,6 +116,9 @@
         let isVertical = false;
         let isHorizontal = false;
         let isMounted = false;
+
+        let firstPosY = 0;
+        let finalPosY = 0;
 
         // 設定TEST文字
         const setTESTheight = (text) => {
@@ -177,7 +180,7 @@
             }
 
 
-
+            toolbarHidden = ((finalPosY - firstPosY) > 100);
 
 
             // if (hasSafari || hasChrome) {
@@ -325,6 +328,8 @@
 
             tipView.style.height = `${height + 350 || 0}px`;
             tipText.style.paddingTop = `${height / 2 - 50 || 0}px`;
+
+            finalPosY = window.innerHeight;
         }
 
         window.addEventListener('resize', () => {
@@ -347,6 +352,7 @@
                 setIsCloseTip(true)
 
             }
+            firstPosY(window.innerHeight)
             window.scrollTo(0, 0);
             resize();
         }
