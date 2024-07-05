@@ -79,6 +79,14 @@
         .closeTip {
             display: none !important;
         }
+
+        #test {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            z-index: 999999999999999999999999;
+            color: rgb(228, 3, 3);
+        }
     </style>
 </head>
 <body>
@@ -86,9 +94,19 @@
         <div id="tipView" class="tipView"><p id="tipText"></p></div>
         <img src="./bg/img_pc_bg.jpg" id="gameBg" />
         <canvas id='game'></canvas>
+        <div id="test">
+           <p id="testMobile">測試用裝置</p>
+           <p id="testDir">測試用方向</p>
+           <p id="testTool">測試用工具列顯示</p>
+        </div>
+
     </div>
 
     <script>
+        const testMobile = document.querySelector('#testMobile');
+        const testDir = document.querySelector('#testDir');
+        const testTool = document.querySelector('#testTool');
+
         const dom = document.querySelector('#game');
         const tipView = document.querySelector('#tipView');
         const tipText = document.querySelector('#tipText');
@@ -97,9 +115,26 @@
         let isHorizontal = false;
         let isMounted = false;
 
+         // 設定TEST文字
+        const setTESMobileText = (text) => {
+            testMobile.innerText = text;
+        }
+
+         // 設定TEST文字
+        const setTESTToolText = (text) => {
+            testTool.innerText = text;
+        }
+
+        // 設定TEST文字
+        const setTESTDirText = (text) => {
+            testDir.innerText = text;
+        }
+
         // 工具列顯示判斷
         const isHiddenToolbar = () => {
             const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
+
+            setTESTToolText(`工具列隱藏: ${toolbarHidden} ${window.outerHeight} ${window.innerHeight}`)
 
             if (toolbarHidden && isVertical && !isHorizontal) {
                 setIsShowGame(true);
@@ -150,14 +185,16 @@
                 isVertical = false;
                 isMounted = false;
                 isHorizontal = true;
-                document.body.style.overflow = 'hidden';
                 window.scrollTo(0, 0);
+                document.body.style.overflow = 'hidden';
+                setTESTDirText('目前是橫像')
             } else if (window.orientation === 180 || window.orientation === 0) {
                 isVertical = true;
                 document.body.style.overflow = 'auto';
                 setTipText('上滑開啟全畫面');
                 isHiddenToolbar();
                 isMounted = false;
+                setTESTDirText('目前是直像')
             }
         }
 
@@ -165,8 +202,10 @@
         const mobile = () => {
             try {
                 document.createEvent('TouchEvent');
+                setTESMobileText('手機裝置')
                 return true;
             } catch (e) {
+                setTESMobileText('電腦裝置')
                 return false;
             }
         }
@@ -219,6 +258,7 @@
             } else {
                 setIsShowGame(true);
                 setIsCloseTip(true)
+
             }
             window.scrollTo(0, 0);
             resize();
