@@ -144,6 +144,7 @@
                 setTipText('')
                 isMounted = false;
             } else if (toolbarHidden && isVertical && isHorizontal) {
+                setIsShowGame(false);
                 window.scrollTo(0, 0);
                 isHorizontal = false;
                 setTipText('上滑開啟全畫面')
@@ -168,9 +169,11 @@
                 document.body.style.overflow = 'hidden';
                 dom.classList.add('showGame');
                 gameBg.classList.add('showGame');
+                setTESTheight('遊戲開啟@@')
             } else {
                 dom.classList.remove('showGame');
                 gameBg.classList.remove('showGame');
+                setTESTheight('遊戲關閉')
             }
         }
 
