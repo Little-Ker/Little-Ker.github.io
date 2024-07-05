@@ -7,6 +7,7 @@
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="yes" name="apple-touch-fullscreen" />
     <meta name="theme-color" content="#000000"/> <!-- 設定狀態欄顏色 -->
+    <meta name="google" content="notranslate"> <!-- 禁止翻譯 -->
 
     <title>Resize</title>
     <style>
@@ -150,6 +151,7 @@
                 isMounted = false;
                 isHorizontal = true;
                 document.body.style.overflow = 'hidden';
+                window.scrollTo(0, 0);
             } else if (window.orientation === 180 || window.orientation === 0) {
                 isVertical = true;
                 document.body.style.overflow = 'auto';
