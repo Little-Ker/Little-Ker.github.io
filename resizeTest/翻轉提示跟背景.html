@@ -106,11 +106,9 @@
                 document.body.style.overflow = 'hidden';
                 dom.classList.add('showGame');
                 gameBg.classList.add('showGame');
-                setTESTheight(`遊戲開啟@@: ${window.outerHeight} ${window.innerHeight}`)
             } else {
                 dom.classList.remove('showGame');
                 gameBg.classList.remove('showGame');
-                setTESTheight(`遊戲關閉@@: ${window.outerHeight} ${window.innerHeight}`)
             }
         }
 
@@ -149,10 +147,8 @@
         const mobile = () => {
             try {
                 document.createEvent('TouchEvent');
-                setTESMobileText('手機裝置')
                 return true;
             } catch (e) {
-                setTESMobileText('電腦裝置')
                 return false;
             }
         }
