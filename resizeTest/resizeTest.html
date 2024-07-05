@@ -94,7 +94,7 @@
            <p id="testDir">測試用方向</p>
            <p id="testTool">測試用工具列顯示</p>
            <p id="testHeight">畫面高度</p>
-           <p>1.0.13</p>
+           <p>1.0.14</p>
         </div>
 
     </div>
@@ -133,12 +133,11 @@
             testDir.innerText = text;
         }
 
-            document.addEventListener("visibilitychange", function() {
-            if (!mobile()) return
-            // console.log( document.visibilityState );
-            // console.log(document.hidden);
-            const toolbarHidden = document.hidden
-            setTESTToolText(`工具列隱藏: ${toolbarHidden}`)
+        // 工具列顯示判斷
+        const isHiddenToolbar = () => {
+            const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
+
+            setTESTToolText(`工具列隱藏: ${toolbarHidden} ${window.outerHeight} ${window.innerHeight}`)
 
             if (toolbarHidden && isVertical && !isHorizontal) {
                 setIsShowGame(true);
@@ -156,34 +155,6 @@
                     window.scrollTo(0, 0);
                 }
             }
-            });
-
-        // 工具列顯示判斷
-        const isHiddenToolbar = () => {
-            // const toolbarHidden = (window.outerHeight - window.innerHeight) < 100;
-
-            // setTESTToolText(`工具列隱藏: ${toolbarHidden} ${window.outerHeight} ${window.innerHeight}`)
-
-            // if (toolbarHidden && isVertical && !isHorizontal) {
-            //     setIsShowGame(true);
-            //     // setTipText('')
-            //     isMounted = false;
-            // } else if (toolbarHidden && isVertical && isHorizontal) {
-            //     window.scrollTo(0, 0);
-            //     isHorizontal = false;
-            //     setTipText('上滑開啟全畫面')
-            // } else {
-            //     setIsShowGame(false);
-            //     setTipText('上滑開啟全畫面')
-            //     if (!isMounted) {
-            //         isMounted = true;
-            //         window.scrollTo(0, 0);
-            //     }
-            // }
-
-
-            // 我在这里建议大家亲自试试以下代码
-
         }
 
         // 設定提示文字
@@ -291,7 +262,7 @@
             }
             setTESTheight(`畫面高度: ${window.outerHeight} ${window.innerHeight}`)
 
-            tipView.style.height = `${height + 150 || 0}px`;
+            tipView.style.height = `${height + 350 || 0}px`;
             tipText.style.paddingTop = `${height / 2 - 50 || 0}px`;
         }
 
