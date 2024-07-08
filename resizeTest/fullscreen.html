@@ -56,8 +56,8 @@
             display: flex;
             justify-content: center;
             position: relative;
-            touch-action: none;
-            user-select: none;
+            /* touch-action: none;
+            user-select: none; */
 
         }
 
@@ -107,6 +107,11 @@
             left: 0;
             pointer-events: none;
         }
+
+        #btnList button {
+            pointer-events: auto;
+        }
+
 
         #swiperBg {
             height: calc(100vh + 100px);
@@ -171,7 +176,7 @@
 
             <div id="btnList">
                 <button type="button" id="open">Full Screen</button>
-                <p>1.0.16</p>
+                <p>1.0.17</p>
                 <button type="button" id="close">Exit Full Screen</button>
             </div>
         </div>
