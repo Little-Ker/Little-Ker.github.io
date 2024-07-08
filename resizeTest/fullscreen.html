@@ -62,6 +62,7 @@
         #gameDetail {
             margin-top: 48px;
             height: calc(100vh - 48px);
+            width: 100%;
         }
 
         #gameCanvas {
@@ -104,7 +105,7 @@
         }
 
         #swiperBg {
-            height: calc(100vh + 100px);
+            /* height: calc(100vh + 100px); */
             background: #9a9a9a;
         }
 
@@ -160,7 +161,7 @@
 
             <div id="btnList">
                 <button type="button" id="open">Full Screen</button>
-                <p>1.0.7</p>
+                <p>1.0.9</p>
                 <button type="button" id="close">Exit Full Screen</button>
             </div>
         </div>
@@ -186,6 +187,7 @@
     <script>
         const gameDetail = document.querySelector('#gameDetail');
         const gameCanvas = document.querySelector('#gameCanvas');
+        const swiperBg = document.querySelector('#swiperBg');
 
         const openBtn = document.querySelector('#open');
         const closeBtn = document.querySelector('#close');
@@ -219,7 +221,11 @@
 
         const closeFullScreenBtn = () => {
             isFullScreen = false
-            setIsShowGame(false);
+            if (mobile()) {
+                setIsShowGame(false);
+                return
+            }
+
             console.log('closeFullScreenBtn')
             document.exitFullscreen();
         }
@@ -235,6 +241,7 @@
 
         // 是否顯示遊戲
         const setIsShowGame = (show) => {
+            console.log('show',show)
             if (show) {
                 gameDetail.classList.add('gameMax');
 
@@ -242,7 +249,7 @@
                 // gameCanvas.classList.add('showGame');
                 // gameBg.classList.add('showGame');
             } else {
-                gameDetail.remove.add('gameMax');
+                gameDetail.classList.remove('gameMax');
                 // gameCanvas.classList.remove('showGame');
                 // gameBg.classList.remove('showGame');
             }
@@ -315,10 +322,11 @@
             gameCanvas.style.width = `${width || 0}px`;
             gameCanvas.style.height = `${height || 0}px`;
 
-            // if (mobile())  {
+            if (mobile())  {
+                swiperBg.style.height = `${height + 100}px`;
             //     gameCanvas.style.width = `${width}px`;
             //     gameCanvas.style.height = `${height}px`;
-            // }
+            }
             // setTESTheight(`畫面高度: ${window.outerHeight} ${window.innerHeight}`)
 
             // tipView.style.height = `${height + 350 || 0}px`;
@@ -327,10 +335,10 @@
 
         window.addEventListener('resize', () => {
             if (mobile()) {
-                setIsShowGame(false);
+                // setIsShowGame(false);
                 orientation();
             } else {
-                setIsShowGame(true);
+                // setIsShowGame(true);
                 setIsCloseTip(true)
             }
             resize();
