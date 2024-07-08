@@ -168,7 +168,7 @@
 
             <div id="btnList">
                 <button type="button" id="open">Full Screen</button>
-                <p>1.0.12</p>
+                <p>1.0.13</p>
                 <button type="button" id="close">Exit Full Screen</button>
             </div>
         </div>
@@ -311,7 +311,7 @@
             const ratio = pageH / pageW;
 
             const winW = window.innerWidth;
-            const winH = window.innerHeight - 36 - (mobile() ? 0 : 48);
+            const winH = window.innerHeight - 36 - (isFullScreen ? 0 : 48);
             // const winH = window.innerHeight;
 
 
