@@ -48,6 +48,14 @@
             height: calc(100% - 36px);
             width: 100%;
             background: #000;
+            /* margin: 0 auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0; */
+            display: flex;
+            justify-content: center;
+            position: relative;
 
         }
 
@@ -59,11 +67,11 @@
         #gameCanvas {
             background: #ffd900;
             margin: 0 auto;
-            top: 0;
+            /* top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            position: absolute;
+            position: relative; */
 
             /* position: fixed;
             display: none;
@@ -130,13 +138,14 @@
         <div id="navbar"></div>
         <div id="gameDetail">
             <div id="game">
-                <iframe id="gameCanvas" src="https://h5c.cqgame.games/h5/219/?language=zh-cn&token=guest123" frameborder="0"></iframe>
+                <iframe id="gameCanvas" width="0" height="0" src="https://h5c.cqgame.games/h5/219/?language=zh-cn&token=guest123" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <!-- <iframe id="gameCanvas" src="https://h5c.cqgame.games/h5/219/?language=zh-cn&token=guest123" frameborder="0"></iframe> -->
                 <!-- <canvas id='gameCanvas'></canvas> -->
             </div>
 
             <div id="btnList">
                 <button type="button" id="open">Full Screen</button>
-                <p>1.0.1</p>
+                <p>1.0.5</p>
                 <button type="button" id="close">Exit Full Screen</button>
             </div>
         </div>
@@ -258,13 +267,13 @@
             const ratio = pageH / pageW;
 
             const winW = window.innerWidth;
-            const winH = window.innerHeight - (isFullScreen ? 0 : 48) - 36;
+            const winH = window.innerHeight - (isFullScreen ? 0 : 48) - 36 - (mobile() ? 48 : 0);
             // const winH = window.innerHeight;
 
             let width = winH / ratio;
             let height = winH;
 
-            // console.log('width',width, 'height', height)
+            console.log('width',width, 'height', height)
 
             // if (width / winH >= ratio) {
             //     width = winH * ratio;
