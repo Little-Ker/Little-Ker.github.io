@@ -127,8 +127,20 @@
         let openGameY = 0;
 
         const openFullScreenBtn = () => {
-            console.log('openFullScreenBtn')
-            dom.requestFullscreen();
+            // console.log('openFullScreenBtn')
+            // dom.requestFullscreen();
+
+            if (dom.requestFullscreen) {
+                dom.requestFullscreen();
+            } else if (dom.webkitRequestFullscreen) { // Safari 和 Chrome
+                dom.webkitRequestFullscreen();
+            } else if (dom.mozRequestFullScreen) { // Firefox
+                dom.mozRequestFullScreen();
+            } else if (dom.msRequestFullscreen) { // IE/Edge
+                dom.msRequestFullscreen();
+            } else {
+                console.log("Fullscreen API is not supported.");
+            }
         }
 
         const closeFullScreenBtn = () => {
