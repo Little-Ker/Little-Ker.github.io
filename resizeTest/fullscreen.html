@@ -99,10 +99,11 @@
             height: 36px;
             border-top: 1px solid #fff;
             color: #fff;
-            position: fixed;
+            position: relative;
             z-index: 99999;
             bottom: 0;
             left: 0;
+            pointer-events: none;
         }
 
         #swiperBg {
@@ -168,7 +169,7 @@
 
             <div id="btnList">
                 <button type="button" id="open">Full Screen</button>
-                <p>1.0.13</p>
+                <p>1.0.14</p>
                 <button type="button" id="close">Exit Full Screen</button>
             </div>
         </div>
@@ -337,7 +338,7 @@
             gameCanvas.style.height = `${height || 0}px`;
 
             if (mobile())  {
-                swiperBg.style.height = `${height + 100}px`;
+                swiperBg.style.height = `${height + 150}px`;
             //     gameCanvas.style.width = `${width}px`;
             //     gameCanvas.style.height = `${height}px`;
             }
