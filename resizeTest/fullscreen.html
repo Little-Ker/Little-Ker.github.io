@@ -18,9 +18,10 @@
 
         .root {
             position: relative;
+            background: #000;
         }
 
-        .tipView {
+        /* .tipView {
             position: relative;
             top: 0;
             left: 0;
@@ -31,13 +32,42 @@
             justify-content: center;
             z-index: 1;
             display: flex;
+        } */
+
+        #navbar {
+            width: 100%;
+            height: 48px;
+            background: #000000b3;
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
         }
 
         #game {
+            height: calc(100% - 36px);
+            width: 100%;
+            background: #000;
+
+        }
+
+        #gameDetail {
+            margin-top: 48px;
+            height: calc(100vh - 48px);
+        }
+
+        #gameCanvas {
             background: #ffd900;
-            position: fixed;
+            margin: 0 auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+
+            /* position: fixed;
             display: none;
-            margin: auto;
+
             top: 0;
             left: 0;
             right: 0;
@@ -47,10 +77,18 @@
             user-select: none;
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
             cursor: inherit;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
         }
 
-        #gameBg {
+        #btnList {
+            display: flex;
+            justify-content: space-between;
+            background: #000;
+            width: 100%;
+            height: 36px;
+        }
+
+        /* #gameBg {
             width: 100%;
             height: 100%;
             position: fixed;
@@ -81,12 +119,26 @@
             left: 100px;
             z-index: 999999999999999999999999;
             color: rgb(228, 3, 3);
-        }
+        } */
     </style>
 </head>
 <body>
     <div class="root">
-        <div id="tipView" class="tipView"><p id="tipText"></p></div>
+        <div id="navbar"></div>
+        <div id="gameDetail">
+            <div id="game">
+                <canvas id='gameCanvas'></canvas>
+            </div>
+
+            <div id="btnList">
+                <button type="button" id="open">Full Screen</button>
+                <button type="button" id="close">Exit Full Screen</button>
+            </div>
+        </div>
+
+
+        <!-- <div></div> -->
+        <!-- <div id="tipView" class="tipView"><p id="tipText"></p></div>
         <img src="./bg/img_pc_bg.jpg" id="gameBg" />
         <canvas id='game'></canvas>
         <div id="test">
@@ -97,47 +149,32 @@
            <p>1.0.31</p>
            <button type="button" id="open">Full Screen</button>
            <button type="button" id="close">Exit Full Screen</button>
-        </div>
+        </div> -->
 
     </div>
 
     <script>
-        const testMobile = document.querySelector('#testMobile');
-        const testDir = document.querySelector('#testDir');
-        const testTool = document.querySelector('#testTool');
-        const testHeight = document.querySelector('#testHeight');
-
-        console.log('window.screen.availHeight',window.screen.availHeight)
-        console.log('window.screen.height',window.screen.height)
-        console.log('screen.height',screen.height)
-
-        const dom = document.querySelector('#game');
-        const tipView = document.querySelector('#tipView');
-        const tipText = document.querySelector('#tipText');
-        const gameBg = document.querySelector('#gameBg');
+        const gameDetail = document.querySelector('#gameDetail');
+        const gameCanvas = document.querySelector('#gameCanvas');
 
         const openBtn = document.querySelector('#open');
         const closeBtn = document.querySelector('#close');
-        let isVertical = false;
-        let isHorizontal = false;
-        let isMounted = false;
+        // const gameDetail = document.querySelector('#gameDetail');
 
-        let firstPosY = 0;
-        let finalPosY = 0;
-        let openGameY = 0;
 
+        // 遊戲全屏畫面
         const openFullScreenBtn = () => {
-            // console.log('openFullScreenBtn')
+            console.log('openFullScreenBtn')
             // dom.requestFullscreen();
 
-            if (dom.requestFullscreen) {
-                dom.requestFullscreen();
-            } else if (dom.webkitRequestFullscreen) { // Safari 和 Chrome
-                dom.webkitRequestFullscreen();
-            } else if (dom.mozRequestFullScreen) { // Firefox
-                dom.mozRequestFullScreen();
-            } else if (dom.msRequestFullscreen) { // IE/Edge
-                dom.msRequestFullscreen();
+            if (gameDetail?.requestFullscreen) {
+                gameDetail.requestFullscreen();
+            } else if (gameDetail?.webkitRequestFullscreen) { // Safari 和 Chrome
+                gameDetail.webkitRequestFullscreen();
+            } else if (gameDetail?.mozRequestFullScreen) { // Firefox
+                gameDetail.mozRequestFullScreen();
+            } else if (gameDetail?.msRequestFullscreen) { // IE/Edge
+                gameDetail.msRequestFullscreen();
             } else {
                 console.log("Fullscreen API is not supported.");
             }
@@ -151,106 +188,6 @@
         openBtn.addEventListener('click', openFullScreenBtn);
         closeBtn.addEventListener('click', closeFullScreenBtn);
 
-        // 設定TEST文字
-        const setTESTheight = (text) => {
-            testHeight.innerText = text;
-        }
-
-         // 設定TEST文字
-        const setTESMobileText = (text) => {
-            testMobile.innerText = text;
-        }
-
-         // 設定TEST文字
-        const setTESTToolText = (text) => {
-            testTool.innerText = text;
-        }
-
-        // 設定TEST文字
-        const setTESTDirText = (text) => {
-            testDir.innerText = text;
-        }
-
-        // 工具列顯示判斷
-        const isHiddenToolbar = () => {
-            let toolbarHidden = false;
-
-            const userAgent = navigator.userAgent
-            setTESMobileText(userAgent)
-
-            const hasSafari = userAgent.includes('Safari');
-            const hasChrome = userAgent.includes('Chrome');
-            const isFirefox  = userAgent.includes('Firefox');
-            const isEdg = userAgent.includes('Edg');
-            const isEdge = userAgent.includes('Edge');
-            const isIE = userAgent.includes('MSIE');
-            const isIE7 = userAgent.includes('MSIE 7');
-            const isOpera = userAgent.includes('Opera');
-
-            if (hasSafari && hasChrome && isEdg) {
-                // Chrome
-                // setTESMobileText('Chrome')
-                toolbarHidden = ((window.outerHeight - window.innerHeight) < 100);
-
-            } else if (isFirefox) {
-                // Firefox
-                // setTESMobileText('Firefox')
-                toolbarHidden = (window.innerHeight === screen.height);
-
-            } else if (hasSafari && hasChrome && isEdge) {
-                // safari
-                // setTESMobileText('safari')
-                toolbarHidden = ((window.outerHeight - window.innerHeight) < 100);
-
-            } else if (isEdge) {
-                // Edge
-                // setTESMobileText('Edge')
-
-            } else {
-                // setTESMobileText('Unknown')
-            }
-
-
-            toolbarHidden = ((finalPosY - firstPosY) > 100);
-
-
-            // if (hasSafari || hasChrome) {
-            //     toolbarHidden = ((window.outerHeight - window.innerHeight) < 100);
-            // } else {
-            //     toolbarHidden = (window.innerHeight === screen.height);
-            // }
-
-            // setTESTheight(`瀏覽器測試: Safari:${hasSafari} Chrome:${hasChrome} Firefox:${isFirefox} IE:${isIE} IE7:${isIE7} Opera:${isOpera}, ${window.outerHeight} ${window.innerHeight} ${screen.height}`)
-
-
-            console.log('window.screen.availHeight',window.screen.availHeight)
-        console.log('window.screen.height',window.screen.height)
-        console.log('screen.height',screen.height)
-
-        setTESTheight(`window.outerHeight:${window.outerHeight}, window.innerHeight:${window.innerHeight}, screen.height: ${screen.height}, window.screen.height: ${window.screen.height}, window.screen.availHeight: ${window.screen.availHeight}, firstPosY:${firstPosY}, finalPosY:${finalPosY}, (finalPosY - firstPosY): ${(finalPosY - firstPosY)}`)
-
-
-            // setTESTToolText(`工具列隱藏: ${toolbarHidden} ${window.outerHeight} ${window.innerHeight} ${screen.height}`)
-
-            if (toolbarHidden && isVertical && !isHorizontal) {
-                setIsShowGame(true);
-                setTipText('')
-                isMounted = false;
-                openGameY = window.innerHeight;
-            } else if (toolbarHidden && isVertical && isHorizontal) {
-                setIsShowGame(false);
-                window.scrollTo(0, 0);
-                isHorizontal = false;
-                setTipText('上滑開啟全畫面')
-            } else {
-                setIsShowGame(false);
-                setTipText('上滑開啟全畫面')
-                if (!isMounted) {
-                    isMounted = true;
-                    window.scrollTo(0, 0);
-                }
-            }
-        }
 
         // 設定提示文字
         const setTipText = (text) => {
@@ -260,12 +197,12 @@
         // 是否顯示遊戲
         const setIsShowGame = (show) => {
             if (show) {
-                document.body.style.overflow = 'hidden';
-                dom.classList.add('showGame');
-                gameBg.classList.add('showGame');
+                // document.body.style.overflow = 'hidden';
+                // gameCanvas.classList.add('showGame');
+                // gameBg.classList.add('showGame');
             } else {
-                dom.classList.remove('showGame');
-                gameBg.classList.remove('showGame');
+                // gameCanvas.classList.remove('showGame');
+                // gameBg.classList.remove('showGame');
             }
         }
 
@@ -280,42 +217,15 @@
 
         // 手機橫直向判斷
         const orientation = () => {
-            // if (window.orientation === 90 || window.orientation === -90) {
-            //     setTipText('手機請轉直');
-            //     isVertical = false;
-            //     isMounted = false;
-            //     isHorizontal = true;
-            //     window.scrollTo(0, 0);
-            //     document.body.style.overflow = 'hidden';
-            //     setTESTDirText('目前是橫像')
-            // } else if (window.orientation === 180 || window.orientation === 0) {
-            //     isVertical = true;
-            //     document.body.style.overflow = 'auto';
-            //     setTipText('上滑開啟全畫面');
-            //     isHiddenToolbar();
-            //     isMounted = false;
-            //     setTESTDirText('目前是直像')
-            // }
-
             if (!screenDir.matches) {
-                setIsShowGame(false);
-                setTipText('手機請轉直');
-                isVertical = false;
-                isMounted = false;
-                isHorizontal = true;
+                console.log('目前是橫像')
                 window.scrollTo(0, 0);
                 document.body.style.overflow = 'hidden';
-                setTESTDirText(`目前是橫像 ${ document.body.style.overflow} ${isHorizontal}`)
             } else {
-                isVertical = true;
+                console.log('目前是直像')
                 document.body.style.overflow = 'auto';
-                setTipText('上滑開啟全畫面');
-                isHiddenToolbar();
-                isMounted = false;
-                setTESTDirText(`目前是直像 ${ document.body.style.overflow} ${isVertical}`)
             }
         }
-
         const screenDir = window.matchMedia("(orientation: portrait)");
         screenDir.addListener(orientation);
 
@@ -331,52 +241,45 @@
             }
         }
 
-        function openFullscreen() {
-        const elem = document.documentElement;
-
-        if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-        } else if (elem.mozRequestFullScreen) { // Firefox
-            elem.mozRequestFullScreen();
-        } else if (elem.webkitRequestFullscreen) { // Chrome, Safari and Opera
-            elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) { // IE/Edge
-            elem.msRequestFullscreen();
-        }
-        }
-
-
-        // 遊戲畫面大小調整
+        // 遊戲畫面大小調整(根據高度縮放)
         const resize = () => {
-            if (!dom) return;
+            if (!gameCanvas) return;
             const pageW = 720;
             const pageH = 1280;
-            const ratio = pageW / pageH;
+            const ratio = pageH / pageW;
 
             const winW = window.innerWidth
-            const winH = window.innerHeight;
+            const winH = window.innerHeight - 36 - 48;
 
-            let width = winW;
-            let height = winW / ratio;
+            let width = winH / ratio;
+            let height = winH;
 
-            if (width / winH >= ratio) {
-                width = winH * ratio;
-                height = winH;
-            }
+            // console.log('width',width, 'height', height)
 
-            dom.style.width = `${width || 0}px`;
-            dom.style.height = `${height || 0}px`;
+            // if (width / winH >= ratio) {
+            //     width = winH * ratio;
+            //     height = winH;
+            // }
 
-            if (mobile())  {
-                dom.style.width = `${width}px`;
-                dom.style.height = `${height}px`;
-            }
+            // let width = winW;
+            // let height = winW / ratio;
+
+            // if (width / winH >= ratio) {
+            //     width = winH * ratio;
+            //     height = winH;
+            // }
+
+            gameCanvas.style.width = `${width || 0}px`;
+            gameCanvas.style.height = `${height || 0}px`;
+
+            // if (mobile())  {
+            //     gameCanvas.style.width = `${width}px`;
+            //     gameCanvas.style.height = `${height}px`;
+            // }
             // setTESTheight(`畫面高度: ${window.outerHeight} ${window.innerHeight}`)
 
-            tipView.style.height = `${height + 350 || 0}px`;
-            tipText.style.paddingTop = `${height / 2 - 50 || 0}px`;
-
-            finalPosY = window.innerHeight;
+            // tipView.style.height = `${height + 350 || 0}px`;
+            // tipText.style.paddingTop = `${height / 2 - 50 || 0}px`;
         }
 
         window.addEventListener('resize', () => {
@@ -392,16 +295,16 @@
 
         window.onload = () => {
             if (mobile()) {
-                setIsShowGame(false);
+                // setIsShowGame(false);
                 orientation();
             } else {
-                setIsShowGame(true);
-                setIsCloseTip(true)
+                // setIsShowGame(true);
+                // setIsCloseTip(true)
 
             }
 
-            firstPosY = window.innerHeight;
-            console.log('=========window.innerHeight',window.innerHeight, firstPosY)
+            // firstPosY = window.innerHeight;
+            // console.log('=========window.innerHeight',window.innerHeight, firstPosY)
             window.scrollTo(0, 0);
             resize();
         }
