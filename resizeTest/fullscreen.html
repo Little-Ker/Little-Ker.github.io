@@ -130,7 +130,8 @@
         <div id="navbar"></div>
         <div id="gameDetail">
             <div id="game">
-                <canvas id='gameCanvas'></canvas>
+                <iframe id="gameCanvas" src="https://h5c.cqgame.games/h5/219/?language=zh-cn&token=guest123" frameborder="0"></iframe>
+                <!-- <canvas id='gameCanvas'></canvas> -->
             </div>
 
             <div id="btnList">
@@ -257,8 +258,8 @@
             const ratio = pageH / pageW;
 
             const winW = window.innerWidth;
-            // const winH = window.innerHeight - (isFullScreen ? 0 : 48) - 36;
-            const winH = window.innerHeight;
+            const winH = window.innerHeight - (isFullScreen ? 0 : 48) - 36;
+            // const winH = window.innerHeight;
 
             let width = winH / ratio;
             let height = winH;
