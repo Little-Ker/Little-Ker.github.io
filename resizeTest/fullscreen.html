@@ -161,9 +161,12 @@
         const closeBtn = document.querySelector('#close');
         // const gameDetail = document.querySelector('#gameDetail');
 
+        let isFullScreen = false;
+
 
         // 遊戲全屏畫面
         const openFullScreenBtn = () => {
+            isFullScreen = true
             console.log('openFullScreenBtn')
             // dom.requestFullscreen();
 
@@ -181,6 +184,7 @@
         }
 
         const closeFullScreenBtn = () => {
+            isFullScreen = false
             console.log('closeFullScreenBtn')
             document.exitFullscreen();
         }
@@ -209,9 +213,9 @@
          // 是否關閉提示
          const setIsCloseTip = (close) => {
             if (close) {
-                tipView.classList.add('closeTip');
+                // tipView.classList.add('closeTip');
             } else {
-                tipView.classList.remove('closeTip');
+                // tipView.classList.remove('closeTip');
             }
         }
 
@@ -249,7 +253,7 @@
             const ratio = pageH / pageW;
 
             const winW = window.innerWidth
-            const winH = window.innerHeight - 36 - 48;
+            const winH = window.innerHeight - (isFullScreen ? 0 : 48) - 36;
 
             let width = winH / ratio;
             let height = winH;
@@ -308,6 +312,11 @@
             window.scrollTo(0, 0);
             resize();
         }
+
+        // ios 禁止手機縮放
+        document.addEventListener('gesturestart', function (event) {
+            event.preventDefault()
+        })
     </script>
 </body>
 </html>
