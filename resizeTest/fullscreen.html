@@ -127,7 +127,7 @@
 
 
         #swiperBg {
-            height: calc(100vh + 600px);
+            /* height: calc(100vh + 600px); */
             background: #000;
         }
 
@@ -191,7 +191,7 @@
 
             <div id="btnList">
                 <button type="button" id="open">Full Screen</button>
-                <p>1.0.21</p>
+                <p>1.0.22</p>
                 <button type="button" id="close">Exit Full Screen</button>
             </div>
         </div>
@@ -338,8 +338,8 @@
             const winW = window.innerWidth;
             // const winH = $(window).height() - 36 - (isFullScreen ? 0 : 48);
 
-            const winH = document.documentElement.clientHeight - 36 - (isFullScreen ? 0 : 48);
-            // const winH = window.innerHeight - 36 - (isFullScreen ? 0 : 48);
+            // const winH = document.documentElement.clientHeight - 36 - (isFullScreen ? 0 : 48);
+            const winH = window.innerHeight - 36 - (isFullScreen ? 0 : 48);
             // const winH = window.innerHeight;
 
     //  if (!minHeight) minHeight = winH
@@ -372,11 +372,11 @@
             gameCanvas.style.width = `${width || 0}px`;
             gameCanvas.style.height = `${height || 0}px`;
 
-            // if (mobile())  {
-            //     swiperBg.style.height = `${height + 150}px`;
+            if (mobile())  {
+                swiperBg.style.height = `${height + 600}px`;
             // //     gameCanvas.style.width = `${width}px`;
             // //     gameCanvas.style.height = `${height}px`;
-            // }
+            }
             // setTESTheight(`畫面高度: ${window.outerHeight} ${window.innerHeight}`)
 
             // tipView.style.height = `${height + 350 || 0}px`;
