@@ -114,8 +114,8 @@
 
 
         #swiperBg {
-            height: calc(100vh + 100px);
-            background: #9a9a9a;
+            height: calc(100vh + 600px);
+            background: #000;
         }
 
         .gameMax {
@@ -176,7 +176,7 @@
 
             <div id="btnList">
                 <button type="button" id="open">Full Screen</button>
-                <p>1.0.17</p>
+                <p>1.0.18</p>
                 <button type="button" id="close">Exit Full Screen</button>
             </div>
         </div>
@@ -210,6 +210,7 @@
         // const gameDetail = document.querySelector('#gameDetail');
 
         let isFullScreen = false;
+        let minHeight = null;
 
 
         // 遊戲全屏畫面
@@ -322,9 +323,12 @@
             const winH = window.innerHeight - 36 - (isFullScreen ? 0 : 48);
             // const winH = window.innerHeight;
 
+     if (!minHeight) minHeight = winH
 
             let width = winH / ratio;
-            let height = winH;
+            let height = (minHeight >= winH) ? minHeight : winH;
+
+       
 
             console.log('isFullScreen', isFullScreen,'width',width, 'height', height)
 
