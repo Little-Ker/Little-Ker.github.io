@@ -113,6 +113,12 @@
             z-index: 9999;
             position: fixed;
             top: 0;
+            margin-top: 0 !important;
+            height: calc(100vh - 36px) !important;
+        }
+
+        .game2 {
+            height: calc(100% - 0px) !important;
         }
 
         /* #gameBg {
@@ -161,7 +167,7 @@
 
             <div id="btnList">
                 <button type="button" id="open">Full Screen</button>
-                <p>1.0.9</p>
+                <p>1.0.11</p>
                 <button type="button" id="close">Exit Full Screen</button>
             </div>
         </div>
@@ -188,6 +194,7 @@
         const gameDetail = document.querySelector('#gameDetail');
         const gameCanvas = document.querySelector('#gameCanvas');
         const swiperBg = document.querySelector('#swiperBg');
+        const game = document.querySelector('#game');
 
         const openBtn = document.querySelector('#open');
         const closeBtn = document.querySelector('#close');
@@ -200,10 +207,11 @@
         const openFullScreenBtn = () => {
             isFullScreen = true
             console.log('openFullScreenBtn')
-            if (mobile()) {
+            // if (mobile()) {
+                resize();
                 setIsShowGame(true);
                 return
-            }
+            // }
             // dom.requestFullscreen();
 
             if (gameDetail?.requestFullscreen) {
@@ -221,10 +229,11 @@
 
         const closeFullScreenBtn = () => {
             isFullScreen = false
-            if (mobile()) {
+            // if (mobile()) {
+                resize();
                 setIsShowGame(false);
                 return
-            }
+            // }
 
             console.log('closeFullScreenBtn')
             document.exitFullscreen();
@@ -244,12 +253,14 @@
             console.log('show',show)
             if (show) {
                 gameDetail.classList.add('gameMax');
+                game.classList.add('game2');
 
                 // document.body.style.overflow = 'hidden';
                 // gameCanvas.classList.add('showGame');
                 // gameBg.classList.add('showGame');
             } else {
                 gameDetail.classList.remove('gameMax');
+                game.classList.remove('game2');
                 // gameCanvas.classList.remove('showGame');
                 // gameBg.classList.remove('showGame');
             }
@@ -301,10 +312,11 @@
             const winH = window.innerHeight - (isFullScreen ? 0 : 48) - 36;
             // const winH = window.innerHeight;
 
+
             let width = winH / ratio;
             let height = winH;
 
-            console.log('width',width, 'height', height)
+            console.log('isFullScreen', isFullScreen,'width',width, 'height', height)
 
             // if (width / winH >= ratio) {
             //     width = winH * ratio;
@@ -334,13 +346,13 @@
         }
 
         window.addEventListener('resize', () => {
-            if (mobile()) {
-                // setIsShowGame(false);
-                orientation();
-            } else {
-                // setIsShowGame(true);
-                setIsCloseTip(true)
-            }
+            // if (mobile()) {
+            //     // setIsShowGame(false);
+            //     orientation();
+            // } else {
+            //     // setIsShowGame(true);
+            //     setIsCloseTip(true)
+            // }
             resize();
         });
 
