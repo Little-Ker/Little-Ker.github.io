@@ -7,6 +7,8 @@ const scrollBg = document.querySelector('#scrollBg');
 
 const tipText = document.querySelector('#tipText');
 
+const test = document.querySelector('#test');
+
 let originalGameHeight = null;
 
 // 是否關閉提示
@@ -84,6 +86,8 @@ const resize = () => {
     } else {
         document.body.style.overflow = 'auto';
     }
+
+    test.innerText = `originalGameHeight::${originalGameHeight}, height:: ${height}, ${(originalGameHeight < height)}`
 
     gameCanvas.style.width = `${width || 0}px`;
     gameCanvas.style.height = `${height || 0}px`;
