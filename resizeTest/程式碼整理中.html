@@ -65,8 +65,6 @@
             display: flex;
             justify-content: center;
             position: relative;
-            /* touch-action: none;
-            user-select: none; */
         }
 
         #gameDetail {
@@ -95,12 +93,10 @@
             bottom: 0;
             left: 0;
             pointer-events: none;
-            padding: 0 1rem;
         }
 
         #btnList button {
             pointer-events: auto;
-            margin-right: 2rem;
         }
 
         #swiperBg {
@@ -171,10 +167,9 @@
 
             <div id="btnList">
 
-                <!-- <button type="button" id="open">Full Screen</button> -->
-                <p>1.0.40</p>
-                <button type="button" id="fullScreenBtn">Full Screen</button>
-                <!-- <button type="button" id="close">Exit Full Screen</button> -->
+                <button type="button" id="open">Full Screen</button>
+                <p>1.0.41</p>
+                <button type="button" id="close">Exit Full Screen</button>
             </div>
         </div>
         <div id="swiperBg"></div>
@@ -204,8 +199,8 @@
         const swiperBg = document.querySelector('#swiperBg');
         const game = document.querySelector('#game');
 
-        // const openBtn = document.querySelector('#open');
-        const fullScreenBtn = document.querySelector('#fullScreenBtn');
+        const openBtn = document.querySelector('#open');
+        const closeBtn = document.querySelector('#close');
         // const gameDetail = document.querySelector('#gameDetail');
 
         let isFullScreen = false;
@@ -248,15 +243,9 @@
             document.exitFullscreen();
         }
 
-        const onFullScreen = () => {
-            if (isFullScreen) {
-                closeFullScreenBtn()
-                return
-            }
-            openFullScreenBtn()
-        }
+        openBtn.addEventListener('click', openFullScreenBtn);
+        closeBtn.addEventListener('click', closeFullScreenBtn);
 
-        fullScreenBtn.addEventListener('click', onFullScreen);
 
         // 設定提示文字
         const setTipText = (text) => {
