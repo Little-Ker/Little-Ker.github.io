@@ -1,6 +1,7 @@
 const gameDetail = document.querySelector('#gameDetail');
         const gameCanvas = document.querySelector('#gameCanvas');
         const game = document.querySelector('#game');
+        const gameBg = document.querySelector('#gameBg');
 
         const scrollBg = document.querySelector('#scrollBg');
 
@@ -68,14 +69,23 @@ const gameDetail = document.querySelector('#gameDetail');
             }
         }
 
-         // 是否關閉提示
-         const setIsCloseTip = (close) => {
+        // 是否關閉提示
+        const setIsCloseTip = (close) => {
             if (close) {
                 tipText.innerText = '';
                 tipText.classList.add('closeTip');
             } else {
                 tipText.innerText = '手機請轉直';
                 tipText.classList.remove('closeTip');
+            }
+        }
+
+        // 是否關閉遊戲背景
+        const setIsGameClose = (close) => {
+            if (close) {
+                gameBg.classList.add('closeGameBg');
+            } else {
+                gameBg.classList.remove('closeGameBg');
             }
         }
 
@@ -141,8 +151,10 @@ const gameDetail = document.querySelector('#gameDetail');
 
         window.addEventListener('resize', () => {
             if (mobile()) {
+                setIsGameClose(true)
                 orientation();
             } else {
+                setIsGameClose(false)
                 setIsCloseTip(true)
             }
             resize();
@@ -150,8 +162,10 @@ const gameDetail = document.querySelector('#gameDetail');
 
         window.onload = () => {
             if (mobile()) {
+                setIsGameClose(true)
                 orientation();
             } else {
+                setIsGameClose(false)
                 setIsCloseTip(true)
             }
 
