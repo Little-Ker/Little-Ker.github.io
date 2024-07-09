@@ -147,9 +147,9 @@ const gameDetail = document.querySelector('#gameDetail');
             gameCanvas.style.width = `${width || 0}px`;
             gameCanvas.style.height = `${height || 0}px`;
 
-            // if (mobile())  {
+            if (mobile())  {
                 scrollBg.style.height = `${height + 600}px`;
-            // }
+            }
         }
 
         window.addEventListener('resize', () => {
