@@ -7,6 +7,8 @@ const scrollBg = document.querySelector('#scrollBg');
 
 const tipText = document.querySelector('#tipText');
 
+let originalGameHeight = null;
+
 // 是否關閉提示
 const setIsCloseTip = (close) => {
     if (close) {
@@ -71,6 +73,16 @@ const resize = () => {
     if (height / winW >= ratio) {
         height = winW * ratio;
         width = winW;
+    }
+
+
+    if (!originalGameHeight) originalGameHeight = height
+
+    // 工具列隱藏了
+    if (originalGameHeight < height) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
     }
 
     gameCanvas.style.width = `${width || 0}px`;
