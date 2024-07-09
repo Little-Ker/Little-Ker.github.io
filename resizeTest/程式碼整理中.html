@@ -65,8 +65,8 @@
             display: flex;
             justify-content: center;
             position: relative;
-            /* touch-action: none;
-            user-select: none; */
+            touch-action: none;
+            user-select: none;
         }
 
         #gameDetail {
@@ -170,7 +170,7 @@
             <div id="btnList">
 
                 <button type="button" id="open">Full Screen</button>
-                <p>1.0.43</p>
+                <p>1.0.44</p>
                 <button type="button" id="close">Exit Full Screen</button>
             </div>
         </div>
@@ -395,9 +395,33 @@
         }
 
         // ios 禁止手機縮放
-        document.addEventListener('gesturestart', function (event) {
-            event.preventDefault()
-        })
+        // document.addEventListener('gesturestart', function (event) {
+        //     event.preventDefault()
+        // })
+
+
+        document.getElementById('btnList').addEventListener('click', function(event) {
+            // 獲取點擊位置
+            const x = event.clientX;
+            const y = event.clientY;
+
+            // 創建一個新的點擊事件
+            const clickEvent = new MouseEvent('click', {
+                clientX: x,
+                clientY: y,
+                bubbles: true,
+                cancelable: true,
+                view: window
+            });
+
+            // 找到位於點擊位置的元素
+            const element = document.elementFromPoint(x, y);
+
+            // 如果找到的元素是 swiperBg，則觸發點擊事件
+            if (element && element.id === 'swiperBg') {
+                element.dispatchEvent(clickEvent);
+            }
+        });
     </script>
 </body>
 </html>
