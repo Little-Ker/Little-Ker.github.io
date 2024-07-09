@@ -50,8 +50,8 @@ body {
   display: flex;
   justify-content: center;
   position: relative;
-  touch-action: none;
-  user-select: none;
+  /* touch-action: none;
+  user-select: none; */
 }
 
 #gameDetail {
