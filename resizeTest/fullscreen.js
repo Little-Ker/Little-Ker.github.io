@@ -1,7 +1,7 @@
 const gameDetail = document.querySelector('#gameDetail');
         const gameCanvas = document.querySelector('#gameCanvas');
         const game = document.querySelector('#game');
-        const gameBg = document.querySelector('#gameBg');
+        // const gameBg = document.querySelector('#gameBg');
 
         const scrollBg = document.querySelector('#scrollBg');
 
@@ -83,9 +83,9 @@ const gameDetail = document.querySelector('#gameDetail');
         // 是否關閉遊戲背景
         const setIsGameClose = (close) => {
             if (close) {
-                gameBg.classList.add('closeGameBg');
+                // gameBg.classList.add('closeGameBg');
             } else {
-                gameBg.classList.remove('closeGameBg');
+                // gameBg.classList.remove('closeGameBg');
             }
         }
 
