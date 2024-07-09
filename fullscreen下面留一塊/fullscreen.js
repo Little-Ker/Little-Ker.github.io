@@ -78,7 +78,7 @@ const resize = () => {
     }
 
 
-    if (!originalGameHeight) originalGameHeight = height
+    // if (!originalGameHeight) originalGameHeight = height
 
     // 工具列隱藏了
     // if (originalGameHeight < height) {
