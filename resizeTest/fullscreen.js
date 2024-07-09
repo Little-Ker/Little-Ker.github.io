@@ -5,7 +5,7 @@ const gameDetail = document.querySelector('#gameDetail');
 
         const scrollBg = document.querySelector('#scrollBg');
 
-        const tipText = document.querySelector('#tipText');
+        // const tipText = document.querySelector('#tipText');
         const fullScreenBtn = document.querySelector('#fullScreenBtn');
 
         let isFullScreen = false;
@@ -72,11 +72,11 @@ const gameDetail = document.querySelector('#gameDetail');
         // 是否關閉提示
         const setIsCloseTip = (close) => {
             if (close) {
-                tipText.innerText = '';
-                tipText.classList.add('closeTip');
+                // tipText.innerText = '';
+                // tipText.classList.add('closeTip');
             } else {
-                tipText.innerText = '手機請轉直';
-                tipText.classList.remove('closeTip');
+                // tipText.innerText = '手機請轉直';
+                // tipText.classList.remove('closeTip');
             }
         }
 
