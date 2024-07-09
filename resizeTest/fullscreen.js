@@ -83,7 +83,9 @@ const gameDetail = document.querySelector('#gameDetail');
         const orientation = () => {
             if (!screenDir.matches) {
                 console.log('目前是橫像')
-                window.scrollTo(0, 0);
+                // window.scrollTo(0, 0);
+                document.documentElement.scrollTop = 0; // For most browsers
+                document.body.scrollTop = 0; // For some older browsers
                 document.body.style.overflow = 'hidden';
                 setIsCloseTip(false);
             } else {
@@ -155,7 +157,9 @@ const gameDetail = document.querySelector('#gameDetail');
 
             // firstPosY = window.innerHeight;
             // console.log('=========window.innerHeight',window.innerHeight, firstPosY)
-            window.scrollTo(0, 0);
+            // window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0; // For most browsers
+            document.body.scrollTop = 0; // For some older browsers
             resize();
         }
 
