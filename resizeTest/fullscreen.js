@@ -94,8 +94,9 @@ const gameDetail = document.querySelector('#gameDetail');
             if (!screenDir.matches) {
                 console.log('目前是橫像')
                 // window.scrollTo(0, 0);
-                document.documentElement.scrollTop = 0; // For most browsers
-                document.body.scrollTop = 0; // For some older browsers
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                // document.documentElement.scrollTop = 0; // For most browsers
+                // document.body.scrollTop = 0; // For some older browsers
                 document.body.style.overflow = 'hidden';
                 setIsCloseTip(false);
             } else {
@@ -162,8 +163,6 @@ const gameDetail = document.querySelector('#gameDetail');
 
             resize();
         });
-
-        function scrollToTop() { scrollBg.scrollTo({ top: 0, behavior: 'smooth' });}
 
         window.onload = () => {
             if (mobile()) {
