@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover,initial-scale=1.0">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="theme-color" content="#000000"/> <!-- 設定狀態欄顏色 -->
+    <meta name="google" content="notranslate"> <!-- 禁止翻譯 -->
+
+    <title>Resize</title>
+    <style>
+
+        html, body {
+            touch-action: manipulation; /* 禁止双击放大 */
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .root {
+            position: relative;
+            background: #000;
+        }
+
+        .tipText {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            color: #fff;
+            justify-content: center;
+            z-index: 1;
+            display: flex;
+        }
+
+        #navbar {
+            width: 100%;
+            height: 48px;
+            background: #000;
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #fff;
+        }
+
+        .logo {
+           margin: 0 1rem;
+        }
+
+        #game {
+            height: calc(100% - 36px);
+            width: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        #gameDetail {
+            margin-top: 48px;
+            height: calc(100vh - 48px);
+            width: 100%;
+            position: fixed;
+        }
+
+        #gameCanvas {
+            background: #ffd900;
+            margin: 0 auto;
+        }
+
+        #btnList {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #000;
+            width: 100%;
+            height: 36px;
+            border-top: 1px solid #fff;
+            color: #fff;
+            position: fixed;
+            z-index: 99999;
+            bottom: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        #btnList button {
+            pointer-events: auto;
+        }
+
+        #swiperBg {
+            background: #000;
+        }
+
+        .gameMax {
+            z-index: 9999;
+            position: fixed;
+            top: 0;
+            margin-top: 0 !important;
+            height: calc(100vh - 36px) !important;
+        }
+
+        .game2 {
+            height: calc(100% - 0px) !important;
+        }
+
+        /* #gameBg {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            object-fit: cover;
+            touch-action: none;
+            user-select: none;
+            pointer-events: none;
+            display: none;
+            z-index: 2;
+        }
+
+        .showGame {
+            display: block !important;
+        }
+
+
+
+        #test {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            z-index: 999999999999999999999999;
+            color: rgb(228, 3, 3);
+        } */
+
+        .closeTip {
+            display: none !important;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="root">
+        <div id="navbar">
+            <div class="logo">GP</div>
+        </div>
+        <div id="gameDetail">
+            <div id="game">
+                <iframe id="gameCanvas" width="0" height="0" src="https://web-gb.cqgame.games/h5/GB2/?language=zh-cn&token=guest123" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <!-- <iframe id="gameCanvas" src="https://h5c.cqgame.games/h5/219/?language=zh-cn&token=guest123" frameborder="0"></iframe> -->
+                <!-- <canvas id='gameCanvas'></canvas> -->
+            </div>
+
+            <div id="btnList">
+
+                <button type="button" id="open">Full Screen</button>
+                <p>1.0.35</p>
+                <button type="button" id="close">Exit Full Screen</button>
+            </div>
+        </div>
+        <div id="swiperBg"></div>
+        <div id="tipText"></div>
+
+
+        <!-- <div></div> -->
+        <!--
+        <img src="./bg/img_pc_bg.jpg" id="gameBg" />
+        <canvas id='game'></canvas>
+        <div id="test">
+           <p id="testMobile">測試用裝置</p>
+           <p id="testDir">測試用方向</p>
+           <p id="testTool">測試用工具列顯示</p>
+           <p id="testHeight">畫面高度</p>
+           <p>1.0.31</p>
+           <button type="button" id="open">Full Screen</button>
+           <button type="button" id="close">Exit Full Screen</button>
+        </div> -->
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
+    <script>
+        const gameDetail = document.querySelector('#gameDetail');
+        const gameCanvas = document.querySelector('#gameCanvas');
+        const swiperBg = document.querySelector('#swiperBg');
+        const game = document.querySelector('#game');
+
+        const openBtn = document.querySelector('#open');
+        const closeBtn = document.querySelector('#close');
+        // const gameDetail = document.querySelector('#gameDetail');
+
+        let isFullScreen = false;
+        let minHeight = null;
+
+
+        // 遊戲全屏畫面
+        const openFullScreenBtn = () => {
+            isFullScreen = true
+            console.log('openFullScreenBtn')
+            if (mobile()) {
+                resize();
+                setIsShowGame(true);
+                return
+            }
+
+            // 網頁版 F11 放大畫面
+            if (gameDetail?.requestFullscreen) {
+                gameDetail.requestFullscreen();
+            } else if (gameDetail?.webkitRequestFullscreen) { // Safari 和 Chrome
+                gameDetail.webkitRequestFullscreen();
+            } else if (gameDetail?.mozRequestFullScreen) { // Firefox
+                gameDetail.mozRequestFullScreen();
+            } else if (gameDetail?.msRequestFullscreen) { // IE/Edge
+                gameDetail.msRequestFullscreen();
+            } else {
+                console.log("Fullscreen API is not supported.");
+            }
+        }
+
+        const closeFullScreenBtn = () => {
+            isFullScreen = false
+            if (mobile()) {
+                resize();
+                setIsShowGame(false);
+                return
+            }
+
+            console.log('closeFullScreenBtn')
+            document.exitFullscreen();
+        }
+
+        openBtn.addEventListener('click', openFullScreenBtn);
+        closeBtn.addEventListener('click', closeFullScreenBtn);
+
+
+        // 設定提示文字
+        const setTipText = (text) => {
+            tipText.innerText = text;
+        }
+
+        // 是否顯示遊戲
+        const setIsShowGame = (show) => {
+            console.log('show',show)
+            if (show) {
+                gameDetail.classList.add('gameMax');
+                game.classList.add('game2');
+
+                // document.body.style.overflow = 'hidden';
+                // gameCanvas.classList.add('showGame');
+                // gameBg.classList.add('showGame');
+            } else {
+                gameDetail.classList.remove('gameMax');
+                game.classList.remove('game2');
+                // gameCanvas.classList.remove('showGame');
+                // gameBg.classList.remove('showGame');
+            }
+        }
+
+         // 是否關閉提示
+         const setIsCloseTip = (close) => {
+            if (close) {
+                tipText.classList.add('closeTip');
+            } else {
+                tipText.classList.remove('closeTip');
+            }
+        }
+
+        // 手機橫直向判斷
+        const orientation = () => {
+            if (!screenDir.matches) {
+                console.log('目前是橫像')
+                window.scrollTo(0, 0);
+                setIsCloseTip(false)
+                document.body.style.overflow = 'hidden';
+            } else {
+                console.log('目前是直像')
+                setIsCloseTip(true)
+                document.body.style.overflow = 'auto';
+            }
+        }
+        const screenDir = window.matchMedia("(orientation: portrait)");
+        screenDir.addListener(orientation);
+
+        // 裝置判斷
+        const mobile = () => {
+            try {
+                console.log('手機板')
+                document.createEvent('TouchEvent');
+                // setTESMobileText('手機裝置')
+                return true;
+            } catch (e) {
+                // setTESMobileText('電腦裝置')
+                return false;
+            }
+        }
+
+        // 遊戲畫面大小調整(根據高度縮放)
+        const resize = () => {
+            if (!gameCanvas) return;
+            const pageW = 720;
+            const pageH = 1280;
+            const ratio = pageH / pageW;
+
+            const navbarHeight = 48;
+            const fullScreenBtn = 36
+
+            const winW = window.innerWidth;
+            // const winH = $(window).height() - 36 - (isFullScreen ? 0 : 48);
+
+            // const winH = document.documentElement.clientHeight - 36 - (isFullScreen ? 0 : 48);
+            const winH = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) - fullScreenBtn - (isFullScreen ? 0 : navbarHeight);
+
+            // document.documentElement.clientHeight
+            // const winH = window.innerHeight;
+
+    //  if (!minHeight) minHeight = winH
+
+            let width = winH / ratio;
+            let height = winH;
+
+            if (height / winW >= ratio) {
+                height = winW * ratio;
+                width = winW;
+            }
+
+            // if (width / winH >= ratio) {
+            //     width = winH * ratio;
+            //     height = winH;
+            // }
+
+            // let width = winW;
+            // let height = winW / ratio;
+
+            // if (width / winH >= ratio) {
+            //     width = winH * ratio;
+            //     height = winH;
+            // }
+
+            gameCanvas.style.width = `${width || 0}px`;
+            gameCanvas.style.height = `${height || 0}px`;
+
+            if (mobile())  {
+                swiperBg.style.height = `${height + 600}px`;
+            // //     gameCanvas.style.width = `${width}px`;
+            // //     gameCanvas.style.height = `${height}px`;
+            }
+
+            // tipView.style.height = `${height + 350 || 0}px`;
+            // tipText.style.paddingTop = `${height / 2 - 50 || 0}px`;
+        }
+
+        window.addEventListener('resize', () => {
+            if (mobile()) {
+                // setIsShowGame(false);
+                orientation();
+            } else {
+                // setIsShowGame(true);
+                setIsCloseTip(true)
+            }
+            resize();
+        });
+
+        window.onload = () => {
+            if (mobile()) {
+                // setIsShowGame(false);
+                orientation();
+            } else {
+                // setIsShowGame(true);
+                setIsCloseTip(true)
+
+            }
+
+            // firstPosY = window.innerHeight;
+            // console.log('=========window.innerHeight',window.innerHeight, firstPosY)
+            window.scrollTo(0, 0);
+            resize();
+        }
+
+        // ios 禁止手機縮放
+        document.addEventListener('gesturestart', function (event) {
+            event.preventDefault()
+        })
+    </script>
+</body>
+</html>
