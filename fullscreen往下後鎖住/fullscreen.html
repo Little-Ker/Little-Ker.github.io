@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover,initial-scale=1.0">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="theme-color" content="#000000"/> <!-- 設定狀態欄顏色 -->
+    <meta name="google" content="notranslate"> <!-- 禁止翻譯 -->
+
+    <title>Full Screen</title>
+    <link href="./fullscreen.css" rel="stylesheet">
+</head>
+<body>
+    <div class="root">
+        <div id="gameDetail">
+            <div id="game">
+                <iframe id="gameCanvas" width="0" height="0" src="https://web-gb.cqgame.games/h5/GB2/?language=zh-cn&token=guest123" frameborder="0"></iframe>
+                <img src="./bg/img_pc_bg.jpg" id="gameBg" />
+            </div>
+        </div>
+        <div id="scrollBg"></div>
+        <div id="tipText"></div>
+        <p id="test">11111</p>
+    </div>
+    <script src="./fullscreen.js"></script>
+    <script src="./lockScreenControl.js"></script>
+</body>
+</html>
