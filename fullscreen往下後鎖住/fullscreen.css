@@ -60,22 +60,10 @@ body {
   background: #000;
 }
 
-#gameBg {
-  width: 100%;
-}
-
 .closeTip {
   display: none !important;
 }
 
 .closeGameBg {
   display: none !important;
-}
-
-#test {
-  position: fixed;
-  top: 50px;
-  left: 50px;
-  z-index: 9999999999999;
-  color: #fff;
 }

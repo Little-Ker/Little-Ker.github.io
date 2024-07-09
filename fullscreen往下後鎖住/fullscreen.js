@@ -7,10 +7,6 @@ const scrollBg = document.querySelector('#scrollBg');
 
 const tipText = document.querySelector('#tipText');
 
-const test = document.querySelector('#test');
-
-let originalGameHeight = null;
-
 // 是否關閉提示
 const setIsCloseTip = (close) => {
     if (close) {
@@ -77,15 +73,6 @@ const resize = () => {
         width = winW;
     }
 
-    if (!originalGameHeight) originalGameHeight = height
-
-    // 工具列隱藏
-    if (originalGameHeight < height) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'auto';
-    }
-
     gameCanvas.style.width = `${width || 0}px`;
     gameCanvas.style.height = `${height || 0}px`;
 
@@ -116,20 +103,3 @@ window.onload = () => {
     resize();
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
-// window.onscroll = function() {
-//     if (!mobile()) return;
-
-//     let scrollPositionY = window.scrollY || window.pageYOffset;
-//     console.log('scrollPositionY', scrollPositionY)
-
-//     test.innerText = `scrollPositionY: ${scrollPositionY}`;
-
-//     // 滾到一定程度，鎖住不給滾動
-//     if (scrollPositionY >= 100) {
-//         document.body.style.overflow = 'hidden';
-//     }
-
-//     // let scrollPositionX = window.scrollX || window.pageXOffset;
-//     // document.getElementById('scrollPosition').innerText = `垂直捲軸位置: ${scrollPositionY}, 水平捲軸位置: ${scrollPositionX}`;
-// };
