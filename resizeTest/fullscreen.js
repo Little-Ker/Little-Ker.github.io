@@ -93,10 +93,7 @@ const gameDetail = document.querySelector('#gameDetail');
         const orientation = () => {
             if (!screenDir.matches) {
                 console.log('目前是橫像')
-                // window.scrollTo(0, 0);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-                // document.documentElement.scrollTop = 0; // For most browsers
-                // document.body.scrollTop = 0; // For some older browsers
                 document.body.style.overflow = 'hidden';
                 setIsCloseTip(false);
             } else {
@@ -111,14 +108,11 @@ const gameDetail = document.querySelector('#gameDetail');
         // 裝置判斷
         const mobile = () => {
             try {
-
                 document.createEvent('TouchEvent');
                 console.log('手機裝置')
-                // setTESMobileText('手機裝置')
                 return true;
             } catch (e) {
                 console.log('電腦裝置')
-                // setTESMobileText('電腦裝置')
                 return false;
             }
         }
@@ -172,28 +166,6 @@ const gameDetail = document.querySelector('#gameDetail');
                 setIsGameClose(false)
                 setIsCloseTip(true)
             }
-
-            // firstPosY = window.innerHeight;
-            // console.log('=========window.innerHeight',window.innerHeight, firstPosY)
-            // window.scrollTo(0, 0);
-            // scrollBg.scrollTop = 0; // For most browsers
-            // scrollBg.scrollTop = 0; // For some older browsers
-            // scrollBg.scrollTo(0, 0);
-            // scrollBg.scrollTo({ top: 0 })
-            // console.log('load')
-
-            // scrollToTop();
-
             resize();
             window.scrollTo({ top: 0, behavior: 'smooth' });
-
-
-            // $(document).bind('scroll', function() { $(document).scrollTop($(document).scrollTop()) })
         }
-
-
-
-        // ios 禁止手機縮放
-        // document.addEventListener('gesturestart', function (event) {
-        //     event.preventDefault()
-        // })
