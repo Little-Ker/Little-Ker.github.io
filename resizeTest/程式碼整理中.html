@@ -25,7 +25,7 @@
             background: #000;
         }
 
-        .tipText {
+        #tipText {
             position: fixed;
             top: 0;
             left: 0;
@@ -33,9 +33,10 @@
             height: 100vh;
             background: #000;
             color: #fff;
-            justify-content: center;
             z-index: 1;
             display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         #navbar {
@@ -158,9 +159,10 @@
         </div>
         <div id="gameDetail">
             <div id="game">
-                <iframe id="gameCanvas" width="0" height="0" src="https://web-gb.cqgame.games/h5/GB2/?language=zh-cn&token=guest123" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <!-- <iframe id="gameCanvas" width="0" height="0" src="https://web-gb.cqgame.games/h5/GB2/?language=zh-cn&token=guest123" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe> -->
                 <!-- <iframe id="gameCanvas" src="https://h5c.cqgame.games/h5/219/?language=zh-cn&token=guest123" frameborder="0"></iframe> -->
                 <!-- <canvas id='gameCanvas'></canvas> -->
+                <canvas id='gameCanvas'></canvas>
             </div>
 
             <div id="btnList">
@@ -281,10 +283,12 @@
         const orientation = () => {
             if (!screenDir.matches) {
                 console.log('目前是橫像')
+                setTipText('手機請轉直')
                 window.scrollTo(0, 0);
                 setIsCloseTip(false)
                 document.body.style.overflow = 'hidden';
             } else {
+                setTipText('')
                 console.log('目前是直像')
                 setIsCloseTip(true)
                 document.body.style.overflow = 'auto';
