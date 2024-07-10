@@ -126,7 +126,7 @@ const gameDetail = document.querySelector('#gameDetail');
             const pageH = 1280;
             const ratio = pageH / pageW;
 
-            const navbarHeight = 0;
+            const navbarHeight = 48;
             const fullScreenBtnHeight = 36
 
             const winW = window.innerWidth;
