@@ -7,6 +7,8 @@ const gameDetail = document.querySelector('#gameDetail');
 
         const tipText = document.querySelector('#tipText');
 
+        const btnList = document.querySelector('#btnList');
+
         // 是否關閉提示
         const setIsCloseTip = (close) => {
             if (close) {
@@ -77,6 +79,8 @@ const gameDetail = document.querySelector('#gameDetail');
 
             gameCanvas.style.width = `${width || 0}px`;
             gameCanvas.style.height = `${height || 0}px`;
+
+            btnList.innerText = `寬: ${width} 高: ${height}`;
 
             if (mobile())  {
                 scrollBg.style.height = `${height + 600}px`;

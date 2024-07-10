@@ -28,7 +28,7 @@ body {
 }
 
 #game {
-  height: calc(100% - 36px);
+  height: calc(100vh - 36px);
   width: 100%;
   background: #000;
   display: flex;
