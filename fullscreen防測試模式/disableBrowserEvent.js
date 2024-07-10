@@ -14,7 +14,7 @@ window.onkeydown = window.onkeyup = window.onkeypress = function () {
 // 檢查到 debugMode 就無限跳中斷點
 setInterval(function() {
   checkDebugMode();
-}, 4000);
+}, 3000);
 var checkDebugMode = function() {
   function doCheck() {
      (function() {}["constructor"]("debugger")())
