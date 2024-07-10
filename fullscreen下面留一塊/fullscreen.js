@@ -129,3 +129,8 @@ const gameDetail = document.querySelector('#gameDetail');
             let scrollPositionY = window.scrollY || window.pageYOffset;
             btnList.innerText = `垂直捲軸位置: ${scrollPositionY}`;
         };
+
+        $(document).ready(function() {
+            $(window).scrollTop(0);
+            console.log('ready')
+        });
