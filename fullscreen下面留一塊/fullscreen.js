@@ -119,8 +119,9 @@ const gameDetail = document.querySelector('#gameDetail');
                 setIsCloseTip(true)
             }
 
-            window.scrollTo(0, 0);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // window.scrollTo(0, 0);
+            // window.scrollTo({ top: 0, behavior: 'smooth' });
+            // setTimeout(() => window.scrollTo(0,0), 50);
             resize();
         };
 
@@ -130,9 +131,15 @@ const gameDetail = document.querySelector('#gameDetail');
             btnList.innerText = `垂直捲軸位置: ${scrollPositionY}`;
         };
 
-        $(window).ready(function() {
-            $(window).scrollTop(0);
-            window.scrollTo(0, 0);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            console.log('ready')
-        });
+        window.onbeforeunload = function(){
+            //刷新后页面自动回到顶部
+          document.documentElement.scrollTop = 0;  //ie下
+          document.body.scrollTop = 0;  //非ie
+        }
+
+        // $(window)；.ready(function() {
+        //     $(window).scrollTop(0);
+        //     window.scrollTo(0, 0);
+        //     window.scrollTo({ top: 0, behavior: 'smooth' });
+        //     console.log('ready')
+        // });
