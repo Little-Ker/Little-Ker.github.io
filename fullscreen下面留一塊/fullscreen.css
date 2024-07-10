@@ -27,8 +27,23 @@ body {
   display: flex;
 }
 
+#navbar {
+  width: 100%;
+  height: 0;
+  background: #000;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
 #game {
-  height: calc(100vh - 36px);
+  height: calc(100% - 36px);
   width: 100%;
   background: #000;
   display: flex;
@@ -37,24 +52,23 @@ body {
 }
 
 #gameDetail {
-  height: calc(100vh);
+  margin-top: 0;
+  height: calc(100vh - 0px);
   width: 100%;
   position: fixed;
-  z-index: 9999;
 }
 
 #gameCanvas {
   background: #000;
   margin: 0 auto;
   position: absolute;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #btnList {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f16464;
+  background: #000;
   width: 100%;
   height: 36px;
   color: #fff;
@@ -75,15 +89,22 @@ body {
   background: #000;
 }
 
+.gameDetailMax {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  margin-top: 0 !important;
+  height: calc(100vh - 36px) !important;
+}
+
+.gameMax {
+  height: 100%  !important;
+}
+
 .closeTip {
   display: none !important;
 }
 
 .closeGameBg {
   display: none !important;
-}
-
-#gameBg {
-  width: 100%;
-  height: 100vh;
 }
