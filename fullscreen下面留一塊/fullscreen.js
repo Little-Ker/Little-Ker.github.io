@@ -127,11 +127,10 @@ const gameDetail = document.querySelector('#gameDetail');
             const pageH = 1280;
             const ratio = pageH / pageW;
 
-            const navbarHeight = 0;
-            const fullScreenBtnHeight = 36
+            const fullScreenBtnHeight = 36;
 
             const winW = window.innerWidth;
-            const winH = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) - fullScreenBtnHeight - (isFullScreen ? 0 : navbarHeight);
+            const winH = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) - fullScreenBtnHeight;
 
             let width = winH / ratio;
             let height = winH;
@@ -158,7 +157,7 @@ const gameDetail = document.querySelector('#gameDetail');
                 setIsCloseTip(true)
             }
 
-            resize();
+            // resize();
         });
 
         window.onload = () => {
