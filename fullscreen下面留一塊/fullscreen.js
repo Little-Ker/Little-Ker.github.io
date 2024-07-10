@@ -6,56 +6,56 @@ const gameDetail = document.querySelector('#gameDetail');
         const scrollBg = document.querySelector('#scrollBg');
 
         const tipText = document.querySelector('#tipText');
-        const fullScreenBtn = document.querySelector('#fullScreenBtn');
+        // const fullScreenBtn = document.querySelector('#fullScreenBtn');
 
         let isFullScreen = false;
 
 
         // 開啟 遊戲全屏畫面
-        const openFullScreenBtn = () => {
-            fullScreenBtn.innerText = 'Exit Full Screen';
-            isFullScreen = true
-            if (mobile()) {
-                resize();
-                setFullScreenGame(true);
-                return
-            }
+        // const openFullScreenBtn = () => {
+        //     fullScreenBtn.innerText = 'Exit Full Screen';
+        //     isFullScreen = true
+        //     if (mobile()) {
+        //         resize();
+        //         setFullScreenGame(true);
+        //         return
+        //     }
 
-            // 網頁版 F11 放大畫面
-            if (gameDetail?.requestFullscreen) {
-                gameDetail.requestFullscreen();
-            } else if (gameDetail?.webkitRequestFullscreen) { // Safari 和 Chrome
-                gameDetail.webkitRequestFullscreen();
-            } else if (gameDetail?.mozRequestFullScreen) { // Firefox
-                gameDetail.mozRequestFullScreen();
-            } else if (gameDetail?.msRequestFullscreen) { // IE/Edge
-                gameDetail.msRequestFullscreen();
-            } else {
-                console.log("Fullscreen API is not supported.");
-            }
-        }
+        //     // 網頁版 F11 放大畫面
+        //     if (gameDetail?.requestFullscreen) {
+        //         gameDetail.requestFullscreen();
+        //     } else if (gameDetail?.webkitRequestFullscreen) { // Safari 和 Chrome
+        //         gameDetail.webkitRequestFullscreen();
+        //     } else if (gameDetail?.mozRequestFullScreen) { // Firefox
+        //         gameDetail.mozRequestFullScreen();
+        //     } else if (gameDetail?.msRequestFullscreen) { // IE/Edge
+        //         gameDetail.msRequestFullscreen();
+        //     } else {
+        //         console.log("Fullscreen API is not supported.");
+        //     }
+        // }
 
-        // 關閉 遊戲全屏畫面
-        const closeFullScreenBtn = () => {
-            fullScreenBtn.innerText = 'Full Screen';
-            isFullScreen = false
-            if (mobile()) {
-                resize();
-                setFullScreenGame(false);
-                return
-            }
-            document.exitFullscreen();
-        }
+        // // 關閉 遊戲全屏畫面
+        // const closeFullScreenBtn = () => {
+        //     fullScreenBtn.innerText = 'Full Screen';
+        //     isFullScreen = false
+        //     if (mobile()) {
+        //         resize();
+        //         setFullScreenGame(false);
+        //         return
+        //     }
+        //     document.exitFullscreen();
+        // }
 
-        const onFullScreen = () => {
-            if (isFullScreen) {
-                closeFullScreenBtn()
-                return
-            }
-            openFullScreenBtn()
-        }
+        // const onFullScreen = () => {
+        //     if (isFullScreen) {
+        //         closeFullScreenBtn()
+        //         return
+        //     }
+        //     openFullScreenBtn()
+        // }
 
-        fullScreenBtn.addEventListener('click', onFullScreen);
+        // fullScreenBtn.addEventListener('click', onFullScreen);
 
         // 遊戲是否顯示全屏
         const setFullScreenGame = (show) => {
