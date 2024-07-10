@@ -56,6 +56,8 @@ body {
   height: calc(100vh - 0px);
   width: 100%;
   position: fixed;
+  z-index: 9999;
+  top: 0;
 }
 
 #gameCanvas {
