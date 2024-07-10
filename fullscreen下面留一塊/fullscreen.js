@@ -9,57 +9,6 @@ const gameDetail = document.querySelector('#gameDetail');
 
         const btnList = document.querySelector('#btnList');
 
-        // const fullScreenBtn = document.querySelector('#fullScreenBtn');
-
-        let isFullScreen = false;
-
-
-        // 開啟 遊戲全屏畫面
-        // const openFullScreenBtn = () => {
-        //     fullScreenBtn.innerText = 'Exit Full Screen';
-        //     isFullScreen = true
-        //     if (mobile()) {
-        //         resize();
-        //         setFullScreenGame(true);
-        //         return
-        //     }
-
-        //     // 網頁版 F11 放大畫面
-        //     if (gameDetail?.requestFullscreen) {
-        //         gameDetail.requestFullscreen();
-        //     } else if (gameDetail?.webkitRequestFullscreen) { // Safari 和 Chrome
-        //         gameDetail.webkitRequestFullscreen();
-        //     } else if (gameDetail?.mozRequestFullScreen) { // Firefox
-        //         gameDetail.mozRequestFullScreen();
-        //     } else if (gameDetail?.msRequestFullscreen) { // IE/Edge
-        //         gameDetail.msRequestFullscreen();
-        //     } else {
-        //         console.log("Fullscreen API is not supported.");
-        //     }
-        // }
-
-        // // 關閉 遊戲全屏畫面
-        // const closeFullScreenBtn = () => {
-        //     fullScreenBtn.innerText = 'Full Screen';
-        //     isFullScreen = false
-        //     if (mobile()) {
-        //         resize();
-        //         setFullScreenGame(false);
-        //         return
-        //     }
-        //     document.exitFullscreen();
-        // }
-
-        // const onFullScreen = () => {
-        //     if (isFullScreen) {
-        //         closeFullScreenBtn()
-        //         return
-        //     }
-        //     openFullScreenBtn()
-        // }
-
-        // fullScreenBtn.addEventListener('click', onFullScreen);
-
         // 遊戲是否顯示全屏
         const setFullScreenGame = (show) => {
             console.log('show',show)
@@ -97,11 +46,12 @@ const gameDetail = document.querySelector('#gameDetail');
             if (!screenDir.matches) {
                 console.log('目前是橫像')
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-                // document.body.style.overflow = 'hidden';
+                document.body.style.overflow = 'hidden';
                 setIsCloseTip(false);
             } else {
                 console.log('目前是直像')
-                // document.body.style.overflow = 'auto';
+                document.body.style.overflow = 'auto';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
                 setIsCloseTip(true);
             }
         }
