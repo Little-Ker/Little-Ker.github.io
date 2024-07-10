@@ -34,6 +34,7 @@ body {
   display: flex;
   justify-content: center;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #gameDetail {
@@ -48,7 +49,6 @@ body {
   background: #000;
   margin: 0 auto;
   position: absolute;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #btnList button {
@@ -66,4 +66,9 @@ body {
 
 .closeGameBg {
   display: none !important;
+}
+
+#gameBg {
+  width: 100%;
+  height: 100%;
 }
