@@ -51,7 +51,6 @@ const gameDetail = document.querySelector('#gameDetail');
             } else {
                 console.log('目前是直像')
                 document.body.style.overflow = 'auto';
-                window.scrollTo({ top: 0, behavior: 'smooth' });
                 setIsCloseTip(true);
             }
         }
@@ -101,7 +100,7 @@ const gameDetail = document.querySelector('#gameDetail');
         window.addEventListener('resize', () => {
             if (mobile()) {
                 setIsGameClose(true)
-                orientation();
+                // orientation();
             } else {
                 setIsGameClose(false)
                 setIsCloseTip(true)
