@@ -46,11 +46,11 @@ const gameDetail = document.querySelector('#gameDetail');
             if (!screenDir.matches) {
                 console.log('目前是橫像')
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-                document.body.style.overflow = 'hidden';
+                // document.body.style.overflow = 'hidden';
                 setIsCloseTip(false);
             } else {
                 console.log('目前是直像')
-                document.body.style.overflow = 'auto';
+                // document.body.style.overflow = 'auto';
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 setIsCloseTip(true);
             }
