@@ -118,7 +118,7 @@ const gameDetail = document.querySelector('#gameDetail');
                 setIsGameClose(false)
                 setIsCloseTip(true)
             }
-
+            setTimeout(() => window.scrollTo(0,0), 150)
             // window.scrollTo(0, 0);
             // window.scrollTo({ top: 0, behavior: 'smooth' });
             // setTimeout(() => window.scrollTo(0,0), 50);
