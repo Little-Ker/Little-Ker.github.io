@@ -8,6 +8,7 @@ const gameDetail = document.querySelector('#gameDetail');
         const tipText = document.querySelector('#tipText');
 
         const btnList = document.querySelector('#btnList');
+
         // const fullScreenBtn = document.querySelector('#fullScreenBtn');
 
         let isFullScreen = false;
@@ -126,7 +127,7 @@ const gameDetail = document.querySelector('#gameDetail');
             const pageH = 1280;
             const ratio = pageH / pageW;
 
-            const navbarHeight = 48;
+            const navbarHeight = 0;
             const fullScreenBtnHeight = 36
 
             const winW = window.innerWidth;
@@ -175,5 +176,5 @@ const gameDetail = document.querySelector('#gameDetail');
 
         window.onscroll = function() {
             let scrollPositionY = window.scrollY || window.pageYOffset;
-            btnList.innerText = `垂直捲軸位置: ${scrollPositionY}`;
+            $('#btnList').innerText = `垂直捲軸位置: ${scrollPositionY}`;
           };
