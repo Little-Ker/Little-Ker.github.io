@@ -157,7 +157,7 @@ const gameDetail = document.querySelector('#gameDetail');
                 setIsCloseTip(true)
             }
 
-            // resize();
+            resize();
         });
 
         window.onload = () => {
@@ -170,10 +170,10 @@ const gameDetail = document.querySelector('#gameDetail');
             }
             resize();
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        };
 
 
         window.onscroll = function() {
             let scrollPositionY = window.scrollY || window.pageYOffset;
-            $('#btnList').innerText = `垂直捲軸位置: ${scrollPositionY}`;
-          };
+            btnList.innerText = `垂直捲軸位置: ${scrollPositionY}`;
+        };
