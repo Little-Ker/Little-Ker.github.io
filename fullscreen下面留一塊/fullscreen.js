@@ -130,7 +130,9 @@ const gameDetail = document.querySelector('#gameDetail');
             btnList.innerText = `垂直捲軸位置: ${scrollPositionY}`;
         };
 
-        $(document).ready(function() {
+        $(window).ready(function() {
             $(window).scrollTop(0);
+            window.scrollTo(0, 0);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
             console.log('ready')
         });
