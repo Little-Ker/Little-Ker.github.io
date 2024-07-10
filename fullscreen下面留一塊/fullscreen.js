@@ -113,7 +113,7 @@ const gameDetail = document.querySelector('#gameDetail');
         window.onload = () => {
             if (mobile()) {
                 setIsGameClose(true)
-                // orientation();
+                orientation();
             } else {
                 setIsGameClose(false)
                 setIsCloseTip(true)
