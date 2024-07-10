@@ -37,7 +37,7 @@ body {
 }
 
 #gameDetail {
-  height: calc(100vh - 36px);
+  height: calc(100vh);
   width: 100%;
   position: fixed;
   z-index: 9999;
@@ -54,11 +54,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #000;
+  background: #f16464;
   width: 100%;
   height: 36px;
   color: #fff;
-  position: fixed;
+  position: relative;
   z-index: 99999;
   bottom: 0;
   left: 0;
